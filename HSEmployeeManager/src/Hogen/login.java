@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -53,7 +54,7 @@ public class login extends Application{
 		TextField username = new TextField();
 		username.setPromptText("Username");
 		username.setStyle("-fx-background-color: #ffffff;");
-		TextField password = new TextField();
+		PasswordField password = new PasswordField();
 		password.setPromptText("Password");
 		password.setStyle("-fx-background-color: #ffffff;");
 		Button login = new Button("Login");
