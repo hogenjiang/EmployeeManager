@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -110,18 +111,27 @@ public class login extends Application{
 		vbox.setPadding(new Insets(0, 200, 100, 200));
 		vbox.setSpacing(15);
 		
-		HBox bottom = new HBox(tip);
-		bottom.setPadding(new Insets(0, 230, 50, 230));
 		
-		HBox bottom1 = new HBox(signup);
-		bottom1.setPadding(new Insets(0, 230, 60, 230));
+//		
+//		HBox bottom = new HBox(tip,signup);
+//		bottom.setPadding(new Insets(0, 230, 60, 230));
+
 		
 		
+		
+		GridPane grid = new GridPane();
+		grid.setPadding(new Insets(0, 0, 40, 0));
+		
+		grid.setHgap(16);
+		grid.setVgap(15);
+		grid.add(tip, 14, 2); //horizontal, vertical
+		grid.add(signup, 15, 2);
 		
 		root.getChildren().add(background);
 		root.setTop(hbox);
 		root.setCenter(vbox);
-		root.setBottom(bottom);
+		root.setBottom(grid);
+		
 		
 
 		
