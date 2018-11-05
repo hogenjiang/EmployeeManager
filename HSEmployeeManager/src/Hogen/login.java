@@ -73,7 +73,7 @@ public class login extends Application{
 	});
 		
 		//Bottom - Sign up
-		Text tip = new Text("Don't have an accont?");
+		Text tip = new Text("Don't have an account?");
 		tip.setFont(font);
 		Button signup = new Button("Sign Up");
 		signup.setBackground(Background.EMPTY);
@@ -105,13 +105,18 @@ public class login extends Application{
 		hbox.setPadding(new Insets(60, 0, 0, 100));
 		
 		
-		VBox vbox = new VBox(username, password,login,tip,signup); 
+		VBox vbox = new VBox(username, password,login); 
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setPadding(new Insets(0, 200, 100, 200));
 		vbox.setSpacing(15);
 		
-		HBox bottom = new HBox(tip,signup);
+		HBox bottom = new HBox(tip);
 		bottom.setPadding(new Insets(0, 230, 50, 230));
+		
+		HBox bottom1 = new HBox(signup);
+		bottom1.setPadding(new Insets(0, 230, 60, 230));
+		
+		
 		
 		root.getChildren().add(background);
 		root.setTop(hbox);
