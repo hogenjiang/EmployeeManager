@@ -1,6 +1,5 @@
 package Hogen;
 
-import Tabs.form;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,6 +17,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -29,6 +29,7 @@ public class login extends Application{
 
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
+	private Scene scene1, scene2;
 
 	public static void main(String[] args) {
 		Application.launch(args);
@@ -42,6 +43,7 @@ public class login extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
 		Font signFont = Font.font ("Arial", FontWeight.BOLD, 10);
@@ -104,11 +106,7 @@ public class login extends Application{
 	//		Transition.setAutoReverse(true); 
 	//		Transition.play(); 
 		
-		
-		
-
-		
-		//Scene
+		//Pane
 		HBox hbox = new HBox(imageview);
 		hbox.setPadding(new Insets(60, 0, 0, 100));
 		
@@ -127,22 +125,40 @@ public class login extends Application{
 		root.setCenter(vbox);
 		root.setBottom(grid);
 		
-		Scene scene = new Scene(root, 640, 480);
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+		
+		
+		//function
+				login.setOnAction(new EventHandler<ActionEvent>() {
+		            @Override public void handle(ActionEvent e) {
+		            	
+		            	primaryStage.setScene(scene2);
+		                primaryStage.setResizable(false);
+		                primaryStage.show();
+		                
+		            }
+		        });
+				
+				signup.setOnAction(new EventHandler<ActionEvent>() {
+		            @Override public void handle(ActionEvent e) {
+		  
+
+		            	   
+		            	
+		            }
+		        });
+		//Scene 2
+		StackPane test = new StackPane();
+		test.getChildren().add(grid);
+		scene2 = new Scene(test, 1280, 720);
+		//Scene 1
+		scene1 = new Scene(root, 640, 480);
+		primaryStage.setScene(scene1);
+		primaryStage.setResizable(false);
         primaryStage.show();
         
         
-		//function
-		login.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-            	primaryStage.close();
-            	
-
-            	   
-            	
-            }
-        });
+        
+		
 		
 	}
 
