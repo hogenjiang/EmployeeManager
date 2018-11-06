@@ -131,9 +131,7 @@ public class login extends Application{
 				login.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {
 		            	
-		            	primaryStage.setScene(scene2);
-		                primaryStage.setResizable(false);
-		                primaryStage.show();
+
 		                
 		            }
 		        });
@@ -147,11 +145,11 @@ public class login extends Application{
 		            }
 		        });
 		//Scene 2
-		StackPane test = new StackPane();
-		test.getChildren().add(grid);
-		scene2 = new Scene(test, 1280, 720);
+//		StackPane test = new StackPane();
+//		test.getChildren().add(grid);
+//		scene2 = new Scene(test, 1280, 720);
 		//Scene 1
-		scene1 = new Scene(root, 640, 480);
+		scene1 = new Scene(root, 630, 470);
 		primaryStage.setScene(scene1);
 		primaryStage.setResizable(false);
         primaryStage.show();
