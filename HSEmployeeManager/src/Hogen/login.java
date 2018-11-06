@@ -1,14 +1,13 @@
 package Hogen;
 
+import Tabs.AddItemTab;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +16,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -29,21 +27,17 @@ public class login extends Application{
 
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
+	private ImageView background1 = new ImageView();
 	private Scene scene1, scene2;
 
 	public static void main(String[] args) {
 		Application.launch(args);
 
 	}
-	
-	public login() {
-		super();
-	}
-	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
+//SCENE 1
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
 		Font signFont = Font.font ("Arial", FontWeight.BOLD, 10);
@@ -54,6 +48,8 @@ public class login extends Application{
 		imageview.setImage(image);
 		Image image1 = new Image("background.png");
 		background.setImage(image1);
+		Image image2 = new Image("background.png");
+		background1.setImage(image2);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
@@ -120,19 +116,20 @@ public class login extends Application{
 		grid.add(tip, 2, 2); //horizontal, vertical
 		grid.add(signup, 3, 2);
 		
-		root.getChildren().add(background);
+		root.getChildren().add(background1);
 		root.setTop(hbox);
 		root.setCenter(vbox);
 		root.setBottom(grid);
 		
-		
-		
+
 		//function
 				login.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {
-		            	
 
-		                
+
+						primaryStage.setScene(scene2);
+						primaryStage.setResizable(false);
+						primaryStage.show();
 		            }
 		        });
 				
@@ -144,17 +141,55 @@ public class login extends Application{
 		            	
 		            }
 		        });
-		//Scene 2
-//		StackPane test = new StackPane();
-//		test.getChildren().add(grid);
-//		scene2 = new Scene(test, 1280, 720);
-		//Scene 1
+
+
+
+//SCENE 2
+
+		//build menu bar, item, create tabPane, tab, borderPane, top, center
+		MenuBar menu = new MenuBar();
+		Menu fileMenu = new Menu("File");
+		Menu viewMenu = new Menu("View");
+		Menu helpMenu = new Menu("Help");
+		Menu newItem = new Menu("New");
+
+		MenuItem salaryItem = new MenuItem("Salary Employee");
+		MenuItem hourlyItem = new MenuItem("Hourly Employee");
+		MenuItem saveItem = new MenuItem("Save");
+		MenuItem saveAsItem = new MenuItem("Save As");
+		MenuItem tableItem = new MenuItem("Table");
+		MenuItem graphItem = new MenuItem("Graph");
+
+		fileMenu.getItems().addAll(newItem, saveItem, saveAsItem);
+		newItem.getItems().addAll(salaryItem, hourlyItem);
+		viewMenu.getItems().addAll(tableItem,graphItem);
+		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
+
+		//TabPane
+		TabPane tabPane = new TabPane();
+		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+		//Three tabs
+		AddItemTab addItemTab = AddItemTab.getInstance();
+		addItemTab.setClosable(false);
+		//RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+		//removeItemTab.setClosable(false);
+		//StatisticsTab statisticsTab = StatisticsTab.getInstance();
+		//statisticsTab.setClosable(false);
+		tabPane.getTabs().addAll(addItemTab);
+
+
+		BorderPane pane = new BorderPane();
+		pane.getChildren().add(background);
+		pane.setTop(menu);
+		pane.setCenter(tabPane);
+
+
+		scene2 = new Scene(pane,630,470);
 		scene1 = new Scene(root, 630, 470);
 		primaryStage.setScene(scene1);
 		primaryStage.setResizable(false);
-        primaryStage.show();
-        
-        
+		primaryStage.show();
+
         
 		
 		
