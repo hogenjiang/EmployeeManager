@@ -1,6 +1,8 @@
 package Hogen;
 
+import Tabs.form;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -24,6 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class login extends Application{
 	
+
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
 
@@ -31,6 +34,11 @@ public class login extends Application{
 		Application.launch(args);
 
 	}
+	
+	public login() {
+		super();
+	}
+	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -62,11 +70,12 @@ public class login extends Application{
 	});
 		login.addEventHandler(MouseEvent.MOUSE_EXITED, 
 			    new EventHandler<MouseEvent>() {
+
 	        @Override public void handle(MouseEvent e) {
 	        	login.setEffect(null);
 	        }
 	});
-		
+
 		//Bottom - Sign up
 		Text tip = new Text("Don't have an account?");
 		tip.setFont(font);
@@ -88,50 +97,52 @@ public class login extends Application{
 		        }
 		});
 		
-		//Animation
-//		ScaleTransition Transition = new ScaleTransition(Duration.millis(500), signup); 
-//		Transition.setByX(.8);
-//		Transition.setByY(.8);
-//		Transition.setAutoReverse(true); 
-//		Transition.play(); 
+			//Animation
+	//		ScaleTransition Transition = new ScaleTransition(Duration.millis(500), signup); 
+	//		Transition.setByX(.8);
+	//		Transition.setByY(.8);
+	//		Transition.setAutoReverse(true); 
+	//		Transition.play(); 
 		
 		
+		
+
+		
+		//Scene
 		HBox hbox = new HBox(imageview);
 		hbox.setPadding(new Insets(60, 0, 0, 100));
-		
 		
 		VBox vbox = new VBox(username, password,login); 
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setPadding(new Insets(0, 200, 100, 200));
 		vbox.setSpacing(15);
-		
-		
-//		
-//		HBox bottom = new HBox(tip,signup);
-//		bottom.setPadding(new Insets(0, 230, 60, 230));
 
-		
-		
-		
 		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(0, 0, 40, 0));
-		
-		grid.setHgap(16);
-		grid.setVgap(15);
-		grid.add(tip, 14, 2); //horizontal, vertical
-		grid.add(signup, 15, 2);
+		grid.setPadding(new Insets(0, 0, 40, 230));
+		grid.add(tip, 2, 2); //horizontal, vertical
+		grid.add(signup, 3, 2);
 		
 		root.getChildren().add(background);
 		root.setTop(hbox);
 		root.setCenter(vbox);
 		root.setBottom(grid);
 		
-		
-
-		
 		Scene scene = new Scene(root, 640, 480);
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
+        
+        
+		//function
+		login.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+            	primaryStage.close();
+            	
+
+            	   
+            	
+            }
+        });
 		
 	}
 
