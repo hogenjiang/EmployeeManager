@@ -5,6 +5,7 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -135,13 +136,17 @@ public class login extends Application{
 	        	signUp.setEffect(null);
 	        }
 	});
-		
+		//3
 		TextField email = new TextField();
         email.setPromptText("Email");
         email.setStyle("-fx-background-color: #ffffff;");
         
-        
-			
+        //4
+        ComboBox<ENUMS.gender> gender = new ComboBox<>();
+        gender.setItems(FXCollections.observableArrayList(ENUMS.gender.values()));
+
+        //5
+		DatePicker date = new DatePicker();
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
@@ -181,22 +186,18 @@ public class login extends Application{
 				
 				signup.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {
+		            	hbox.getChildren().remove(imageview);	
 		            	
-		            	
-		
-		             hbox.getChildren().removeAll(imageview);
+		             vbox.getChildren().removeAll(login);
+		             vbox.getChildren().addAll(email,gender,date);
 		             
-		             
-		             vbox.getChildren().removeAll(login,username, password);
-		             vbox.getChildren().addAll(email);
 		             
 		             grid.getChildren().removeAll(tip,signup);
-		             
-		             grid.setHgap(6);
+		             grid.setHgap(7);
 		             grid.add(back, 2, 2);
-		     		 grid.add(signUp, 3, 2);
-		     		 
-
+		             grid.add(signUp, 3, 2);
+		             
+		             
 		             
 
 				     TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username); 		     
@@ -207,24 +208,52 @@ public class login extends Application{
 				     
 				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
 				     t3.setByY(-30);
-		
+				     
+				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender); 		     
+				     t4.setByY(-30);
+				     
+				     TranslateTransition t5 = new TranslateTransition(Duration.millis(200), date); 		     
+				     t5.setByY(-30);
+				     
+				     ScaleTransition s1 = new ScaleTransition(Duration.millis(500), imageview); 		     
+				     s1.setToX(.6);
+				     s1.setToY(.6);
+				     
+			     
 				     
 				     //Order - SequentialTransition, same time - ParallelTransition
-				     ParallelTransition pt = new ParallelTransition(t1, t2, t3);
+				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4, t5, s1);
 				        pt.play();   
+				        
+				        
 		            	
 		            }
 		        });
 				
 				
-				
 				back.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {
-		            	vbox.getChildren().remove(email);
+		            	BorderPane signuproot = new BorderPane();
+		            	hbox.getChildren().add(imageview);
+		            	
+		            	vbox.getChildren().removeAll(email,gender,date);
 		            	grid.getChildren().removeAll(signUp, back);
 		            	
-		        		hbox.getChildren().add(imageview);
-		            	
+		            	grid.setHgap(0);
+		            	grid.add(tip, 2, 2); 
+		        		grid.add(signup, 3, 2);
+		        		
+		        		
+		        		vbox.getChildren().addAll(login);
+		        		
+		        		
+		        		signuproot.getChildren().add(background1);
+		        		signuproot.setTop(hbox);
+		        		signuproot.setCenter(vbox);
+		        		signuproot.setBottom(grid);
+		        		
+		        		
+		        		
 		   
 		            	 TranslateTransition tb1 = new TranslateTransition(Duration.millis(200), username); 		     
 					     tb1.setByY(30);
@@ -232,19 +261,27 @@ public class login extends Application{
 					     TranslateTransition tb2 = new TranslateTransition(Duration.millis(200), password); 		     
 					     tb2.setByY(30);
 					     
-					     TranslateTransition tb3 = new TranslateTransition(Duration.millis(200), login); 		     
-					     tb3.setByY(100);
+					     TranslateTransition tb3 = new TranslateTransition(Duration.millis(200), email); 		     
+					     tb3.setByY(30);
 					     
-					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), tip); 		     
-					     tb4.setByY(400);
 					     
-					     TranslateTransition tb5 = new TranslateTransition(Duration.millis(200), signup); 		     
-					     tb5.setByY(400);
+					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), gender); 		     
+					     tb4.setByY(30);
 					     
+					     TranslateTransition tb5 = new TranslateTransition(Duration.millis(200), date); 		     
+					     tb5.setByY(30);
+					     
+
+					     ScaleTransition sb1 = new ScaleTransition(Duration.millis(500), imageview); 		     
+					     sb1.setToX(1);
+					     sb1.setToY(1);
 					
 					     //Order - SequentialTransition, same time - ParallelTransition
-					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, tb5);
+					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, tb5, sb1);
 					        ptb.play();   
+					        
+					        scene1 = new Scene(signuproot, 630, 470);
+			        		primaryStage.setScene(scene1);
 		            	
 		            }
 		        });
@@ -266,10 +303,18 @@ public class login extends Application{
 		MenuItem hourlyItem = new MenuItem("Hourly Employee");
 		MenuItem saveItem = new MenuItem("Save");
 		MenuItem saveAsItem = new MenuItem("Save As");
+		MenuItem exitItem = new MenuItem("Exit");
 		MenuItem tableItem = new MenuItem("Table");
 		MenuItem graphItem = new MenuItem("Graph");
-
-		fileMenu.getItems().addAll(newItem, saveItem, saveAsItem);
+		
+		exitItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+			primaryStage.setScene(scene1);
+			primaryStage.setResizable(false);
+			primaryStage.show();
+	    });
+		
+		
+		fileMenu.getItems().addAll(newItem, saveItem, saveAsItem, exitItem);
 		newItem.getItems().addAll(salaryItem, hourlyItem);
 		viewMenu.getItems().addAll(tableItem,graphItem);
 		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
