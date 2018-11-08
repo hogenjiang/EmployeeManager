@@ -1,8 +1,9 @@
 package Hogen;
 
+import Tabs.AddItemTab;
+import Tabs.RemoveItemTab;
 import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
-import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -142,8 +143,8 @@ public class login extends Application{
         email.setStyle("-fx-background-color: #ffffff;");
         
         //4
-        ComboBox<ENUMS.gender> gender = new ComboBox<>();
-        gender.setItems(FXCollections.observableArrayList(ENUMS.gender.values()));
+        ComboBox<Enums.gender> gender = new ComboBox<>();
+        gender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
 
         //5
 		DatePicker date = new DatePicker();
@@ -323,13 +324,13 @@ public class login extends Application{
 		TabPane tabPane = new TabPane();
 		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 		//Three tabs
-//		AddItemTab addItemTab = AddItemTab.getInstance();
-//		addItemTab.setClosable(false);
-		//RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
-		//removeItemTab.setClosable(false);
+		AddItemTab addItemTab = AddItemTab.getInstance();
+		addItemTab.setClosable(false);
+		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+		removeItemTab.setClosable(false);
 		//StatisticsTab statisticsTab = StatisticsTab.getInstance();
 		//statisticsTab.setClosable(false);
-//		tabPane.getTabs().addAll(addItemTab);
+		tabPane.getTabs().addAll(addItemTab, removeItemTab);
 
 
 		BorderPane pane = new BorderPane();
@@ -338,8 +339,8 @@ public class login extends Application{
 		pane.setCenter(tabPane);
 
 
-		scene2 = new Scene(pane,630,470);
-		scene1 = new Scene(root, 630, 470);
+		scene2 = new Scene(pane,620,460);
+		scene1 = new Scene(root, 620, 460);
 		primaryStage.setScene(scene1);
 		primaryStage.setResizable(false);
 		primaryStage.show();
