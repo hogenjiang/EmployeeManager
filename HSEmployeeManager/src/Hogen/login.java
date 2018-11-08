@@ -2,8 +2,8 @@ package Hogen;
 
 import Tabs.AddItemTab;
 import Tabs.RemoveItemTab;
+import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -61,12 +61,12 @@ public class login extends Application{
 		//Center - userName, password, login
 		TextField username = new TextField();
 		username.setPromptText("Username");
-		username.setStyle("-fx-background-color: #ffffff;");
+		username.getStyleClass().add("TextField");
 		PasswordField password = new PasswordField();
 		password.setPromptText("Password");
-		password.setStyle("-fx-background-color: #ffffff;");
+		password.getStyleClass().add("TextField");
 		Button login = new Button("Login");
-		login.setStyle("-fx-font-size: 16; -fx-base: #2c5185; -fx-background-color: #2c5185; -fx-border-radius: 5;");
+		login.getStyleClass().add("Button");
 		login.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -106,7 +106,7 @@ public class login extends Application{
 		//Sign up
 		//1
 		Button back = new Button("Back");
-		back.setStyle("-fx-font-size: 16; -fx-base: #2c5185; -fx-background-color: #2c5185; -fx-border-radius: 5;");
+		back.getStyleClass().add("Button");
 		back.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -123,7 +123,7 @@ public class login extends Application{
 		
 		//2
 		Button signUp = new Button("Sign Up");
-		signUp.setStyle("-fx-font-size: 16; -fx-base: #2c5185; -fx-background-color: #2c5185; -fx-border-radius: 5;");
+		signUp.getStyleClass().add("Button");
 		signUp.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -140,14 +140,17 @@ public class login extends Application{
 		//3
 		TextField email = new TextField();
         email.setPromptText("Email");
-        email.setStyle("-fx-background-color: #ffffff;");
+        email.getStyleClass().add("TextField");
         
         //4
         ComboBox<Enums.gender> gender = new ComboBox<>();
         gender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+        gender.getStyleClass().add("TextField");
+
 
         //5
 		DatePicker date = new DatePicker();
+		date.getStyleClass().add("TextField");
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
@@ -178,6 +181,7 @@ public class login extends Application{
 					@Override
 					public void handle(Event event) {
 						primaryStage.setScene(scene2);
+						scene1.getStylesheets().add("CSS/combo.css");
 						primaryStage.setResizable(false);
 						primaryStage.show();
 						
@@ -215,15 +219,13 @@ public class login extends Application{
 				     
 				     TranslateTransition t5 = new TranslateTransition(Duration.millis(200), date); 		     
 				     t5.setByY(-30);
-				     
-				     ScaleTransition s1 = new ScaleTransition(Duration.millis(500), imageview); 		     
-				     s1.setToX(.6);
-				     s1.setToY(.6);
+
+
 				     
 			     
 				     
 				     //Order - SequentialTransition, same time - ParallelTransition
-				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4, t5, s1);
+				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4, t5);
 				        pt.play();   
 				        
 				        
@@ -273,16 +275,17 @@ public class login extends Application{
 					     tb5.setByY(30);
 					     
 
-					     ScaleTransition sb1 = new ScaleTransition(Duration.millis(500), imageview); 		     
-					     sb1.setToX(1);
-					     sb1.setToY(1);
+					     FadeTransition sb1 = new FadeTransition(Duration.millis(200), imageview);
+					     sb1.setFromValue(.6);
+					     sb1.setToValue(1);
 					
 					     //Order - SequentialTransition, same time - ParallelTransition
 					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, tb5, sb1);
 					        ptb.play();   
 					        
 					        scene1 = new Scene(signuproot, 630, 470);
-			        		primaryStage.setScene(scene1);
+							scene1.getStylesheets().add("CSS/combo.css");
+					        primaryStage.setScene(scene1);
 		            	
 		            }
 		        });
@@ -310,6 +313,7 @@ public class login extends Application{
 		
 		exitItem.addEventHandler(ActionEvent.ACTION, (e) -> {
 			primaryStage.setScene(scene1);
+			scene1.getStylesheets().add("CSS/combo.css");
 			primaryStage.setResizable(false);
 			primaryStage.show();
 	    });
@@ -339,8 +343,10 @@ public class login extends Application{
 		pane.setCenter(tabPane);
 
 
-		scene2 = new Scene(pane,620,460);
+		scene2 = new Scene(pane,1024,768);
 		scene1 = new Scene(root, 620, 460);
+		scene1.getStylesheets().add("CSS/combo.css");
+		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
 		primaryStage.setResizable(false);
 		primaryStage.show();
