@@ -3,7 +3,9 @@ package Hogen;
 import Tabs.AddItemTab;
 import Tabs.RemoveItemTab;
 import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
 import javafx.animation.ParallelTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -145,12 +147,20 @@ public class login extends Application{
         //4
         ComboBox<Enums.gender> gender = new ComboBox<>();
         gender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+        gender.setMinWidth(100);
+        gender.setPromptText("Gender");
         gender.getStyleClass().add("TextField");
 
 
         //5
 		DatePicker date = new DatePicker();
+		date.setPromptText("Birth date");
 		date.getStyleClass().add("TextField");
+		
+		//6
+		HBox hh = new HBox();
+    	hh.getChildren().addAll(gender,date);
+    	hh.setSpacing(15);
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
@@ -180,8 +190,8 @@ public class login extends Application{
 
 					@Override
 					public void handle(Event event) {
+					
 						primaryStage.setScene(scene2);
-						scene1.getStylesheets().add("CSS/combo.css");
 						primaryStage.setResizable(false);
 						primaryStage.show();
 						
@@ -193,8 +203,10 @@ public class login extends Application{
 		            @Override public void handle(ActionEvent e) {
 		            	hbox.getChildren().remove(imageview);	
 		            	
+		            	
+		            	
 		             vbox.getChildren().removeAll(login);
-		             vbox.getChildren().addAll(email,gender,date);
+		             vbox.getChildren().addAll(email,hh);
 		             
 		             
 		             grid.getChildren().removeAll(tip,signup);
@@ -202,9 +214,6 @@ public class login extends Application{
 		             grid.add(back, 2, 2);
 		             grid.add(signUp, 3, 2);
 		             
-		             
-		             
-
 				     TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username); 		     
 				     t1.setByY(-30);
 				     
@@ -214,18 +223,12 @@ public class login extends Application{
 				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
 				     t3.setByY(-30);
 				     
-				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender); 		     
+				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), hh); 		     
 				     t4.setByY(-30);
-				     
-				     TranslateTransition t5 = new TranslateTransition(Duration.millis(200), date); 		     
-				     t5.setByY(-30);
 
-
-				     
-			     
 				     
 				     //Order - SequentialTransition, same time - ParallelTransition
-				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4, t5);
+				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
 				        pt.play();   
 				        
 				        
@@ -239,7 +242,7 @@ public class login extends Application{
 		            	BorderPane signuproot = new BorderPane();
 		            	hbox.getChildren().add(imageview);
 		            	
-		            	vbox.getChildren().removeAll(email,gender,date);
+		            	vbox.getChildren().removeAll(email,hh);
 		            	grid.getChildren().removeAll(signUp, back);
 		            	
 		            	grid.setHgap(0);
@@ -268,11 +271,8 @@ public class login extends Application{
 					     tb3.setByY(30);
 					     
 					     
-					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), gender); 		     
+					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), hh); 		     
 					     tb4.setByY(30);
-					     
-					     TranslateTransition tb5 = new TranslateTransition(Duration.millis(200), date); 		     
-					     tb5.setByY(30);
 					     
 
 					     FadeTransition sb1 = new FadeTransition(Duration.millis(200), imageview);
@@ -280,7 +280,7 @@ public class login extends Application{
 					     sb1.setToValue(1);
 					
 					     //Order - SequentialTransition, same time - ParallelTransition
-					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, tb5, sb1);
+					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, sb1);
 					        ptb.play();   
 					        
 					        scene1 = new Scene(signuproot, 630, 470);
@@ -342,9 +342,8 @@ public class login extends Application{
 		pane.setTop(menu);
 		pane.setCenter(tabPane);
 
-
-		scene2 = new Scene(pane,1024,768);
 		scene1 = new Scene(root, 620, 460);
+		scene2 = new Scene(pane,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);

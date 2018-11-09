@@ -1,0 +1,10 @@
+.TextField{
+    -fx-background-color: #ffffff;
+}
+
+.Button{
+    -fx-font-size: 16;
+    -fx-base: #2c5185;
+    -fx-background-color: #2c5185;
+    -fx-border-radius: 5;
+}
