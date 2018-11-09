@@ -34,7 +34,7 @@ public class login extends Application{
 
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
-	private ImageView background1 = new ImageView();
+	private ImageView background1024 = new ImageView();
 	private Scene scene1, scene2;
 
 	public static void main(String[] args) {
@@ -55,8 +55,8 @@ public class login extends Application{
 		imageview.setImage(image);
 		Image image1 = new Image("background.png");
 		background.setImage(image1);
-		Image image2 = new Image("background.png");
-		background1.setImage(image2);
+		Image image2 = new Image("background1024.png");
+		background1024.setImage(image2);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
@@ -167,7 +167,7 @@ public class login extends Application{
 		grid.add(signup, 3, 2);
 		
 		
-		root.getChildren().add(background1);
+		root.getChildren().add(background);
 		root.setTop(hbox);
 		root.setCenter(vbox);
 		root.setBottom(grid);
@@ -250,7 +250,7 @@ public class login extends Application{
 		        		vbox.getChildren().addAll(login);
 		        		
 		        		
-		        		signuproot.getChildren().add(background1);
+		        		signuproot.getChildren().add(background);
 		        		signuproot.setTop(hbox);
 		        		signuproot.setCenter(vbox);
 		        		signuproot.setBottom(grid);
@@ -338,7 +338,7 @@ public class login extends Application{
 
 
 		BorderPane pane = new BorderPane();
-		pane.getChildren().add(background);
+		pane.getChildren().add(background1024);
 		pane.setTop(menu);
 		pane.setCenter(tabPane);
 
