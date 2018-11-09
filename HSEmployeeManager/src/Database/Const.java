@@ -3,7 +3,7 @@ package Database;
 public class Const {
 public static final String DB_NAME = "jjiangblog";
 public static final String DB_USER = "jjiang";
-public static final String DB_PASS = "hl8whhl8whshc49shc49";
+public static final String DB_PASS = "hl8whhl8whshcshc";
 
 //Create a constant for each table column
 
