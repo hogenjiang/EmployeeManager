@@ -1,36 +1,84 @@
 package Hogen;
 
-import javafx.animation.ScaleTransition;
+
+import java.awt.Desktop;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
+
+import Enums.gender;
+import Models.Employee;
+import Tabs.AddItemTab;
+import Tabs.RemoveItemTab;
+import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.ParallelTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 public class login extends Application{
 	
+
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
+	private ImageView background1024 = new ImageView();
+	private Scene scene1, scene2;
+	//Main entrance
+	ListView<String> list = new ListView<String>(); 
+	FileChooser filechooser = new FileChooser();
+	Desktop desktop = Desktop.getDesktop();
+	private ImageView profile = new ImageView();
+	//BorderPane
+			BorderPane border = new BorderPane();
+			
+	//password message
+	final Label message = new Label("");
+	
 
 	public static void main(String[] args) {
 		Application.launch(args);
@@ -39,6 +87,7 @@ public class login extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+//SCENE 1
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
 		Font signFont = Font.font ("Arial", FontWeight.BOLD, 10);
@@ -49,16 +98,18 @@ public class login extends Application{
 		imageview.setImage(image);
 		Image image1 = new Image("background.png");
 		background.setImage(image1);
+		Image image2 = new Image("background1024.png");
+		background1024.setImage(image2);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
 		username.setPromptText("Username");
-		username.setStyle("-fx-background-color: #ffffff;");
+		username.getStyleClass().add("TextField");
 		PasswordField password = new PasswordField();
 		password.setPromptText("Password");
-		password.setStyle("-fx-background-color: #ffffff;");
+		password.getStyleClass().add("TextField");
 		Button login = new Button("Login");
-		login.setStyle("-fx-font-size: 16; -fx-base: #2c5185; -fx-background-color: #2c5185; -fx-border-radius: 5;");
+		login.getStyleClass().add("Button");
 		login.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -67,13 +118,14 @@ public class login extends Application{
 	});
 		login.addEventHandler(MouseEvent.MOUSE_EXITED, 
 			    new EventHandler<MouseEvent>() {
+
 	        @Override public void handle(MouseEvent e) {
 	        	login.setEffect(null);
 	        }
 	});
-		
+
 		//Bottom - Sign up
-		Text tip = new Text("Don't have an accont?");
+		Text tip = new Text("Don't have an account?");
 		tip.setFont(font);
 		Button signup = new Button("Sign Up");
 		signup.setBackground(Background.EMPTY);
@@ -93,37 +145,483 @@ public class login extends Application{
 		        }
 		});
 		
-		//Animation
-//		ScaleTransition Transition = new ScaleTransition(Duration.millis(500), signup); 
-//		Transition.setByX(.8);
-//		Transition.setByY(.8);
-//		Transition.setAutoReverse(true); 
-//		Transition.play(); 
+		
+		//Sign up
+		//1
+		Button back = new Button("Back");
+		back.getStyleClass().add("Button");
+		back.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	back.setEffect(shadow);
+	        }
+	});
+		back.addEventHandler(MouseEvent.MOUSE_EXITED, 
+			    new EventHandler<MouseEvent>() {
+
+	        @Override public void handle(MouseEvent e) {
+	        	back.setEffect(null);
+	        }
+	});
+		
+		//2
+		Button signUp = new Button("Sign Up");
+		signUp.getStyleClass().add("Button");
+		signUp.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	signUp.setEffect(shadow);
+	        }
+	});
+		signUp.addEventHandler(MouseEvent.MOUSE_EXITED, 
+			    new EventHandler<MouseEvent>() {
+
+	        @Override public void handle(MouseEvent e) {
+	        	signUp.setEffect(null);
+	        }
+	});
+		//3
+		TextField email = new TextField();
+        email.setPromptText("Email");
+        email.getStyleClass().add("TextField");
+        
+        //4
+        ComboBox<Enums.gender> gender = new ComboBox<>();
+        gender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+        gender.setMinWidth(100);
+        gender.getStyleClass().add("TextField");
+
+
+        //5
+		DatePicker date = new DatePicker();
+		date.setPromptText("Birth date");
+		date.getStyleClass().add("TextField");
 		
 		
+		
+		//7
+		HBox hh = new HBox();
+    	hh.getChildren().addAll(gender,date);
+    	hh.setSpacing(15);
+		
+		//Pane
 		HBox hbox = new HBox(imageview);
 		hbox.setPadding(new Insets(60, 0, 0, 100));
 		
 		
-		VBox vbox = new VBox(username, password,login,tip,signup); 
+
+		VBox vbox = new VBox(username, password, message, login); 
 		vbox.setAlignment(Pos.CENTER);
-		vbox.setPadding(new Insets(0, 200, 100, 200));
+		vbox.setPadding(new Insets(0, 188, 100, 188));
 		vbox.setSpacing(15);
+
+		GridPane grid = new GridPane();
+		grid.setPadding(new Insets(0, 0, 40, 230));
+		grid.add(tip, 2, 2); //horizontal, vertical
+		grid.add(signup, 3, 2);
 		
-		HBox bottom = new HBox(tip,signup);
-		bottom.setPadding(new Insets(0, 230, 50, 230));
 		
 		root.getChildren().add(background);
 		root.setTop(hbox);
 		root.setCenter(vbox);
-		root.setBottom(bottom);
+		root.setBottom(grid);
 		
 
+		//function
 		
-		Scene scene = new Scene(root, 640, 480);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+
+				login.setOnAction(new EventHandler<ActionEvent>() {
+
+					@Override 
+					public void handle(ActionEvent e) {
+						
+						if(!username.getText().equals("11") || !password.getText().equals("11")) {
+							message.setText("The username or password is incorrect!");
+							username.clear();
+							password.clear();
+						}else {
+							password.clear();
+							message.setText("");
+							primaryStage.setScene(scene2);
+							primaryStage.setResizable(false);
+							primaryStage.show();
+						}
+						
+	
+					}
+				
+				});
+				
+				signup.setOnAction(new EventHandler<ActionEvent>() {
+		            @Override 
+		            public void handle(ActionEvent e) {
+		            	hbox.getChildren().remove(imageview);	
+		            	
+		            	
+		            	
+		             vbox.getChildren().removeAll(login,message);
+		             vbox.getChildren().addAll(email,hh);
+		             
+		             
+		             grid.getChildren().removeAll(tip,signup);
+		             grid.setHgap(7);
+		             grid.add(back, 2, 2);
+		             grid.add(signUp, 3, 2);
+		             
+				     TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username); 		     
+				     t1.setByY(-30);
+				     
+				     TranslateTransition t2 = new TranslateTransition(Duration.millis(200), password); 		     
+				     t2.setByY(-30);
+				     
+				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
+				     t3.setByY(-30);
+				     
+				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), hh); 		     
+				     t4.setByY(-30);
+
+				     
+				     //Order - SequentialTransition, same time - ParallelTransition
+				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
+				        pt.play();   
+				        
+				        
+		            	
+		            }
+		        });
+				
+				back.setOnAction(new EventHandler<ActionEvent>() {
+		            @Override public void handle(ActionEvent e) {
+		            	BorderPane signuproot = new BorderPane();
+		            	hbox.getChildren().add(imageview);
+		            	
+		            	vbox.getChildren().removeAll(email,hh);
+		            	grid.getChildren().removeAll(signUp, back);
+		            	
+		            	grid.setHgap(0);
+		            	grid.add(tip, 2, 2); 
+		        		grid.add(signup, 3, 2);
+		        		
+		        		
+		        		vbox.getChildren().addAll(message,login);
+		        		
+		        		
+		        		signuproot.getChildren().add(background);
+		        		signuproot.setTop(hbox);
+		        		signuproot.setCenter(vbox);
+		        		signuproot.setBottom(grid);
+		        		
+		        		
+		        		
+		   
+		            	 TranslateTransition tb1 = new TranslateTransition(Duration.millis(200), username); 		     
+					     tb1.setByY(30);
+					     
+					     TranslateTransition tb2 = new TranslateTransition(Duration.millis(200), password); 		     
+					     tb2.setByY(30);
+					     
+					     TranslateTransition tb3 = new TranslateTransition(Duration.millis(200), email); 		     
+					     tb3.setByY(30);
+					     
+					     
+					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), hh); 		     
+					     tb4.setByY(30);
+					     
+
+					     FadeTransition sb1 = new FadeTransition(Duration.millis(200), imageview);
+					     sb1.setFromValue(.6);
+					     sb1.setToValue(1);
+					
+					     //Order - SequentialTransition, same time - ParallelTransition
+					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, sb1);
+					        ptb.play();   
+					        
+					        scene1 = new Scene(signuproot, 630, 470);
+							scene1.getStylesheets().add("CSS/combo.css");
+					        primaryStage.setScene(scene1);
+		            	
+		            }
+		        });
+				
+				signUp.setOnAction(new EventHandler<ActionEvent>() {
+
+					@Override
+					public void handle(ActionEvent event) {
+						
+					}
+					
+				});
+				
+				
+				//SCENE 2
+
+				//build menu bar, item, create tabPane, tab, borderPane, top, center
+				MenuBar menu = new MenuBar();
+				Menu fileMenu = new Menu("File");
+				Menu viewMenu = new Menu("View");
+				Menu helpMenu = new Menu("Help");
+				Menu newItem = new Menu("New");
+
+				MenuItem salaryItem = new MenuItem("Salary Employee");
+				MenuItem hourlyItem = new MenuItem("Hourly Employee");
+				MenuItem saveItem = new MenuItem("Save");
+				MenuItem exitItem = new MenuItem("Exit");
+				MenuItem tableItem = new MenuItem("Table");
+				MenuItem graphItem = new MenuItem("Graph");
+				MenuItem webItem = new MenuItem("Website");
+
+				
+				exitItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+					primaryStage.setScene(scene1);
+					primaryStage.setResizable(false);
+					primaryStage.show();
+			    });
+				
+				
+				
+				fileMenu.getItems().addAll(newItem, saveItem, exitItem);
+				newItem.getItems().addAll(salaryItem, hourlyItem);
+				viewMenu.getItems().addAll(tableItem,graphItem);
+				menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
+				helpMenu.getItems().add(webItem);
+
+				//TabPane
+				TabPane tabPane = new TabPane();
+				tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+				//Three tabs
+				AddItemTab addItemTab = AddItemTab.getInstance();
+				addItemTab.setClosable(false);
+				RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+				removeItemTab.setClosable(false);
+				//StatisticsTab statisticsTab = StatisticsTab.getInstance();
+				//statisticsTab.setClosable(false);
+				//tabPane.getTabs().addAll(addItemTab, removeItemTab);
+				
+				
+			
+				
+				//ListView
+				ObservableList<String> items = FXCollections.observableArrayList("fds");
+				list.setItems(items);
+				list.setPrefSize(0, 90);
+				
+				//profile
+						Button choose = new Button("Open a picture");
+						choose.getStyleClass().add("Button");
+						choose.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+							    new EventHandler<MouseEvent>() {
+					        @Override public void handle(MouseEvent e) {
+					        	choose.setEffect(shadow);
+					        }
+					});
+						choose.addEventHandler(MouseEvent.MOUSE_EXITED, 
+							    new EventHandler<MouseEvent>() {
+
+					        @Override public void handle(MouseEvent e) {
+					        	choose.setEffect(null);
+					        }
+					});
+						choose.setOnAction(new EventHandler<ActionEvent>() {
+
+							@Override
+							public void handle(ActionEvent event) {
+								configureFileChooser(filechooser);	
+								File file = filechooser.showOpenDialog(primaryStage);
+								if (file != null) {
+									//profile
+									Image profileImage = new Image(file.toURI().toString());
+									profile.setImage(profileImage);
+									profile.setFitHeight(64);
+									profile.setFitWidth(64);
+				    				
+				                }
+							}
+							
+						});
+						
+						
+				//contextMenu
+						final ContextMenu cm = new ContextMenu();
+						MenuItem cmItem1 = new MenuItem("Copy Image");
+						cmItem1.setOnAction(new EventHandler<ActionEvent>() {
+						    public void handle(ActionEvent e) {
+						        Clipboard clipboard = Clipboard.getSystemClipboard();
+						        ClipboardContent content = new ClipboardContent();
+						        content.putImage(profile.getImage());
+						        clipboard.setContent(content);
+						    }
+						});
+
+						cm.getItems().add(cmItem1);
+						profile.addEventHandler(MouseEvent.MOUSE_CLICKED,
+						    new EventHandler<MouseEvent>() {
+						        @Override public void handle(MouseEvent e) {
+						            if (e.getButton() == MouseButton.SECONDARY)  
+						                cm.show(profile, e.getScreenX(), e.getScreenY());
+						        }
+						});
+						
+						
+					//Pie chart
+						ObservableList<PieChart.Data> pieChartData =
+				                FXCollections.observableArrayList(
+				                new PieChart.Data("Salary Employee", 70),
+				                new PieChart.Data("Hourly Employee", 30));
+				        final PieChart chart = new PieChart(pieChartData);
+						
+				        chart.setLabelLineLength(10);
+				        applyCustomColorSequence(
+				        	      pieChartData, 
+				        	      "rgb(128,128,128)", 
+				        	      "rgb(192,192,192)"
+				        	     
+				        	    );
+				        
+				        
+				        
+				        
+				//TableView
+				        TableView table = new TableView();
+				        table.getStyleClass().add("Table");
+				    	ObservableList<Employee> data = FXCollections.observableArrayList(
+				    		    new Employee("Hello", "35", "Hourly"),
+				    		    new Employee("Isabella", "26", "Salary"),
+				    		    new Employee("Ethan", "32", "Hourly"),
+				    		    new Employee("Emma", "27", "Hourly"),
+				    		    new Employee("Michael", "25", "Salary")
+				    		);
+				        final Label label = new Label("Worker");
+				        label.setFont(new Font("Arial", 20));
+				        table.setEditable(true);
+				        TableColumn Name = new TableColumn("Name");
+				        Name.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Name")
+				        	);
+				        TableColumn Age = new TableColumn("Age");
+				        Age.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Age")
+				        	);
+				        TableColumn Situation = new TableColumn("Situation");
+				        Situation.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Situation")
+				        	);
+				        table.getColumns().addAll(Name, Age, Situation);
+				        table.setItems(data);
+				        table.setPrefSize(197, 800);
+				        
+				
+				        WebView browser = new WebView();
+				        WebEngine webEngine = browser.getEngine();
+				        webEngine.load("http://www.google.ca");
+				        
+				        
+				        
+				//Add item
+				        TextField EName = new TextField();
+				        TextField EAge = new TextField();
+				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
+				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
+				        ESituation.setMinWidth(100);
+				        ESituation.getStyleClass().add("TextField");
+				        EName.setPromptText("Name");
+				        EName.setMaxWidth(Name.getPrefWidth());
+				        EAge.setMaxWidth(Age.getPrefWidth());
+				        EAge.setPromptText("Age");
+				        ESituation.setPromptText("Situation");
+				        Button add = new Button("Add");
+				        add.setOnAction((ActionEvent e) ->{
+				        	data.add(new Employee(
+				        			EName.getText(),
+				        			EAge.getText(),
+				        			Text(ESituation)));
+				        	EName.clear();
+				        	EAge.clear();
+				        });
+				        EName.getStyleClass().add("TextField");
+				        EAge.getStyleClass().add("TextField");
+				        ESituation.getStyleClass().add("TextField");
+
+				//VBox(list,choose,profile, pie chart)
+				        VBox item_vbox = new VBox(chart);
+				        item_vbox.setAlignment(Pos.TOP_CENTER);
+				        
+				        HBox addEmployee = new HBox();
+				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
+				        addEmployee.setSpacing(3);
+				        
+				        
+				        VBox hold = new VBox();
+				        hold.setSpacing(5);
+				        hold.setPadding(new Insets(10, 0, 0, 10));
+				        hold.getChildren().addAll(label, table, addEmployee);
+
+				GridPane pane = new GridPane();
+				
+				pane.setPadding(new Insets(20, 0, 20, 20));
+				pane.add(hold, 0, 0);
+				pane.add(item_vbox, 1, 0);
+				border.getChildren().add(background1024);
+				border.setTop(menu);
+				border.setLeft(pane);
+				
+				//define Menu option 
+				webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+					border.getChildren().removeAll(pane);
+					border.setCenter(browser);
+			    });
+		
+
+		scene1 = new Scene(root, 620, 460);
+		scene2 = new Scene(border,1024,768);
+		scene1.getStylesheets().add("CSS/combo.css");
+		scene2.getStylesheets().add("CSS/combo.css");
+		primaryStage.setScene(scene1);
+		primaryStage.setResizable(false);
+		primaryStage.show();
+
+		
+		
 		
 	}
+	
+	
+	//Define method for file extension
+	private static void configureFileChooser(
+	        final FileChooser fileChooser) {      
+	            fileChooser.setTitle("View Pictures");
+	            fileChooser.setInitialDirectory(
+	                new File(System.getProperty("user.home"))
+	            );                 
+	            fileChooser.getExtensionFilters().addAll(
+	                new FileChooser.ExtensionFilter("All Images", "*.*"),
+	                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+	                new FileChooser.ExtensionFilter("PNG", "*.png")
+	            );
+	    }
+	
+	private void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(FileChooser.class.getName()).log(
+                Level.SEVERE, null, ex
+            );
+        }
+    }
+	
+	private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+        int i = 0;
+        for (PieChart.Data data : pieChartData) {
+          data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
+          i++;
+        }
+      }
+	
+	private String Text(ComboBox com) {
+		
+		
+		return com.toString();
+	}
+	
 
 }
