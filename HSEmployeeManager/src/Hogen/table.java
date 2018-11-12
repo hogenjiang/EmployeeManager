@@ -25,14 +25,7 @@ public class table extends Application{
 
 	}
 
-//	TableView table = new TableView();
-//	ObservableList<Employee> data = FXCollections.observableArrayList(
-//		    new Employee("Jacob", "Smith", "jacob.smith@example.com"),
-//		    new Employee("Isabella", "Johnson", "isabella.johnson@example.com"),
-//		    new Employee("Ethan", "Williams", "ethan.williams@example.com"),
-//		    new Employee("Emma", "Jones", "emma.jones@example.com"),
-//		    new Employee("Michael", "Brown", "michael.brown@example.com")
-//		);
+
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
