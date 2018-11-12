@@ -513,19 +513,52 @@ public class login extends Application{
 				        WebView browser = new WebView();
 				        WebEngine webEngine = browser.getEngine();
 				        webEngine.load("http://www.google.ca");
+				        
+				        
+				        
+				//Add item
+				        TextField EName = new TextField();
+				        TextField EAge = new TextField();
+				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
+				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
+				        ESituation.setMinWidth(100);
+				        ESituation.getStyleClass().add("TextField");
+				        EName.setPromptText("Name");
+				        EName.setMaxWidth(Name.getPrefWidth());
+				        EAge.setMaxWidth(Age.getPrefWidth());
+				        EAge.setPromptText("Age");
+				        ESituation.setPromptText("Situation");
+				        Button add = new Button("Add");
+				        add.setOnAction((ActionEvent e) ->{
+				        	data.add(new Employee(
+				        			EName.getText(),
+				        			EAge.getText(),
+				        			Text(ESituation)));
+				        	EName.clear();
+				        	EAge.clear();
+				        });
+				        EName.getStyleClass().add("TextField");
+				        EAge.getStyleClass().add("TextField");
+				        ESituation.getStyleClass().add("TextField");
 
 				//VBox(list,choose,profile, pie chart)
 				        VBox item_vbox = new VBox(chart);
 				        item_vbox.setAlignment(Pos.TOP_CENTER);
-
+				        
+				        HBox addEmployee = new HBox();
+				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
+				        addEmployee.setSpacing(3);
+				        
+				        
+				        VBox hold = new VBox();
+				        hold.setSpacing(5);
+				        hold.setPadding(new Insets(10, 0, 0, 10));
+				        hold.getChildren().addAll(label, table, addEmployee);
 
 				GridPane pane = new GridPane();
 				
-//				pane.setTop(menu);
-//				pane.setCenter(group);
-//				pane.setBottom(group);
 				pane.setPadding(new Insets(20, 0, 20, 20));
-				pane.add(table, 0, 0);
+				pane.add(hold, 0, 0);
 				pane.add(item_vbox, 1, 0);
 				border.getChildren().add(background1024);
 				border.setTop(menu);
@@ -583,6 +616,12 @@ public class login extends Application{
           i++;
         }
       }
+	
+	private String Text(ComboBox com) {
+		
+		
+		return com.toString();
+	}
 	
 
 }
