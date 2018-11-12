@@ -15,7 +15,7 @@ public class AddItemTab extends Tab{
 	private AddItemTab() {
 		this.setText("Add");
 		
-		//Build GridPane 
+		
 		GridPane pane = new GridPane();
 		pane.setPadding(new Insets(20, 0, 0, 20));
 		pane.setVgap(10);
