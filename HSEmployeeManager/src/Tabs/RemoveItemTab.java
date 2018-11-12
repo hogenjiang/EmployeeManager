@@ -27,7 +27,7 @@ public class RemoveItemTab extends Tab{
 		Text year = new Text("Year");
 		pane.add(year, 0, 1);
 		DatePicker date = new DatePicker();
-		pane.add(date, 1, 1);
+		
 
 
 		this.setContent(pane);
