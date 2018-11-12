@@ -1,4 +1,4 @@
-package Hogen;
+package forms;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
