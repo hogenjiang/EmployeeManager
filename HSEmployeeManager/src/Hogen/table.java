@@ -36,11 +36,7 @@ public class table extends Application{
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
-//		BorderPane root = new BorderPane();
-//		Text name = new Text("world");
-//		name.getStyleClass().add("Button");
-//		Text name1 = new Text("hello");
-//		root.setBottom(name);
+
 		
 		GridPane grid = new GridPane();
 		
