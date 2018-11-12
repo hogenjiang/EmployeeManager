@@ -25,14 +25,14 @@ public class table extends Application{
 
 	}
 
-	TableView table = new TableView();
-	ObservableList<Employee> data = FXCollections.observableArrayList(
-		    new Employee("Jacob", "Smith", "jacob.smith@example.com"),
-		    new Employee("Isabella", "Johnson", "isabella.johnson@example.com"),
-		    new Employee("Ethan", "Williams", "ethan.williams@example.com"),
-		    new Employee("Emma", "Jones", "emma.jones@example.com"),
-		    new Employee("Michael", "Brown", "michael.brown@example.com")
-		);
+//	TableView table = new TableView();
+//	ObservableList<Employee> data = FXCollections.observableArrayList(
+//		    new Employee("Jacob", "Smith", "jacob.smith@example.com"),
+//		    new Employee("Isabella", "Johnson", "isabella.johnson@example.com"),
+//		    new Employee("Ethan", "Williams", "ethan.williams@example.com"),
+//		    new Employee("Emma", "Jones", "emma.jones@example.com"),
+//		    new Employee("Michael", "Brown", "michael.brown@example.com")
+//		);
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
@@ -58,7 +58,7 @@ public class table extends Application{
 		final Label label = new Label("Address Book");
         label.setFont(new Font("Arial", 20));
  
-        table.setEditable(true);
+//        table.setEditable(true);
  
         
         //Main
@@ -75,16 +75,16 @@ public class table extends Application{
         TableColumn emailCol = new TableColumn("Email");
 //        emailCol.getColumns().addAll(firstEmailCol, secondEmailCol);
         
-        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
-        table.setItems(data);
-        final VBox vbox = new VBox();
-        vbox.setSpacing(5);
-        vbox.setPadding(new Insets(10, 0, 0, 10));
-        vbox.getChildren().addAll(label, table);
- 
-        group.getChildren().addAll(vbox);
- 
-		
+//        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+//        table.setItems(data);
+//        final VBox vbox = new VBox();
+//        vbox.setSpacing(5);
+//        vbox.setPadding(new Insets(10, 0, 0, 10));
+//        vbox.getChildren().addAll(label, table);
+// 
+//        group.getChildren().addAll(vbox);
+// 
+//		
 		
 		
 		

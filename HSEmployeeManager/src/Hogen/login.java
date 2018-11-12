@@ -8,12 +8,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
 import Enums.gender;
+import Models.Employee;
 import Tabs.AddItemTab;
 import Tabs.RemoveItemTab;
 import javafx.animation.FadeTransition;
@@ -30,9 +32,14 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,6 +56,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -64,7 +73,9 @@ public class login extends Application{
 	FileChooser filechooser = new FileChooser();
 	Desktop desktop = Desktop.getDesktop();
 	private ImageView profile = new ImageView();
-	
+	//BorderPane
+			BorderPane border = new BorderPane();
+			
 	//password message
 	final Label message = new Label("");
 	
@@ -224,7 +235,7 @@ public class login extends Application{
 					@Override 
 					public void handle(ActionEvent e) {
 						
-						if(!username.getText().equals("test") || !password.getText().equals("test")) {
+						if(!username.getText().equals("11") || !password.getText().equals("11")) {
 							message.setText("The username or password is incorrect!");
 							username.clear();
 							password.clear();
@@ -357,6 +368,7 @@ public class login extends Application{
 				MenuItem exitItem = new MenuItem("Exit");
 				MenuItem tableItem = new MenuItem("Table");
 				MenuItem graphItem = new MenuItem("Graph");
+				MenuItem webItem = new MenuItem("Website");
 
 				
 				exitItem.addEventHandler(ActionEvent.ACTION, (e) -> {
@@ -365,10 +377,13 @@ public class login extends Application{
 					primaryStage.show();
 			    });
 				
+				
+				
 				fileMenu.getItems().addAll(newItem, saveItem, exitItem);
 				newItem.getItems().addAll(salaryItem, hourlyItem);
 				viewMenu.getItems().addAll(tableItem,graphItem);
 				menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
+				helpMenu.getItems().add(webItem);
 
 				//TabPane
 				TabPane tabPane = new TabPane();
@@ -380,7 +395,7 @@ public class login extends Application{
 				removeItemTab.setClosable(false);
 				//StatisticsTab statisticsTab = StatisticsTab.getInstance();
 				//statisticsTab.setClosable(false);
-				tabPane.getTabs().addAll(addItemTab, removeItemTab);
+				//tabPane.getTabs().addAll(addItemTab, removeItemTab);
 				
 				
 			
@@ -447,34 +462,84 @@ public class login extends Application{
 						});
 						
 						
-					
+					//Pie chart
+						ObservableList<PieChart.Data> pieChartData =
+				                FXCollections.observableArrayList(
+				                new PieChart.Data("Salary Employee", 70),
+				                new PieChart.Data("Hourly Employee", 30));
+				        final PieChart chart = new PieChart(pieChartData);
 						
+				        chart.setLabelLineLength(10);
+				        applyCustomColorSequence(
+				        	      pieChartData, 
+				        	      "rgb(128,128,128)", 
+				        	      "rgb(192,192,192)"
+				        	     
+				        	    );
+				        
+				        
+				        
+				        
+				//TableView
+				        TableView table = new TableView();
+				        table.getStyleClass().add("Table");
+				    	ObservableList<Employee> data = FXCollections.observableArrayList(
+				    		    new Employee("Hello", "35", "Hourly"),
+				    		    new Employee("Isabella", "26", "Salary"),
+				    		    new Employee("Ethan", "32", "Hourly"),
+				    		    new Employee("Emma", "27", "Hourly"),
+				    		    new Employee("Michael", "25", "Salary")
+				    		);
+				        final Label label = new Label("Worker");
+				        label.setFont(new Font("Arial", 20));
+				        table.setEditable(true);
+				        TableColumn Name = new TableColumn("Name");
+				        Name.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Name")
+				        	);
+				        TableColumn Age = new TableColumn("Age");
+				        Age.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Age")
+				        	);
+				        TableColumn Situation = new TableColumn("Situation");
+				        Situation.setCellValueFactory(
+				        	    new PropertyValueFactory<Employee,String>("Situation")
+				        	);
+				        table.getColumns().addAll(Name, Age, Situation);
+				        table.setItems(data);
+				        table.setPrefSize(197, 800);
+				        
 				
-				
-				
-				
+				        WebView browser = new WebView();
+				        WebEngine webEngine = browser.getEngine();
+				        webEngine.load("http://www.google.ca");
 
-				//VBox(list, choose)
-				VBox item_vbox = new VBox(list,choose,profile);
-				item_vbox.setAlignment(Pos.CENTER);
-				item_vbox.setPadding(new Insets(0, 400, 200, 400));
-				item_vbox.setSpacing(15);
+				//VBox(list,choose,profile, pie chart)
+				        VBox item_vbox = new VBox(chart);
+				        item_vbox.setAlignment(Pos.TOP_CENTER);
 
-				BorderPane pane = new BorderPane();
-				pane.getChildren().add(background1024);
-				pane.setTop(menu);
-				pane.setCenter(tabPane);
-				pane.setBottom(item_vbox);
-		
-	
 
+				GridPane pane = new GridPane();
 				
+//				pane.setTop(menu);
+//				pane.setCenter(group);
+//				pane.setBottom(group);
+				pane.setPadding(new Insets(20, 0, 20, 20));
+				pane.add(table, 0, 0);
+				pane.add(item_vbox, 1, 0);
+				border.getChildren().add(background1024);
+				border.setTop(menu);
+				border.setLeft(pane);
 				
-
+				//define Menu option 
+				webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+					border.getChildren().removeAll(pane);
+					border.setCenter(browser);
+			    });
 		
 
 		scene1 = new Scene(root, 620, 460);
-		scene2 = new Scene(pane,1024,768);
+		scene2 = new Scene(border,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
@@ -511,7 +576,13 @@ public class login extends Application{
         }
     }
 	
-	
+	private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+        int i = 0;
+        for (PieChart.Data data : pieChartData) {
+          data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
+          i++;
+        }
+      }
 	
 
 }
