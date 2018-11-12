@@ -1,10 +1,8 @@
-/DBTest.class
-/Database/
-/Employee.class
-/Hogen/
+/.DS_Store
+/Form.class
 /HourlyEmployee.class
+/JavaBean/
 /RemoveEmployee.class
 /SalaryEmployee.class
-/background.png
-/screenshot.png
-/title.png
+/classes/
+/forms/
