@@ -32,13 +32,13 @@ public class Database {
 			}
 		}
 		
-//		try {
-//			createTable(Const.TABLE_ITEM, Const.CREATE_TABLE_ITEMS, connection);
+		try {
+			createTable(Const.TABLE_USER, Const.CREATE_TABLE_USER, connection);
 //			createTable(Const.TABLE_LOCATION, Const.CREATE_TABLE_LOCATIONS, connection);
 //			
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	//getInstance and getConnection method
 	public static Database getInstance() {

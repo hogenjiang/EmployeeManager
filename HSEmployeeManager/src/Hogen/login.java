@@ -15,7 +15,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 import Enums.gender;
+import Models.Account;
 import Models.Employee;
+import Tables.AccountTable;
 import Tabs.AddItemTab;
 import Tabs.RemoveItemTab;
 import javafx.animation.FadeTransition;
@@ -77,6 +79,8 @@ public class login extends Application{
 	private ImageView profile = new ImageView();
 	//BorderPane
 			BorderPane border = new BorderPane();
+			Account account = new Account();
+			AccountTable atable = new AccountTable();
 			
 	//password message
 	final Label message = new Label("");
@@ -90,7 +94,6 @@ public class login extends Application{
 	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root1 = FXMLLoader.load(getClass().getResource("title.fxml"));
 		
 //SCENE 1
 		BorderPane root = new BorderPane();
@@ -197,17 +200,12 @@ public class login extends Application{
         gender.getStyleClass().add("TextField");
 
 
-        //5
-		DatePicker date = new DatePicker();
-		date.setPromptText("Birth date");
-		date.getStyleClass().add("TextField");
+        
 		
 		
 		
-		//7
-		HBox hh = new HBox();
-    	hh.getChildren().addAll(gender,date);
-    	hh.setSpacing(15);
+		
+    	
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
@@ -218,7 +216,7 @@ public class login extends Application{
 
 		VBox vbox = new VBox(username, password, message, login); 
 		vbox.setAlignment(Pos.CENTER);
-		vbox.setPadding(new Insets(0, 150, 60, 150));
+		vbox.setPadding(new Insets(0, 300, 60, 300));
 		vbox.setSpacing(20);
 
 		GridPane grid = new GridPane();
@@ -242,7 +240,9 @@ public class login extends Application{
 					@Override 
 					public void handle(ActionEvent e) {
 						
-						if(!username.getText().equals("11") || !password.getText().equals("11")) {
+						//atable
+						
+						if(!username.getText().equals(atable.getLogin(account.getLogin()))) {
 							message.setText("The username or password is incorrect!");
 							username.clear();
 							password.clear();
@@ -267,7 +267,7 @@ public class login extends Application{
 		            	
 		            	
 		             vbox.getChildren().removeAll(login,message);
-		             vbox.getChildren().addAll(email,hh);
+		             vbox.getChildren().addAll(email,gender);
 		             
 		             
 		             grid.getChildren().removeAll(tip,signup);
@@ -284,7 +284,7 @@ public class login extends Application{
 				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
 				     t3.setByY(-30);
 				     
-				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), hh); 		     
+				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender); 		     
 				     t4.setByY(-30);
 
 				     
@@ -302,7 +302,7 @@ public class login extends Application{
 		            	BorderPane signuproot = new BorderPane();
 		            	hbox.getChildren().add(imageview);
 		            	
-		            	vbox.getChildren().removeAll(email,hh);
+		            	vbox.getChildren().removeAll(email,gender);
 		            	grid.getChildren().removeAll(signUp, back);
 		            	
 		            	grid.setHgap(0);
@@ -331,7 +331,7 @@ public class login extends Application{
 					     tb3.setByY(30);
 					     
 					     
-					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), hh); 		     
+					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), gender); 		     
 					     tb4.setByY(30);
 					     
 
@@ -351,11 +351,17 @@ public class login extends Application{
 		            }
 		        });
 				
+				
+				
 				signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 					@Override
 					public void handle(ActionEvent event) {
+						Account account = new Account(username.getText(), password.getText(),
+								email.getText(),gender.getSelectionModel().getSelectedItem().name());
 						
+						
+						atable.createAccount(account);
 					}
 					
 				});
