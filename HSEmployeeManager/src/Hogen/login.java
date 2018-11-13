@@ -370,8 +370,8 @@ public class login extends Application{
 				Menu helpMenu = new Menu("Help");
 				Menu newItem = new Menu("New");
 
-				MenuItem salaryItem = new MenuItem("Salary Employee");
-				MenuItem hourlyItem = new MenuItem("Hourly Employee");
+				MenuItem salaryItem = new MenuItem("Salary Test.Employee");
+				MenuItem hourlyItem = new MenuItem("Hourly Test.Employee");
 				MenuItem exportItem = new MenuItem("Export");
 				MenuItem exitItem = new MenuItem("Exit");
 				MenuItem tableItem = new MenuItem("Table");
@@ -475,8 +475,8 @@ public class login extends Application{
 					//Pie chart
 						ObservableList<PieChart.Data> pieChartData =
 				                FXCollections.observableArrayList(
-				                new PieChart.Data("Salary Employee", 70),
-				                new PieChart.Data("Hourly Employee", 30));
+				                new PieChart.Data("Salary Test.Employee", 70),
+				                new PieChart.Data("Hourly Test.Employee", 30));
 				        final PieChart chart = new PieChart(pieChartData);
 						
 				        chart.setLabelLineLength(10);

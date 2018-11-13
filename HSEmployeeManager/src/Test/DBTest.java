@@ -1,3 +1,5 @@
+package Test;
+
 import Database.Database;
 
 public class DBTest {
