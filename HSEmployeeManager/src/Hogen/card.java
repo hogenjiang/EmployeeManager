@@ -2,6 +2,7 @@ package Hogen;
 
 import java.awt.Desktop;
 import java.io.File;
+import Hogen.table;
 
 import Models.Employee;
 import javafx.application.Application;
@@ -36,6 +37,8 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+
+
 public class card extends Application{
 
 	public static void main(String[] args) {
@@ -48,8 +51,10 @@ public class card extends Application{
 	
 	Image profileImage = new Image("profile.jpg");
 	
-	
-	
+
+    public Scene scene1;
+
+
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
@@ -64,6 +69,16 @@ public class card extends Application{
 		
 		Label name = new Label("Dsad");
 		Button sd = new Button();
+
+        sd.setOnAction(e -> {
+
+
+            Stage.setScene(scene1);
+            Stage.show();
+        });
+
+
+
 		
 		
 		pane.setPadding(new Insets(5,5,5,5));
@@ -74,13 +89,14 @@ public class card extends Application{
 		
 		root.getChildren().add(background4K);
 		root.setCenter(pane);
+		root.setBottom(sd);
 		
-		Parent root1 = FXMLLoader.load(getClass().getResource("title.fxml"));
+
 		
-		Scene scene = new Scene(root1,1024,768);
-		scene.getStylesheets().add("CSS/combo.css");
-		Stage.setScene(scene);
+		scene1 = new Scene(root,1024,768);
+		scene1.getStylesheets().add("CSS/combo.css");
 		Stage.setResizable(true);
+		Stage.setScene(scene1);
 		Stage.show();
 		
 	}

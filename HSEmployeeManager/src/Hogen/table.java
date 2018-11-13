@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -45,15 +46,32 @@ public class table extends Application{
 	FileChooser filechooser = new FileChooser();
 	Desktop desktop = Desktop.getDesktop();
 	private ImageView profile = new ImageView();
+
+	public static Scene newScene;
+
 	
 	
 	Image profileImage = new Image("profile.jpg");
 	
 	
 	DropShadow shadow = new DropShadow();
+
+
+	public static Scene scenea;
+
+
+	public static Scene getNewScene(){
+		newScene = scenea;
+		return newScene;
+	}
+
+
+
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
+
+
 		BorderPane root = new BorderPane();
 		Image image2 = new Image("background4K.png");
 		background4K.setImage(image2);
@@ -63,7 +81,9 @@ public class table extends Application{
 		profile.setFitWidth(160);
 		
 		//Information
-		
+
+
+
 		
 		
 		
@@ -164,11 +184,13 @@ public class table extends Application{
 		root.setCenter(h);
 		
 		
-		Scene scene = new Scene(root,1024,768);
-		scene.getStylesheets().add("CSS/combo.css");
-		Stage.setScene(scene);
+		scenea = new Scene(root,1024,768);
+		scenea.getStylesheets().add("CSS/combo.css");
+		Stage.setScene(scenea);
 		Stage.setResizable(true);
 		Stage.show();
+
+
 		
 	}
 
@@ -185,5 +207,7 @@ public class table extends Application{
 	                new FileChooser.ExtensionFilter("PNG", "*.png")
 	            );
 	    }
+
+
 	
 }
