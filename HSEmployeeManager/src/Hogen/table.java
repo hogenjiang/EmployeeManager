@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -113,6 +115,19 @@ public class table extends Application{
 	    TextField phone1 = new TextField("") ;
 	    TextField email1 = new TextField("") ;
 	    
+	    Label gender = new Label("Gender");
+	    ToggleGroup group = new ToggleGroup();
+	    ToggleButton maleButton = new ToggleButton("Male");
+	    ToggleButton femaleButton = new ToggleButton("Female");
+	    
+	       maleButton.setToggleGroup(group);
+	       femaleButton.setToggleGroup(group);
+	 
+	       maleButton.setUserData("I am a Male");
+	       femaleButton.setUserData("I am a Female");
+	 
+	       maleButton.setSelected(true);
+	    
 	    Button save = new Button("Save");
 		
 		GridPane grid = new GridPane();
@@ -131,6 +146,13 @@ public class table extends Application{
 		phone1.setPromptText("Phone");
 		grid.add(email1, 1, 2);
 		email1.setPromptText("Email");
+		
+		HBox hj = new HBox(gender,maleButton,femaleButton);
+		hj.setSpacing(7);
+		
+		grid.add(hj, 1, 3);
+		
+		
 		
 	
 	    
