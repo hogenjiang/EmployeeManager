@@ -30,6 +30,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
@@ -66,8 +67,9 @@ public class login extends Application{
 
 	private ImageView imageview = new ImageView();
 	private ImageView background = new ImageView();
-	private ImageView background1024 = new ImageView();
+	private ImageView background4K = new ImageView();
 	private Scene scene1, scene2;
+	
 	//Main entrance
 	ListView<String> list = new ListView<String>(); 
 	FileChooser filechooser = new FileChooser();
@@ -85,8 +87,11 @@ public class login extends Application{
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Parent root1 = FXMLLoader.load(getClass().getResource("title.fxml"));
+		
 //SCENE 1
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
@@ -96,10 +101,10 @@ public class login extends Application{
 		//Top - logo
 		Image image = new Image("title.png");
 		imageview.setImage(image);
-		Image image1 = new Image("background.png");
+		Image image1 = new Image("background4K.png");
 		background.setImage(image1);
-		Image image2 = new Image("background1024.png");
-		background1024.setImage(image2);
+		Image image2 = new Image("background4K.png");
+		background4K.setImage(image2);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
@@ -206,17 +211,19 @@ public class login extends Application{
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
-		hbox.setPadding(new Insets(60, 0, 0, 100));
+		hbox.setPadding(new Insets(60, 0, 0, 0));
+		hbox.setAlignment(Pos.CENTER);
 		
 		
 
 		VBox vbox = new VBox(username, password, message, login); 
 		vbox.setAlignment(Pos.CENTER);
-		vbox.setPadding(new Insets(0, 188, 100, 188));
-		vbox.setSpacing(15);
+		vbox.setPadding(new Insets(0, 150, 60, 150));
+		vbox.setSpacing(20);
 
 		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(0, 0, 40, 230));
+		grid.setAlignment(Pos.CENTER);
+		grid.setPadding(new Insets(0, 0, 60, 0));
 		grid.add(tip, 2, 2); //horizontal, vertical
 		grid.add(signup, 3, 2);
 		
@@ -243,7 +250,7 @@ public class login extends Application{
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(false);
+							primaryStage.setResizable(true);
 							primaryStage.show();
 						}
 						
@@ -336,9 +343,10 @@ public class login extends Application{
 					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, sb1);
 					        ptb.play();   
 					        
-					        scene1 = new Scene(signuproot, 630, 470);
+					        scene1 = new Scene(signuproot, 1024, 768);
 							scene1.getStylesheets().add("CSS/combo.css");
 					        primaryStage.setScene(scene1);
+					        primaryStage.setResizable(true);
 		            	
 		            }
 		        });
@@ -364,7 +372,7 @@ public class login extends Application{
 
 				MenuItem salaryItem = new MenuItem("Salary Employee");
 				MenuItem hourlyItem = new MenuItem("Hourly Employee");
-				MenuItem saveItem = new MenuItem("Save");
+				MenuItem exportItem = new MenuItem("Export");
 				MenuItem exitItem = new MenuItem("Exit");
 				MenuItem tableItem = new MenuItem("Table");
 				MenuItem graphItem = new MenuItem("Graph");
@@ -377,9 +385,11 @@ public class login extends Application{
 					primaryStage.show();
 			    });
 				
+				salaryItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+					
+			    });
 				
-				
-				fileMenu.getItems().addAll(newItem, saveItem, exitItem);
+				fileMenu.getItems().addAll(newItem, exportItem, exitItem);
 				newItem.getItems().addAll(salaryItem, hourlyItem);
 				viewMenu.getItems().addAll(tableItem,graphItem);
 				menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
@@ -395,7 +405,7 @@ public class login extends Application{
 				removeItemTab.setClosable(false);
 				//StatisticsTab statisticsTab = StatisticsTab.getInstance();
 				//statisticsTab.setClosable(false);
-				//tabPane.getTabs().addAll(addItemTab, removeItemTab);
+//				tabPane.getTabs().addAll(addItemTab, removeItemTab);
 				
 				
 			
@@ -431,8 +441,8 @@ public class login extends Application{
 									//profile
 									Image profileImage = new Image(file.toURI().toString());
 									profile.setImage(profileImage);
-									profile.setFitHeight(64);
-									profile.setFitWidth(64);
+									profile.setFitHeight(180);
+									profile.setFitWidth(180);
 				    				
 				                }
 							}
@@ -481,7 +491,7 @@ public class login extends Application{
 				        
 				        
 				//TableView
-				        TableView table = new TableView();
+				        TableView<Employee> table = new TableView<Employee>();
 				        table.getStyleClass().add("Table");
 				    	ObservableList<Employee> data = FXCollections.observableArrayList(
 				    		    new Employee("Hello", "35", "Hourly"),
@@ -493,18 +503,21 @@ public class login extends Application{
 				        final Label label = new Label("Worker");
 				        label.setFont(new Font("Arial", 20));
 				        table.setEditable(true);
-				        TableColumn Name = new TableColumn("Name");
+				        TableColumn<Employee, String> Name = new TableColumn<Employee, String>("Name");
 				        Name.setCellValueFactory(
 				        	    new PropertyValueFactory<Employee,String>("Name")
 				        	);
-				        TableColumn Age = new TableColumn("Age");
+				        Name.setSortable(false);
+				        TableColumn<Employee, String> Age = new TableColumn<Employee, String>("Age");
 				        Age.setCellValueFactory(
 				        	    new PropertyValueFactory<Employee,String>("Age")
 				        	);
-				        TableColumn Situation = new TableColumn("Situation");
+				        Age.setSortable(false);
+				        TableColumn<Employee, String> Situation = new TableColumn<Employee, String>("Situation");
 				        Situation.setCellValueFactory(
 				        	    new PropertyValueFactory<Employee,String>("Situation")
 				        	);
+				        Situation.setSortable(false);
 				        table.getColumns().addAll(Name, Age, Situation);
 				        table.setItems(data);
 				        table.setPrefSize(197, 800);
@@ -542,41 +555,41 @@ public class login extends Application{
 				        ESituation.getStyleClass().add("TextField");
 
 				//VBox(list,choose,profile, pie chart)
-				        VBox item_vbox = new VBox(chart);
-				        item_vbox.setAlignment(Pos.TOP_CENTER);
-				        
-				        HBox addEmployee = new HBox();
-				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
-				        addEmployee.setSpacing(3);
-				        
-				        
-				        VBox hold = new VBox();
-				        hold.setSpacing(5);
-				        hold.setPadding(new Insets(10, 0, 0, 10));
-				        hold.getChildren().addAll(label, table, addEmployee);
-
-				GridPane pane = new GridPane();
-				
-				pane.setPadding(new Insets(20, 0, 20, 20));
-				pane.add(hold, 0, 0);
-				pane.add(item_vbox, 1, 0);
-				border.getChildren().add(background1024);
+//				        VBox item_vbox = new VBox(chart);
+//				        item_vbox.setAlignment(Pos.TOP_CENTER);
+//				        
+//				        HBox addEmployee = new HBox();
+//				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
+//				        addEmployee.setSpacing(3);
+//				        
+//				        
+//				        VBox hold = new VBox();
+//				        hold.setSpacing(5);
+//				        hold.setPadding(new Insets(10, 0, 0, 10));
+//				        hold.getChildren().addAll(label, table, addEmployee);
+//
+//				GridPane pane = new GridPane();
+//				
+//				pane.setPadding(new Insets(20, 0, 20, 20));
+//				pane.add(hold, 0, 0);
+//				pane.add(item_vbox, 1, 0);
+				border.getChildren().addAll(background4K);
 				border.setTop(menu);
-				border.setLeft(pane);
+//				border.setLeft(pane);
 				
 				//define Menu option 
 				webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
-					border.getChildren().removeAll(pane);
+//					border.getChildren().removeAll(pane);
 					border.setCenter(browser);
 			    });
 		
 
-		scene1 = new Scene(root, 620, 460);
+		scene1 = new Scene(root, 1024, 768);
 		scene2 = new Scene(border,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
-		primaryStage.setResizable(false);
+		primaryStage.setResizable(true);
 		primaryStage.show();
 
 		
