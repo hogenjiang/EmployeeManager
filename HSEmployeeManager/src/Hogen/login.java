@@ -46,10 +46,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -233,16 +230,17 @@ public class login extends Application{
 		
 
 		//function
-		
 
 				login.setOnAction(new EventHandler<ActionEvent>() {
 
-					@Override 
+					@Override
 					public void handle(ActionEvent e) {
-						
+
 						//atable
-						
-						if(!username.getText().equals(atable.getLogin(account.getLogin()))) {
+						AccountTable at = new AccountTable();
+						Account user = at.getLogin(username.getText(), password.getText());
+
+						if(user == null) {
 							message.setText("The username or password is incorrect!");
 							username.clear();
 							password.clear();
@@ -253,49 +251,69 @@ public class login extends Application{
 							primaryStage.setResizable(true);
 							primaryStage.show();
 						}
-						
-	
-					}
-				
-				});
-				
-				signup.setOnAction(new EventHandler<ActionEvent>() {
-		            @Override 
-		            public void handle(ActionEvent e) {
-		            	hbox.getChildren().remove(imageview);	
-		            	
-		            	
-		            	
-		             vbox.getChildren().removeAll(login,message);
-		             vbox.getChildren().addAll(email,gender);
-		             
-		             
-		             grid.getChildren().removeAll(tip,signup);
-		             grid.setHgap(7);
-		             grid.add(back, 2, 2);
-		             grid.add(signUp, 3, 2);
-		             
-				     TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username); 		     
-				     t1.setByY(-30);
-				     
-				     TranslateTransition t2 = new TranslateTransition(Duration.millis(200), password); 		     
-				     t2.setByY(-30);
-				     
-				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
-				     t3.setByY(-30);
-				     
-				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender); 		     
-				     t4.setByY(-30);
 
-				     
-				     //Order - SequentialTransition, same time - ParallelTransition
-				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
-				        pt.play();   
-				        
-				        
-		            	
-		            }
-		        });
+
+					}
+
+				});
+
+					password.setOnKeyPressed(new EventHandler<KeyEvent>() {
+												 @Override
+												 public void handle(KeyEvent event) {
+													 if(event.getCode().equals(KeyCode.ENTER)) {
+														 AccountTable at = new AccountTable();
+														 Account user = at.getLogin(username.getText(), password.getText());
+
+														 if(user == null) {
+															 message.setText("The username or password is incorrect!");
+															 username.clear();
+															 password.clear();
+														 }else {
+															 password.clear();
+															 message.setText("");
+															 primaryStage.setScene(scene2);
+															 primaryStage.setResizable(true);
+															 primaryStage.show();
+														 }
+													 }
+												 }
+											 });
+
+							signup.setOnAction(new EventHandler<ActionEvent>() {
+								@Override
+								public void handle(ActionEvent e) {
+									hbox.getChildren().remove(imageview);
+
+
+									vbox.getChildren().removeAll(login, message);
+									vbox.getChildren().addAll(email, gender);
+
+
+									grid.getChildren().removeAll(tip, signup);
+									grid.setHgap(7);
+									grid.add(back, 2, 2);
+									grid.add(signUp, 3, 2);
+
+									TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username);
+									t1.setByY(-30);
+
+									TranslateTransition t2 = new TranslateTransition(Duration.millis(200), password);
+									t2.setByY(-30);
+
+									TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email);
+									t3.setByY(-30);
+
+									TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender);
+									t4.setByY(-30);
+
+
+									//Order - SequentialTransition, same time - ParallelTransition
+									ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
+									pt.play();
+
+
+								}
+							});
 				
 				back.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {

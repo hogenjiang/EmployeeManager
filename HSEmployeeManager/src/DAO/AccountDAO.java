@@ -8,5 +8,5 @@ public interface AccountDAO {
 	public void updateAccount(Account account);
 	public void deleteAccount(Account account);
 	public void createAccount(Account account);
-	public Account getLogin(String login);
+	public Account getLogin(String login, String password);
 }

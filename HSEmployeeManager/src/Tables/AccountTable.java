@@ -40,7 +40,7 @@ public class AccountTable implements AccountDAO {
 
 	@Override
 	public Account getAccount(int accountID) {
-		String query = "SELECT FROM " + Const.TABLE_USER + " WHERE " +
+		String query = "SELECT * FROM " + Const.TABLE_USER + " WHERE " +
 				   Const.ACCOUNT_COLUMN_ID + " = " + accountID;
 	Account account = new Account();
 	try {
@@ -109,23 +109,25 @@ try {
 	}
 		
 	}
-	
-	
-	public Account getLogin(String login) {
-		login = account.getLogin();
-		String query = "SELECT FROM " + Const.TABLE_USER + " WHERE " +
-				   Const.ACCOUNT_COLUMN_LOGIN + " = " + login;
-		
+
+	public Account getLogin(String login, String password) {
+		String query = "SELECT * FROM " + Const.TABLE_USER + " WHERE " +
+				Const.ACCOUNT_COLUMN_LOGIN + " = '" + login + "' AND " +
+				Const.ACCOUNT_COLUMN_PASSWORD + " = '" + password + "'";
 		try {
-			db.getConnection().createStatement().execute(query);
-			}catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			ResultSet data = db.getConnection().createStatement().executeQuery(query);
+			if (!data.isBeforeFirst()) {
+				return null;
 			}
-	
-	return account;
+			data.next();
+			Account user = this.getAccount(data.getInt(Const.ACCOUNT_COLUMN_ID));
+			return user;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
-	
+
 
 }
