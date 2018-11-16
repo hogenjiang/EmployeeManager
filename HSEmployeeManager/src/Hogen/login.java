@@ -65,8 +65,8 @@ public class login extends Application{
 	
 
 	private ImageView imageview = new ImageView();
-	private ImageView background = new ImageView();
 	private ImageView background4K = new ImageView();
+	private ImageView icon = new ImageView();
 	private Scene scene1, scene2;
 	
 	//Main entrance
@@ -101,10 +101,10 @@ public class login extends Application{
 		//Top - logo
 		Image image = new Image("title.png");
 		imageview.setImage(image);
-		Image image1 = new Image("background4K.png");
-		background.setImage(image1);
 		Image image2 = new Image("background4K.png");
 		background4K.setImage(image2);
+		Image icon1 = new Image("iconpng.png");
+		icon.setImage(icon1);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
@@ -221,13 +221,10 @@ public class login extends Application{
 		grid.setPadding(new Insets(0, 0, 60, 0));
 		grid.add(tip, 2, 2); //horizontal, vertical
 		grid.add(signup, 3, 2);
-		
-		
-		root.getChildren().add(background);
-		root.setTop(hbox);
-		root.setCenter(vbox);
-		root.setBottom(grid);
-		
+
+
+
+
 
 		//function
 
@@ -331,7 +328,7 @@ public class login extends Application{
 		        		vbox.getChildren().addAll(message,login);
 		        		
 		        		
-		        		signuproot.getChildren().add(background);
+		        		signuproot.getChildren().add(background4K);
 		        		signuproot.setTop(hbox);
 		        		signuproot.setCenter(vbox);
 		        		signuproot.setBottom(grid);
@@ -606,14 +603,19 @@ public class login extends Application{
 //					border.getChildren().removeAll(pane);
 					border.setCenter(browser);
 			    });
-		
 
+		root.getChildren().add(background4K);
+		root.setTop(hbox);
+		root.setCenter(vbox);
+		root.setBottom(grid);
 		scene1 = new Scene(root, 1024, 768);
 		scene2 = new Scene(border,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
 		primaryStage.setResizable(true);
+		primaryStage.setTitle("Employee System");
+		primaryStage.getIcons().add(icon1);
 		primaryStage.show();
 
 		
