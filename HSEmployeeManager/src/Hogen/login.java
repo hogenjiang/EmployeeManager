@@ -392,8 +392,12 @@ public class login extends Application{
 				Menu helpMenu = new Menu("Help");
 				Menu newItem = new Menu("New");
 
-				MenuItem salaryItem = new MenuItem("Salary Test.Employee");
-				MenuItem hourlyItem = new MenuItem("Hourly Test.Employee");
+
+				fileMenu.setGraphic(new ImageView("icon/file.png"));
+				viewMenu.setGraphic(new ImageView("icon/view.png"));
+				helpMenu.setGraphic(new ImageView("icon/help.png"));
+
+				MenuItem employeeItem = new MenuItem("Employee");
 				MenuItem exportItem = new MenuItem("Export");
 				MenuItem exitItem = new MenuItem("Exit");
 				MenuItem tableItem = new MenuItem("Table");
@@ -406,13 +410,13 @@ public class login extends Application{
 					primaryStage.setResizable(false);
 					primaryStage.show();
 			    });
-				
-				salaryItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+
+		employeeItem.addEventHandler(ActionEvent.ACTION, (e) -> {
 					
 			    });
 				
 				fileMenu.getItems().addAll(newItem, exportItem, exitItem);
-				newItem.getItems().addAll(salaryItem, hourlyItem);
+				newItem.getItems().addAll(employeeItem);
 				viewMenu.getItems().addAll(tableItem,graphItem);
 				menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
 				helpMenu.getItems().add(webItem);
@@ -516,79 +520,111 @@ public class login extends Application{
 				        TableView<Employee> table = new TableView<Employee>();
 				        table.getStyleClass().add("Table");
 				    	ObservableList<Employee> data = FXCollections.observableArrayList(
-				    		    new Employee("Hello", "35", "Hourly"),
-				    		    new Employee("Isabella", "26", "Salary"),
-				    		    new Employee("Ethan", "32", "Hourly"),
-				    		    new Employee("Emma", "27", "Hourly"),
-				    		    new Employee("Michael", "25", "Salary")
+				    		    new Employee("02313","Hogen", "Jiang", "00", "13", "13", "Dsa","dsa,","ds",
+										"dd","fsdf","fd","fd","fsd","fd")
 				    		);
+
 				        final Label label = new Label("Worker");
 				        label.setFont(new Font("Arial", 20));
 				        table.setEditable(true);
-				        TableColumn<Employee, String> Name = new TableColumn<Employee, String>("Name");
-				        Name.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Name")
-				        	);
-				        Name.setSortable(false);
-				        TableColumn<Employee, String> Age = new TableColumn<Employee, String>("Age");
-				        Age.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Age")
-				        	);
-				        Age.setSortable(false);
-				        TableColumn<Employee, String> Situation = new TableColumn<Employee, String>("Situation");
-				        Situation.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Situation")
-				        	);
-				        Situation.setSortable(false);
-				        table.getColumns().addAll(Name, Age, Situation);
-				        table.setItems(data);
-				        table.setPrefSize(197, 800);
-				        
+				        TableColumn<Employee, String> ID = new TableColumn<Employee, String>("ID");
+		ID.setCellValueFactory(
+				new PropertyValueFactory<Employee,String>("ID")
+		);
+				        TableColumn<Employee, String> FIRSTNAME = new TableColumn<Employee, String>("Firstname");
+
+				        TableColumn<Employee, String> LASTNAME = new TableColumn<Employee, String>("Lastname");
+
+						TableColumn<Employee, String> SIN = new TableColumn<Employee, String>("SIN");
+
+						TableColumn<Employee, String> EMAIL = new TableColumn<Employee, String>("Email");
+
+						TableColumn<Employee, String> SALARY = new TableColumn<Employee, String>("Salary");
+
+						TableColumn<Employee, String> TITLE = new TableColumn<Employee, String>("Title");
+
+						TableColumn<Employee, String> DEPARTMENT = new TableColumn<Employee, String>("Department");
+
+						TableColumn<Employee, String> ADDRESS = new TableColumn<Employee, String>("Address");
+
+						TableColumn<Employee, String> PHONE = new TableColumn<Employee, String>("Phone");
+
+						TableColumn<Employee, String> GENDER = new TableColumn<Employee, String>("Gender");
+
+						TableColumn<Employee, String> BIRTHDATE = new TableColumn<Employee, String>("Birth date");
+
+						TableColumn<Employee, String> STARTDATE = new TableColumn<Employee, String>("Start date");
+
+						TableColumn<Employee, String> STATUS = new TableColumn<Employee, String>("Status");
+
+						TableColumn<Employee, String> ENDDATE = new TableColumn<Employee, String>("End date");
+
+
+		table.getColumns().addAll(ID);
+						table.setItems(data);
+
+
 				
 				        WebView browser = new WebView();
 				        WebEngine webEngine = browser.getEngine();
 				        webEngine.load("http://www.google.ca");
-				        
-				        
-				        
-				//Add item
-				        TextField EName = new TextField();
-				        TextField EAge = new TextField();
-				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
-				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
-				        ESituation.setMinWidth(100);
-				        ESituation.getStyleClass().add("TextField");
-				        EName.setPromptText("Name");
-				        EName.setMaxWidth(Name.getPrefWidth());
-				        EAge.setMaxWidth(Age.getPrefWidth());
-				        EAge.setPromptText("Age");
-				        ESituation.setPromptText("Situation");
-				        Button add = new Button("Add");
-				        add.setOnAction((ActionEvent e) ->{
-				        	data.add(new Employee(
-				        			EName.getText(),
-				        			EAge.getText(),
-				        			Text(ESituation)));
-				        	EName.clear();
-				        	EAge.clear();
-				        });
-				        EName.getStyleClass().add("TextField");
-				        EAge.getStyleClass().add("TextField");
-				        ESituation.getStyleClass().add("TextField");
 
-//				VBox(list,choose,profile, chart)
+
+
+				//Add item
+//		TextField EId = new TextField();
+//		TextField EfirstName = new TextField();
+//		TextField ElastName = new TextField();
+//		TextField ESIN = new TextField();
+//		TextField Esalary = new TextField();
+//		TextField Etitle = new TextField();
+//		TextField Edepartment = new TextField();
+//		TextField Eaddress = new TextField();
+//		TextField Ephone = new TextField();
+//		TextField Eemail = new TextField();
+//		TextField Egender = new TextField();
+//		TextField Estatus = new TextField();
+//		TextField EbirthDate = new TextField();
+//		TextField EstartDate = new TextField();
+//		TextField EendDate = new TextField();
+
+
+
+
+//				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
+//				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
+//				        ESituation.setMinWidth(100);
+//				        ESituation.getStyleClass().add("TextField");
+//				        EName.setPromptText("Name");
+//				        EName.setMaxWidth(Name.getPrefWidth());
+//				        EAge.setMaxWidth(Age.getPrefWidth());
+//				        EAge.setPromptText("Age");
+//				        ESituation.setPromptText("Situation");
+//				        Button add = new Button("Add");
+//				        add.setOnAction((ActionEvent e) ->{
+//				        	data.add(new Employee(
+//									EId.getText(),EfirstName.getText(), ElastName.getText(),ESIN.getText(),Esalary.getText(),Etitle.getText(),Edepartment.getText(),
+//									Eaddress.getText(),Ephone.getText(),Eemail.getText(),Egender.getText(),Estatus.getText(),
+//									EbirthDate.getText(),EstartDate.getText(),EendDate.getText()
+//				        			));
+//
+//				        });
+
+
+
 				        VBox item_vbox = new VBox(chart);
 				        item_vbox.setAlignment(Pos.TOP_CENTER);
 
-				        HBox addEmployee = new HBox();
-				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
-				        addEmployee.setSpacing(3);
+//				        HBox addEmployee = new HBox();
+//				        addEmployee.getChildren().addAll(EId, EfirstName, ElastName, ESIN, Esalary, Etitle, Edepartment, Eaddress, Ephone, Eemail, Egender, Estatus, EbirthDate, EstartDate, EendDate, add);
+//				        addEmployee.setPadding(new Insets(10, 0, 0, 10));
+//				        addEmployee.setSpacing(3);
 
 
 				        VBox hold = new VBox();
 				        hold.setSpacing(5);
 				        hold.setPadding(new Insets(10, 0, 0, 10));
-				        hold.getChildren().addAll(label, table, addEmployee);
+				        hold.getChildren().addAll(label, table);
 
 				GridPane pane = new GridPane();
 
