@@ -529,10 +529,12 @@ public class login extends Application{
 				        table.setEditable(true);
 				        TableColumn<Employee, String> ID = new TableColumn<Employee, String>("ID");
 		ID.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("ID")
+				new PropertyValueFactory<Employee,String>("EmployeeId")
 		);
 				        TableColumn<Employee, String> FIRSTNAME = new TableColumn<Employee, String>("Firstname");
-
+		FIRSTNAME.setCellValueFactory(
+				new PropertyValueFactory<Employee,String>("Firstname")
+		);
 				        TableColumn<Employee, String> LASTNAME = new TableColumn<Employee, String>("Lastname");
 
 						TableColumn<Employee, String> SIN = new TableColumn<Employee, String>("SIN");
