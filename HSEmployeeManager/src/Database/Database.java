@@ -23,7 +23,7 @@ public class Database {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = 
-						DriverManager.getConnection("jdbc:mysql://localhost/" + Const.DB_NAME + "?useSSL=false", Const.DB_USER, Const.DB_PASS);
+						DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME + "?useSSL=false", Const.DB_USER, Const.DB_PASS);
 
 				System.out.println("Successfully Created Connection");
 			}
@@ -34,8 +34,8 @@ public class Database {
 		
 		try {
 			createTable(Const.TABLE_USER, Const.CREATE_TABLE_USER, connection);
-//			createTable(Const.TABLE_LOCATION, Const.CREATE_TABLE_LOCATIONS, connection);
-//			
+//			createTable(Const.TABLE_EMPLOYEE, Const.CREATE_TABLE_EMPLOYEE, connection);
+
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}

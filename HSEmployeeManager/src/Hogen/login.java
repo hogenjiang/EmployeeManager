@@ -67,13 +67,14 @@ public class login extends Application{
 	private ImageView imageview = new ImageView();
 	private ImageView background4K = new ImageView();
 	private ImageView icon = new ImageView();
+	private ImageView profile = new ImageView();
 	private Scene scene1, scene2;
 	
 	//Main entrance
 	ListView<String> list = new ListView<String>(); 
 	FileChooser filechooser = new FileChooser();
 	Desktop desktop = Desktop.getDesktop();
-	private ImageView profile = new ImageView();
+
 	//BorderPane
 			BorderPane border = new BorderPane();
 			Account account = new Account();
@@ -575,28 +576,28 @@ public class login extends Application{
 				        EAge.getStyleClass().add("TextField");
 				        ESituation.getStyleClass().add("TextField");
 
-				//VBox(list,choose,profile, pie chart)
-//				        VBox item_vbox = new VBox(chart);
-//				        item_vbox.setAlignment(Pos.TOP_CENTER);
-//				        
-//				        HBox addEmployee = new HBox();
-//				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
-//				        addEmployee.setSpacing(3);
-//				        
-//				        
-//				        VBox hold = new VBox();
-//				        hold.setSpacing(5);
-//				        hold.setPadding(new Insets(10, 0, 0, 10));
-//				        hold.getChildren().addAll(label, table, addEmployee);
-//
-//				GridPane pane = new GridPane();
-//				
-//				pane.setPadding(new Insets(20, 0, 20, 20));
-//				pane.add(hold, 0, 0);
-//				pane.add(item_vbox, 1, 0);
+//				VBox(list,choose,profile, chart)
+				        VBox item_vbox = new VBox(chart);
+				        item_vbox.setAlignment(Pos.TOP_CENTER);
+
+				        HBox addEmployee = new HBox();
+				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
+				        addEmployee.setSpacing(3);
+
+
+				        VBox hold = new VBox();
+				        hold.setSpacing(5);
+				        hold.setPadding(new Insets(10, 0, 0, 10));
+				        hold.getChildren().addAll(label, table, addEmployee);
+
+				GridPane pane = new GridPane();
+
+				pane.setPadding(new Insets(20, 0, 20, 20));
+				pane.add(hold, 0, 0);
+				pane.add(item_vbox, 1, 0);
 				border.getChildren().addAll(background4K);
 				border.setTop(menu);
-//				border.setLeft(pane);
+				border.setLeft(pane);
 				
 				//define Menu option 
 				webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
