@@ -15,7 +15,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 import Enums.gender;
+import Models.Account;
 import Models.Employee;
+import Tables.AccountTable;
 import Tabs.AddItemTab;
 import Tabs.RemoveItemTab;
 import javafx.animation.FadeTransition;
@@ -30,6 +32,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
@@ -43,10 +46,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -65,16 +65,20 @@ public class login extends Application{
 	
 
 	private ImageView imageview = new ImageView();
-	private ImageView background = new ImageView();
-	private ImageView background1024 = new ImageView();
+	private ImageView background4K = new ImageView();
+	private ImageView icon = new ImageView();
+	private ImageView profile = new ImageView();
 	private Scene scene1, scene2;
+	
 	//Main entrance
 	ListView<String> list = new ListView<String>(); 
 	FileChooser filechooser = new FileChooser();
 	Desktop desktop = Desktop.getDesktop();
-	private ImageView profile = new ImageView();
+
 	//BorderPane
 			BorderPane border = new BorderPane();
+			Account account = new Account();
+			AccountTable atable = new AccountTable();
 			
 	//password message
 	final Label message = new Label("");
@@ -85,8 +89,10 @@ public class login extends Application{
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
 //SCENE 1
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
@@ -96,10 +102,10 @@ public class login extends Application{
 		//Top - logo
 		Image image = new Image("title.png");
 		imageview.setImage(image);
-		Image image1 = new Image("background.png");
-		background.setImage(image1);
-		Image image2 = new Image("background1024.png");
-		background1024.setImage(image2);
+		Image image2 = new Image("background4K.png");
+		background4K.setImage(image2);
+		Image icon1 = new Image("iconpng.png");
+		icon.setImage(icon1);
 		
 		//Center - userName, password, login
 		TextField username = new TextField();
@@ -192,50 +198,47 @@ public class login extends Application{
         gender.getStyleClass().add("TextField");
 
 
-        //5
-		DatePicker date = new DatePicker();
-		date.setPromptText("Birth date");
-		date.getStyleClass().add("TextField");
+        
 		
 		
 		
-		//7
-		HBox hh = new HBox();
-    	hh.getChildren().addAll(gender,date);
-    	hh.setSpacing(15);
+		
+    	
 		
 		//Pane
 		HBox hbox = new HBox(imageview);
-		hbox.setPadding(new Insets(60, 0, 0, 100));
+		hbox.setPadding(new Insets(60, 0, 0, 0));
+		hbox.setAlignment(Pos.CENTER);
 		
 		
 
 		VBox vbox = new VBox(username, password, message, login); 
 		vbox.setAlignment(Pos.CENTER);
-		vbox.setPadding(new Insets(0, 188, 100, 188));
-		vbox.setSpacing(15);
+		vbox.setPadding(new Insets(0, 300, 60, 300));
+		vbox.setSpacing(20);
 
 		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(0, 0, 40, 230));
+		grid.setAlignment(Pos.CENTER);
+		grid.setPadding(new Insets(0, 0, 60, 0));
 		grid.add(tip, 2, 2); //horizontal, vertical
 		grid.add(signup, 3, 2);
-		
-		
-		root.getChildren().add(background);
-		root.setTop(hbox);
-		root.setCenter(vbox);
-		root.setBottom(grid);
-		
+
+
+
+
 
 		//function
-		
 
 				login.setOnAction(new EventHandler<ActionEvent>() {
 
-					@Override 
+					@Override
 					public void handle(ActionEvent e) {
-						
-						if(!username.getText().equals("11") || !password.getText().equals("11")) {
+
+						//atable
+						AccountTable at = new AccountTable();
+						Account user = at.getLogin(username.getText(), password.getText());
+
+						if(user == null) {
 							message.setText("The username or password is incorrect!");
 							username.clear();
 							password.clear();
@@ -243,59 +246,79 @@ public class login extends Application{
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(false);
+							primaryStage.setResizable(true);
 							primaryStage.show();
 						}
-						
-	
-					}
-				
-				});
-				
-				signup.setOnAction(new EventHandler<ActionEvent>() {
-		            @Override 
-		            public void handle(ActionEvent e) {
-		            	hbox.getChildren().remove(imageview);	
-		            	
-		            	
-		            	
-		             vbox.getChildren().removeAll(login,message);
-		             vbox.getChildren().addAll(email,hh);
-		             
-		             
-		             grid.getChildren().removeAll(tip,signup);
-		             grid.setHgap(7);
-		             grid.add(back, 2, 2);
-		             grid.add(signUp, 3, 2);
-		             
-				     TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username); 		     
-				     t1.setByY(-30);
-				     
-				     TranslateTransition t2 = new TranslateTransition(Duration.millis(200), password); 		     
-				     t2.setByY(-30);
-				     
-				     TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email); 		     
-				     t3.setByY(-30);
-				     
-				     TranslateTransition t4 = new TranslateTransition(Duration.millis(200), hh); 		     
-				     t4.setByY(-30);
 
-				     
-				     //Order - SequentialTransition, same time - ParallelTransition
-				     ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
-				        pt.play();   
-				        
-				        
-		            	
-		            }
-		        });
+
+					}
+
+				});
+
+					password.setOnKeyPressed(new EventHandler<KeyEvent>() {
+												 @Override
+												 public void handle(KeyEvent event) {
+													 if(event.getCode().equals(KeyCode.ENTER)) {
+														 AccountTable at = new AccountTable();
+														 Account user = at.getLogin(username.getText(), password.getText());
+
+														 if(user == null) {
+															 message.setText("The username or password is incorrect!");
+															 username.clear();
+															 password.clear();
+														 }else {
+															 password.clear();
+															 message.setText("");
+															 primaryStage.setScene(scene2);
+															 primaryStage.setResizable(true);
+															 primaryStage.show();
+														 }
+													 }
+												 }
+											 });
+
+							signup.setOnAction(new EventHandler<ActionEvent>() {
+								@Override
+								public void handle(ActionEvent e) {
+									hbox.getChildren().remove(imageview);
+
+
+									vbox.getChildren().removeAll(login, message);
+									vbox.getChildren().addAll(email, gender);
+
+
+									grid.getChildren().removeAll(tip, signup);
+									grid.setHgap(7);
+									grid.add(back, 2, 2);
+									grid.add(signUp, 3, 2);
+
+									TranslateTransition t1 = new TranslateTransition(Duration.millis(200), username);
+									t1.setByY(-30);
+
+									TranslateTransition t2 = new TranslateTransition(Duration.millis(200), password);
+									t2.setByY(-30);
+
+									TranslateTransition t3 = new TranslateTransition(Duration.millis(200), email);
+									t3.setByY(-30);
+
+									TranslateTransition t4 = new TranslateTransition(Duration.millis(200), gender);
+									t4.setByY(-30);
+
+
+									//Order - SequentialTransition, same time - ParallelTransition
+									ParallelTransition pt = new ParallelTransition(t1, t2, t3, t4);
+									pt.play();
+
+
+								}
+							});
 				
 				back.setOnAction(new EventHandler<ActionEvent>() {
 		            @Override public void handle(ActionEvent e) {
 		            	BorderPane signuproot = new BorderPane();
 		            	hbox.getChildren().add(imageview);
 		            	
-		            	vbox.getChildren().removeAll(email,hh);
+		            	vbox.getChildren().removeAll(email,gender);
 		            	grid.getChildren().removeAll(signUp, back);
 		            	
 		            	grid.setHgap(0);
@@ -306,7 +329,7 @@ public class login extends Application{
 		        		vbox.getChildren().addAll(message,login);
 		        		
 		        		
-		        		signuproot.getChildren().add(background);
+		        		signuproot.getChildren().add(background4K);
 		        		signuproot.setTop(hbox);
 		        		signuproot.setCenter(vbox);
 		        		signuproot.setBottom(grid);
@@ -324,7 +347,7 @@ public class login extends Application{
 					     tb3.setByY(30);
 					     
 					     
-					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), hh); 		     
+					     TranslateTransition tb4 = new TranslateTransition(Duration.millis(200), gender); 		     
 					     tb4.setByY(30);
 					     
 
@@ -336,18 +359,25 @@ public class login extends Application{
 					     ParallelTransition ptb = new ParallelTransition(tb1, tb2, tb3, tb4, sb1);
 					        ptb.play();   
 					        
-					        scene1 = new Scene(signuproot, 630, 470);
+					        scene1 = new Scene(signuproot, 1024, 768);
 							scene1.getStylesheets().add("CSS/combo.css");
 					        primaryStage.setScene(scene1);
+					        primaryStage.setResizable(true);
 		            	
 		            }
 		        });
+				
+				
 				
 				signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 					@Override
 					public void handle(ActionEvent event) {
+						Account account = new Account(username.getText(), password.getText(),
+								email.getText(),gender.getSelectionModel().getSelectedItem().name());
 						
+						
+						atable.createAccount(account);
 					}
 					
 				});
@@ -362,9 +392,13 @@ public class login extends Application{
 				Menu helpMenu = new Menu("Help");
 				Menu newItem = new Menu("New");
 
-				MenuItem salaryItem = new MenuItem("Salary Employee");
-				MenuItem hourlyItem = new MenuItem("Hourly Employee");
-				MenuItem saveItem = new MenuItem("Save");
+
+				fileMenu.setGraphic(new ImageView("icon/file.png"));
+				viewMenu.setGraphic(new ImageView("icon/view.png"));
+				helpMenu.setGraphic(new ImageView("icon/help.png"));
+
+				MenuItem employeeItem = new MenuItem("Employee");
+				MenuItem exportItem = new MenuItem("Export");
 				MenuItem exitItem = new MenuItem("Exit");
 				MenuItem tableItem = new MenuItem("Table");
 				MenuItem graphItem = new MenuItem("Graph");
@@ -376,11 +410,13 @@ public class login extends Application{
 					primaryStage.setResizable(false);
 					primaryStage.show();
 			    });
+
+		employeeItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+					
+			    });
 				
-				
-				
-				fileMenu.getItems().addAll(newItem, saveItem, exitItem);
-				newItem.getItems().addAll(salaryItem, hourlyItem);
+				fileMenu.getItems().addAll(newItem, exportItem, exitItem);
+				newItem.getItems().addAll(employeeItem);
 				viewMenu.getItems().addAll(tableItem,graphItem);
 				menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
 				helpMenu.getItems().add(webItem);
@@ -395,7 +431,7 @@ public class login extends Application{
 				removeItemTab.setClosable(false);
 				//StatisticsTab statisticsTab = StatisticsTab.getInstance();
 				//statisticsTab.setClosable(false);
-				//tabPane.getTabs().addAll(addItemTab, removeItemTab);
+//				tabPane.getTabs().addAll(addItemTab, removeItemTab);
 				
 				
 			
@@ -431,8 +467,8 @@ public class login extends Application{
 									//profile
 									Image profileImage = new Image(file.toURI().toString());
 									profile.setImage(profileImage);
-									profile.setFitHeight(64);
-									profile.setFitWidth(64);
+									profile.setFitHeight(180);
+									profile.setFitWidth(180);
 				    				
 				                }
 							}
@@ -465,8 +501,8 @@ public class login extends Application{
 					//Pie chart
 						ObservableList<PieChart.Data> pieChartData =
 				                FXCollections.observableArrayList(
-				                new PieChart.Data("Salary Employee", 70),
-				                new PieChart.Data("Hourly Employee", 30));
+				                new PieChart.Data("Salary Test.Employee", 70),
+				                new PieChart.Data("Hourly Test.Employee", 30));
 				        final PieChart chart = new PieChart(pieChartData);
 						
 				        chart.setLabelLineLength(10);
@@ -481,102 +517,144 @@ public class login extends Application{
 				        
 				        
 				//TableView
-				        TableView table = new TableView();
+				        TableView<Employee> table = new TableView<Employee>();
 				        table.getStyleClass().add("Table");
 				    	ObservableList<Employee> data = FXCollections.observableArrayList(
-				    		    new Employee("Hello", "35", "Hourly"),
-				    		    new Employee("Isabella", "26", "Salary"),
-				    		    new Employee("Ethan", "32", "Hourly"),
-				    		    new Employee("Emma", "27", "Hourly"),
-				    		    new Employee("Michael", "25", "Salary")
+				    		    new Employee("02313","Hogen", "Jiang", "00", "13", "13", "Dsa","dsa,","ds",
+										"dd","fsdf","fd","fd","fsd","fd")
 				    		);
+
 				        final Label label = new Label("Worker");
 				        label.setFont(new Font("Arial", 20));
 				        table.setEditable(true);
-				        TableColumn Name = new TableColumn("Name");
-				        Name.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Name")
-				        	);
-				        TableColumn Age = new TableColumn("Age");
-				        Age.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Age")
-				        	);
-				        TableColumn Situation = new TableColumn("Situation");
-				        Situation.setCellValueFactory(
-				        	    new PropertyValueFactory<Employee,String>("Situation")
-				        	);
-				        table.getColumns().addAll(Name, Age, Situation);
-				        table.setItems(data);
-				        table.setPrefSize(197, 800);
-				        
+				        TableColumn<Employee, String> ID = new TableColumn<Employee, String>("ID");
+		ID.setCellValueFactory(
+				new PropertyValueFactory<Employee,String>("EmployeeId")
+		);
+				        TableColumn<Employee, String> FIRSTNAME = new TableColumn<Employee, String>("Firstname");
+		FIRSTNAME.setCellValueFactory(
+				new PropertyValueFactory<Employee,String>("Firstname")
+		);
+				        TableColumn<Employee, String> LASTNAME = new TableColumn<Employee, String>("Lastname");
+
+						TableColumn<Employee, String> SIN = new TableColumn<Employee, String>("SIN");
+
+						TableColumn<Employee, String> EMAIL = new TableColumn<Employee, String>("Email");
+
+						TableColumn<Employee, String> SALARY = new TableColumn<Employee, String>("Salary");
+
+						TableColumn<Employee, String> TITLE = new TableColumn<Employee, String>("Title");
+
+						TableColumn<Employee, String> DEPARTMENT = new TableColumn<Employee, String>("Department");
+
+						TableColumn<Employee, String> ADDRESS = new TableColumn<Employee, String>("Address");
+
+						TableColumn<Employee, String> PHONE = new TableColumn<Employee, String>("Phone");
+
+						TableColumn<Employee, String> GENDER = new TableColumn<Employee, String>("Gender");
+
+						TableColumn<Employee, String> BIRTHDATE = new TableColumn<Employee, String>("Birth date");
+
+						TableColumn<Employee, String> STARTDATE = new TableColumn<Employee, String>("Start date");
+
+						TableColumn<Employee, String> STATUS = new TableColumn<Employee, String>("Status");
+
+						TableColumn<Employee, String> ENDDATE = new TableColumn<Employee, String>("End date");
+
+
+		table.getColumns().addAll(ID);
+						table.setItems(data);
+
+
 				
 				        WebView browser = new WebView();
 				        WebEngine webEngine = browser.getEngine();
 				        webEngine.load("http://www.google.ca");
-				        
-				        
-				        
-				//Add item
-				        TextField EName = new TextField();
-				        TextField EAge = new TextField();
-				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
-				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
-				        ESituation.setMinWidth(100);
-				        ESituation.getStyleClass().add("TextField");
-				        EName.setPromptText("Name");
-				        EName.setMaxWidth(Name.getPrefWidth());
-				        EAge.setMaxWidth(Age.getPrefWidth());
-				        EAge.setPromptText("Age");
-				        ESituation.setPromptText("Situation");
-				        Button add = new Button("Add");
-				        add.setOnAction((ActionEvent e) ->{
-				        	data.add(new Employee(
-				        			EName.getText(),
-				        			EAge.getText(),
-				        			Text(ESituation)));
-				        	EName.clear();
-				        	EAge.clear();
-				        });
-				        EName.getStyleClass().add("TextField");
-				        EAge.getStyleClass().add("TextField");
-				        ESituation.getStyleClass().add("TextField");
 
-				//VBox(list,choose,profile, pie chart)
+
+
+				//Add item
+//		TextField EId = new TextField();
+//		TextField EfirstName = new TextField();
+//		TextField ElastName = new TextField();
+//		TextField ESIN = new TextField();
+//		TextField Esalary = new TextField();
+//		TextField Etitle = new TextField();
+//		TextField Edepartment = new TextField();
+//		TextField Eaddress = new TextField();
+//		TextField Ephone = new TextField();
+//		TextField Eemail = new TextField();
+//		TextField Egender = new TextField();
+//		TextField Estatus = new TextField();
+//		TextField EbirthDate = new TextField();
+//		TextField EstartDate = new TextField();
+//		TextField EendDate = new TextField();
+
+
+
+
+//				        ComboBox<Enums.Situation> ESituation = new ComboBox<>();
+//				        ESituation.setItems(FXCollections.observableArrayList(Enums.Situation.values()));
+//				        ESituation.setMinWidth(100);
+//				        ESituation.getStyleClass().add("TextField");
+//				        EName.setPromptText("Name");
+//				        EName.setMaxWidth(Name.getPrefWidth());
+//				        EAge.setMaxWidth(Age.getPrefWidth());
+//				        EAge.setPromptText("Age");
+//				        ESituation.setPromptText("Situation");
+//				        Button add = new Button("Add");
+//				        add.setOnAction((ActionEvent e) ->{
+//				        	data.add(new Employee(
+//									EId.getText(),EfirstName.getText(), ElastName.getText(),ESIN.getText(),Esalary.getText(),Etitle.getText(),Edepartment.getText(),
+//									Eaddress.getText(),Ephone.getText(),Eemail.getText(),Egender.getText(),Estatus.getText(),
+//									EbirthDate.getText(),EstartDate.getText(),EendDate.getText()
+//				        			));
+//
+//				        });
+
+
+
 				        VBox item_vbox = new VBox(chart);
 				        item_vbox.setAlignment(Pos.TOP_CENTER);
-				        
-				        HBox addEmployee = new HBox();
-				        addEmployee.getChildren().addAll(EName, EAge, ESituation, add);
-				        addEmployee.setSpacing(3);
-				        
-				        
+
+//				        HBox addEmployee = new HBox();
+//				        addEmployee.getChildren().addAll(EId, EfirstName, ElastName, ESIN, Esalary, Etitle, Edepartment, Eaddress, Ephone, Eemail, Egender, Estatus, EbirthDate, EstartDate, EendDate, add);
+//				        addEmployee.setPadding(new Insets(10, 0, 0, 10));
+//				        addEmployee.setSpacing(3);
+
+
 				        VBox hold = new VBox();
 				        hold.setSpacing(5);
 				        hold.setPadding(new Insets(10, 0, 0, 10));
-				        hold.getChildren().addAll(label, table, addEmployee);
+				        hold.getChildren().addAll(label, table);
 
 				GridPane pane = new GridPane();
-				
+
 				pane.setPadding(new Insets(20, 0, 20, 20));
 				pane.add(hold, 0, 0);
 				pane.add(item_vbox, 1, 0);
-				border.getChildren().add(background1024);
+				border.getChildren().addAll(background4K);
 				border.setTop(menu);
 				border.setLeft(pane);
 				
 				//define Menu option 
 				webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
-					border.getChildren().removeAll(pane);
+//					border.getChildren().removeAll(pane);
 					border.setCenter(browser);
 			    });
-		
 
-		scene1 = new Scene(root, 620, 460);
+		root.getChildren().add(background4K);
+		root.setTop(hbox);
+		root.setCenter(vbox);
+		root.setBottom(grid);
+		scene1 = new Scene(root, 1024, 768);
 		scene2 = new Scene(border,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
-		primaryStage.setResizable(false);
+		primaryStage.setResizable(true);
+		primaryStage.setTitle("Employee System");
+		primaryStage.getIcons().add(icon1);
 		primaryStage.show();
 
 		

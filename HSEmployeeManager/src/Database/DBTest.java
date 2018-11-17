@@ -1,4 +1,4 @@
-import Database.Database;
+package Database;
 
 public class DBTest {
 

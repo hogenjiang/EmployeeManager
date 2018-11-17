@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="HSEmployeeManager">
+    <output-path>$PROJECT_DIR$/out/artifacts/HSEmployeeManager</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Hogen.login" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/HSEmployeeManager/src/iconpng.png" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/HSEmployeeManager/src/icon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="HSEmployeeManager.jar">
+        <element id="module-output" name="HSEmployeeManager" />
+      </element>
+    </root>
+  </artifact>
+</component>

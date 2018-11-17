@@ -1,7 +1,5 @@
 package Tabs;
 
-//Comments
-
 import javafx.geometry.Insets;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Tab;
