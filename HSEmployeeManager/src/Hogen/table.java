@@ -3,36 +3,25 @@ package Hogen;
 import java.awt.Desktop;
 import java.io.File;
 
-import Models.Employee;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -51,7 +40,7 @@ public class table extends Application{
 
 	
 	
-	Image profileImage = new Image("profile.jpg");
+	Image profileImage = new Image("icon/profile.jpg");
 	
 	
 	DropShadow shadow = new DropShadow();
@@ -73,7 +62,7 @@ public class table extends Application{
 
 
 		BorderPane root = new BorderPane();
-		Image image2 = new Image("background4K.png");
+		Image image2 = new Image("icon/background4K.png");
 		background4K.setImage(image2);
 		
 		profile.setImage(profileImage);
