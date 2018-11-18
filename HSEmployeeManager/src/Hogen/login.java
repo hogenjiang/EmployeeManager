@@ -11,6 +11,7 @@ import Models.Account;
 import Tables.AccountTable;
 import Tabs.Add;
 import Tabs.Home;
+import Tabs.Statistics;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
@@ -215,7 +216,7 @@ login.setOnAction(new EventHandler<ActionEvent>() {
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(true);
+							primaryStage.setResizable(false);
 							primaryStage.show();
 						}
 
@@ -392,7 +393,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 //		TabPane tabPane = new TabPane();
 //		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 //		//Three tabs
-		Add add = Add.getInstance();
+
 //		add.setClosable(false);
 //		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
 //		removeItemTab.setClosable(false);
@@ -400,10 +401,9 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 //		tabPane.setSide(Side.BOTTOM);
 
 
-
-
-
+		Add add = Add.getInstance();
 		Home home = Home.getInstance();
+		Statistics statistics = Statistics.getInstance();
 
 		Button homeButton = new Button();
 		homeButton.setGraphic(new ImageView("icon/home.png"));
@@ -421,7 +421,47 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 					}
 				});
 		homeButton.setOnAction(e->{
+			border.setCenter(home);
+
+		});
+
+		Button addButton = new Button();
+		addButton.setGraphic(new ImageView("icon/home.png"));
+		addButton.getStyleClass().remove("button");
+		addButton.addEventHandler(MouseEvent.MOUSE_ENTERED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						addButton.setEffect(shadow);
+					}
+				});
+		addButton.addEventHandler(MouseEvent.MOUSE_EXITED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						addButton.setEffect(null);
+					}
+				});
+		addButton.setOnAction(e->{
 			border.setCenter(add);
+
+		});
+
+		Button statisticsButton = new Button();
+		statisticsButton.setGraphic(new ImageView("icon/home.png"));
+		statisticsButton.getStyleClass().remove("button");
+		statisticsButton.addEventHandler(MouseEvent.MOUSE_ENTERED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						statisticsButton.setEffect(shadow);
+					}
+				});
+		statisticsButton.addEventHandler(MouseEvent.MOUSE_EXITED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						statisticsButton.setEffect(null);
+					}
+				});
+		statisticsButton.setOnAction(e->{
+			border.setCenter(statistics);
 
 		});
 
@@ -470,7 +510,8 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 	            fileChooser.getExtensionFilters().addAll(
 	                new FileChooser.ExtensionFilter("All Images", "*.*"),
 	                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-	                new FileChooser.ExtensionFilter("PNG", "*.png")
+	                new FileChooser.ExtensionFilter("PNG", "*.png"),
+						new FileChooser.ExtensionFilter("GIF", "*.gif")
 	            );
 	    }
 	
@@ -492,11 +533,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
         }
       }
 	
-	private String Text(ComboBox com) {
-		
-		
-		return com.toString();
-	}
+
 	
 
 }

@@ -180,9 +180,7 @@ public class Add extends BorderPane{
 	}
 	
 	public static Add getInstance() {
-		if(tab == null) {
 			tab = new Add();
-		}
 
 		return tab;
 	}
