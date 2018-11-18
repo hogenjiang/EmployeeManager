@@ -9,6 +9,18 @@
     -fx-border-radius: 5;
 }
 
+.check-box .box {
+    -fx-background-color: #ffffff;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #828282;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #ffffff;
+}
+
 
 .Pie{
 	-fx-pie-color: #ffd700;
