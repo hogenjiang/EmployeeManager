@@ -392,6 +392,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		newItem.getItems().addAll(employeeItem);
 		viewMenu.getItems().addAll(tableItem,graphItem);
 		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
+		menu.setPadding(new Insets(0,0,0,0));
 		helpMenu.getItems().add(webItem);
 
 		//TabPane
@@ -403,7 +404,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
 		removeItemTab.setClosable(false);
 		tabPane.getTabs().addAll(addItemTab, removeItemTab);
-		tabPane.setSide(Side.BOTTOM);
+		tabPane.setSide(Side.LEFT);
 
 
 

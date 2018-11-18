@@ -1,10 +1,8 @@
 package Tabs;
 
-import Hogen.table;
-import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -14,14 +12,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.control.CheckBox;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.File;
 
 public class AddItemTab extends Tab{
@@ -138,9 +134,15 @@ public class AddItemTab extends Tab{
 		EstartDate.relocate(390,390);
 		TextField EendDate = new TextField();
 		EendDate.relocate(690,390);
+		//Checkbox
+		CheckBox agree = new CheckBox();
+		agree.relocate(250,490);
+		agree.setText("By clicking button below, you agree to our terms of service and privacy statement.");
+
+
 		//Button save
-		Button save = new Button("Save");
-		save.relocate(520,600);
+		Button save = new Button("Create employee");
+		save.relocate(400,600);
 		save.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
 					@Override public void handle(MouseEvent e) {
@@ -163,17 +165,12 @@ public class AddItemTab extends Tab{
 
 		});
 
-		//pane
-		AnchorPane anchorPane = new AnchorPane();
-		AnchorPane.setBottomAnchor(save,-480.0);
-		anchorPane.getChildren().add(save);
 
-//		Image image = new Image("icon/background4K.png");
-//		background4K.setImage(image);
-//		canvas.getChildren().addAll(background4K);
+
+
 		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,sin, ESIN,salary, Esalary,title, Etitle,department, Edepartment,
 				address, Eaddress,phone, Ephone,email, Eemail,gender, Egender, ID, EID, status, Estatus,
-				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, anchorPane);
+				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, agree, save);
 		canvas.getStylesheets().add("CSS/combo.css");
 
 		this.setContent(canvas);
