@@ -8,10 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import Models.Account;
-import Models.Employee;
 import Tables.AccountTable;
-import Tabs.AddItemTab;
-import Tabs.RemoveItemTab;
+import Tabs.Add;
+import Tabs.Home;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
@@ -21,15 +20,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.geometry.Side;
-import javafx.scene.Camera;
-import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,10 +33,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Duration;
 public class login extends Application{
 
@@ -395,23 +388,61 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		menu.setPadding(new Insets(0,0,0,0));
 		helpMenu.getItems().add(webItem);
 
-		//TabPane
-		TabPane tabPane = new TabPane();
-		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-		//Three tabs
-		AddItemTab addItemTab = AddItemTab.getInstance();
-		addItemTab.setClosable(false);
-		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
-		removeItemTab.setClosable(false);
-		tabPane.getTabs().addAll(addItemTab, removeItemTab);
-		tabPane.setSide(Side.LEFT);
+//		//TabPane
+//		TabPane tabPane = new TabPane();
+//		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+//		//Three tabs
+		Add add = Add.getInstance();
+//		add.setClosable(false);
+//		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+//		removeItemTab.setClosable(false);
+//		tabPane.getTabs().addAll(add, removeItemTab);
+//		tabPane.setSide(Side.BOTTOM);
 
 
+
+
+
+		Home home = Home.getInstance();
+
+		Button homeButton = new Button();
+		homeButton.setGraphic(new ImageView("icon/home.png"));
+		homeButton.getStyleClass().remove("button");
+		homeButton.addEventHandler(MouseEvent.MOUSE_ENTERED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						homeButton.setEffect(shadow);
+					}
+				});
+		homeButton.addEventHandler(MouseEvent.MOUSE_EXITED,
+				new EventHandler<MouseEvent>() {
+					@Override public void handle(MouseEvent e) {
+						homeButton.setEffect(null);
+					}
+				});
+		homeButton.setOnAction(e->{
+			border.setCenter(add);
+
+		});
+
+
+
+
+
+
+
+		AnchorPane anchorPane = new AnchorPane();
+		AnchorPane.setTopAnchor(homeButton, 5.0);
+		AnchorPane.setRightAnchor(homeButton,5.0);
+		anchorPane.getChildren().addAll(homeButton);
+
+		HBox bb = new HBox(menu, anchorPane);
+		bb.setSpacing(760);
 
 		//Define scene
-		border.getChildren().add(background);
-		border.setTop(menu);
-		border.setCenter(tabPane);
+		border.getChildren().addAll(background);
+		border.setTop(bb);
+		border.setCenter(home);
 		root.getChildren().add(background4K);
 		root.setTop(hbox);
 		root.setCenter(vbox);

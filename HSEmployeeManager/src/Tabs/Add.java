@@ -4,9 +4,9 @@ package Tabs;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,8 +20,8 @@ import javafx.scene.control.CheckBox;
 import java.awt.Desktop;
 import java.io.File;
 
-public class AddItemTab extends Tab{
-	private static AddItemTab tab;
+public class Add extends BorderPane{
+	private static Add tab;
 	private ImageView profile = new ImageView();
 //	private ImageView background4K = new ImageView();
 	FileChooser filechooser = new FileChooser();
@@ -29,14 +29,15 @@ public class AddItemTab extends Tab{
 	DropShadow shadow = new DropShadow();
 	Image profileImage = new Image("icon/profile.jpg");
 	
-	private AddItemTab() {
-		this.setText("Add");
+	private Add() {
+//		this.setText("Add");
 		Pane canvas = new Pane();
 		//profile
 		profile.setImage(profileImage);
 		profile.setFitHeight(213);
 		profile.setFitWidth(160);
-		Button choose = new Button("Open");
+		Button choose = new Button("Add picture");
+
 		choose.getStyleClass().add("Button");
 		choose.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
@@ -62,7 +63,7 @@ public class AddItemTab extends Tab{
 					profile.setImage(profileImage);
 					profile.setFitHeight(213);
 					profile.setFitWidth(160);
-
+					choose.setText("Change picture");
 				}
 			}
 
@@ -173,13 +174,14 @@ public class AddItemTab extends Tab{
 				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, agree, save);
 		canvas.getStylesheets().add("CSS/combo.css");
 
-		this.setContent(canvas);
+
+		this.getChildren().add(canvas);
 		
 	}
 	
-	public static AddItemTab getInstance() {
+	public static Add getInstance() {
 		if(tab == null) {
-			tab = new AddItemTab();
+			tab = new Add();
 		}
 
 		return tab;
@@ -197,5 +199,12 @@ public class AddItemTab extends Tab{
 				new FileChooser.ExtensionFilter("PNG", "*.png")
 		);
 	}
-	
+
+	private void json(){
+
+	}
 }
+
+
+
+

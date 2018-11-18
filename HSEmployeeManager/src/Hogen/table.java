@@ -3,14 +3,12 @@ package Hogen;
 import java.awt.Desktop;
 import java.io.File;
 
-import Tabs.AddItemTab;
-import Tabs.RemoveItemTab;
+import Tabs.Add;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
@@ -154,11 +152,11 @@ public class table extends Application{
 		grid.add(hj, 1, 3);
 
 
-		TabPane tabPane = new TabPane();
-		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-		AddItemTab addItemTab = AddItemTab.getInstance();
-		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
-		tabPane.getTabs().addAll(addItemTab,removeItemTab);
+//		TabPane tabPane = new TabPane();
+//		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+		Add add = Add.getInstance();
+//		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+//		tabPane.getTabs().addAll(add,removeItemTab);
 
 	    HBox h = new HBox();
 	    h.setPadding(new Insets(80,80,80,80));
@@ -167,7 +165,7 @@ public class table extends Application{
 
 
 		root.getChildren().add(background4K);
-		root.setCenter(tabPane);
+//		root.setCenter(Add);
 		
 		
 		scenea = new Scene(root,1024,768);
