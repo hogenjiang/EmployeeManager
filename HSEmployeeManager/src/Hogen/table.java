@@ -3,25 +3,21 @@ package Hogen;
 import java.awt.Desktop;
 import java.io.File;
 
+import Tabs.AddItemTab;
+import Tabs.RemoveItemTab;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -39,10 +35,10 @@ public class table extends Application{
 	public static Scene newScene;
 
 	
-	
+
 	Image profileImage = new Image("icon/profile.jpg");
-	
-	
+
+
 	DropShadow shadow = new DropShadow();
 
 
@@ -72,19 +68,15 @@ public class table extends Application{
 		//Information
 
 
-
-		
-		
-		
 		Button choose = new Button("Open");
 		choose.getStyleClass().add("Button");
-		choose.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		choose.addEventHandler(MouseEvent.MOUSE_ENTERED,
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
 	        	choose.setEffect(shadow);
 	        }
 	});
-		choose.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		choose.addEventHandler(MouseEvent.MOUSE_EXITED,
 			    new EventHandler<MouseEvent>() {
 
 	        @Override public void handle(MouseEvent e) {
@@ -95,19 +87,19 @@ public class table extends Application{
 
 			@Override
 			public void handle(ActionEvent event) {
-				configureFileChooser(filechooser);	
+				configureFileChooser(filechooser);
 				File file = filechooser.showOpenDialog(Stage);
 				if (file != null) {
 					//profile
-					
+
 					profileImage = new Image(file.toURI().toString());
 					profile.setImage(profileImage);
 					profile.setFitHeight(213);
 					profile.setFitWidth(160);
-    				
+
                 }
 			}
-			
+
 		});
 		
 		
@@ -160,17 +152,22 @@ public class table extends Application{
 		hj.setSpacing(7);
 		
 		grid.add(hj, 1, 3);
-		
-		
-		
-	
-	    
+
+
+		TabPane tabPane = new TabPane();
+		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+		AddItemTab addItemTab = AddItemTab.getInstance();
+		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
+		tabPane.getTabs().addAll(addItemTab,removeItemTab);
+
 	    HBox h = new HBox();
 	    h.setPadding(new Insets(80,80,80,80));
 	    h.getChildren().addAll(v,grid);
-		
+
+
+
 		root.getChildren().add(background4K);
-		root.setCenter(h);
+		root.setCenter(tabPane);
 		
 		
 		scenea = new Scene(root,1024,768);
@@ -185,11 +182,11 @@ public class table extends Application{
 
 	
 	private static void configureFileChooser(
-	        final FileChooser fileChooser) {      
+	        final FileChooser fileChooser) {
 	            fileChooser.setTitle("View Pictures");
 	            fileChooser.setInitialDirectory(
 	                new File(System.getProperty("user.home"))
-	            );                 
+	            );
 	            fileChooser.getExtensionFilters().addAll(
 	                new FileChooser.ExtensionFilter("All Images", "*.*"),
 	                new FileChooser.ExtensionFilter("JPG", "*.jpg"),

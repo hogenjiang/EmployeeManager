@@ -23,6 +23,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
 import javafx.scene.Camera;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
@@ -49,6 +50,7 @@ public class login extends Application{
 
 	private ImageView imageview = new ImageView();
 	private ImageView background4K = new ImageView();
+	private ImageView background = new ImageView();
 	private ImageView icon = new ImageView();
 	private ImageView profile = new ImageView();
 
@@ -82,8 +84,8 @@ public class login extends Application{
 		
 //SCENE 1
 		BorderPane root = new BorderPane();
-		Font font = Font.font ("Arial", FontWeight.BOLD, 11);
-		Font signFont = Font.font ("Arial", FontWeight.BOLD, 10);
+		Font font = Font.font ("Arial", FontWeight.BOLD, 12);
+		Font signFont = Font.font ("Arial", FontWeight.BOLD, 11);
 		DropShadow shadow = new DropShadow();
 		
 		//Top - logo
@@ -91,6 +93,8 @@ public class login extends Application{
 		imageview.setImage(image);
 		Image image2 = new Image("icon/background4K.png");
 		background4K.setImage(image2);
+		Image image3 = new Image("icon/background4K.png");
+		background.setImage(image3);
 		Image icon1 = new Image("icon/iconpng.png");
 		icon.setImage(icon1);
 		//profile
@@ -99,12 +103,9 @@ public class login extends Application{
 		//Center - userName, password, login
 		TextField username = new TextField();
 		username.setPromptText("Username");
-		username.getStyleClass().add("TextField");
 		PasswordField password = new PasswordField();
 		password.setPromptText("Password");
-		password.getStyleClass().add("TextField");
 		Button login = new Button("Login");
-		login.getStyleClass().add("Button");
 		login.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -124,6 +125,7 @@ public class login extends Application{
 		tip.setFont(font);
 		Button signup = new Button("Sign Up");
 		signup.setBackground(Background.EMPTY);
+		signup.getStyleClass().remove("button");
 		signup.setFont(signFont);
 		signup.setAlignment(Pos.TOP_CENTER);
 		signup.setTextFill(Color.rgb(44, 81, 133));
@@ -144,7 +146,6 @@ public class login extends Application{
 		//Sign up
 		//1
 		Button back = new Button("Back");
-		back.getStyleClass().add("Button");
 		back.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -161,7 +162,6 @@ public class login extends Application{
 		
 		//2
 		Button signUp = new Button("Sign Up");
-		signUp.getStyleClass().add("Button");
 		signUp.addEventHandler(MouseEvent.MOUSE_ENTERED, 
 			    new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent e) {
@@ -178,13 +178,11 @@ public class login extends Application{
 		//3
 		TextField email = new TextField();
         email.setPromptText("Email");
-        email.getStyleClass().add("TextField");
         
         //4
         ComboBox<Enums.gender> gender = new ComboBox<>();
         gender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
         gender.setMinWidth(100);
-        gender.getStyleClass().add("TextField");
 
 
 
@@ -404,275 +402,15 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		addItemTab.setClosable(false);
 		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
 		removeItemTab.setClosable(false);
-		//StatisticsTab statisticsTab = StatisticsTab.getInstance();
-		//statisticsTab.setClosable(false);
-//				tabPane.getTabs().addAll(addItemTab, removeItemTab);
+		tabPane.getTabs().addAll(addItemTab, removeItemTab);
+		tabPane.setSide(Side.BOTTOM);
 
 
 
-
-		//ListView
-		ObservableList<String> items = FXCollections.observableArrayList("fds");
-		list.setItems(items);
-		list.setPrefSize(0, 90);
-
-		//profile
-		Button choose = new Button("Open a picture");
-		choose.getStyleClass().add("Button");
-		choose.addEventHandler(MouseEvent.MOUSE_ENTERED,
-				new EventHandler<MouseEvent>() {
-					@Override public void handle(MouseEvent e) {
-						choose.setEffect(shadow);
-					}
-				});
-		choose.addEventHandler(MouseEvent.MOUSE_EXITED,
-				new EventHandler<MouseEvent>() {
-
-					@Override public void handle(MouseEvent e) {
-						choose.setEffect(null);
-					}
-				});
-		choose.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				configureFileChooser(filechooser);
-				File file = filechooser.showOpenDialog(primaryStage);
-				if (file != null) {
-					//profile
-					Image profileImage = new Image(file.toURI().toString());
-					profile.setImage(profileImage);
-					profile.setFitHeight(180);
-					profile.setFitWidth(180);
-
-				}
-			}
-
-		});
-
-
-		//contextMenu
-		final ContextMenu cm = new ContextMenu();
-		MenuItem cmItem1 = new MenuItem("Copy Image");
-		cmItem1.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e) {
-				Clipboard clipboard = Clipboard.getSystemClipboard();
-				ClipboardContent content = new ClipboardContent();
-				content.putImage(profile.getImage());
-				clipboard.setContent(content);
-			}
-		});
-
-		cm.getItems().add(cmItem1);
-		profile.addEventHandler(MouseEvent.MOUSE_CLICKED,
-				new EventHandler<MouseEvent>() {
-					@Override public void handle(MouseEvent e) {
-						if (e.getButton() == MouseButton.SECONDARY)
-							cm.show(profile, e.getScreenX(), e.getScreenY());
-					}
-				});
-
-
-		//Pie chart
-		ObservableList<PieChart.Data> pieChartData =
-				FXCollections.observableArrayList(
-						new PieChart.Data("Salary Test.Employee", 70),
-						new PieChart.Data("Hourly Test.Employee", 30));
-		final PieChart chart = new PieChart(pieChartData);
-
-		chart.setLabelLineLength(10);
-		applyCustomColorSequence(
-				pieChartData,
-				"rgb(128,128,128)",
-				"rgb(192,192,192)"
-
-		);
-
-
-
-
-		//TableView
-		TableView<Employee> table = new TableView<Employee>();
-		ObservableList<Employee> data = FXCollections.observableArrayList(
-				new Employee("02313","Hogen", "Jiang", "00", "13", "13", "Dsa","dsa,","ds",
-						"dd","fsdf","fd","fd","fsd","fd")
-		);
-
-
-
-
-				        TableColumn<Employee, String> ID = new TableColumn<Employee, String>("ID");
-		ID.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("EmployeeId")
-		);
-				        TableColumn<Employee, String> FIRSTNAME = new TableColumn<Employee, String>("Firstname");
-		FIRSTNAME.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("FirstName")
-		);
-				        TableColumn<Employee, String> LASTNAME = new TableColumn<Employee, String>("Lastname");
-		LASTNAME.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("LastName")
-		);
-						TableColumn<Employee, String> SIN = new TableColumn<Employee, String>("SIN");
-		SIN.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("SIN")
-		);
-						TableColumn<Employee, String> EMAIL = new TableColumn<Employee, String>("Email");
-		EMAIL.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Email")
-		);
-						TableColumn<Employee, String> SALARY = new TableColumn<Employee, String>("Salary");
-		SALARY.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Salary")
-		);
-						TableColumn<Employee, String> TITLE = new TableColumn<Employee, String>("Title");
-		TITLE.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Title")
-		);
-						TableColumn<Employee, String> DEPARTMENT = new TableColumn<Employee, String>("Department");
-		DEPARTMENT.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Department")
-		);
-						TableColumn<Employee, String> ADDRESS = new TableColumn<Employee, String>("Address");
-		ADDRESS.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Address")
-		);
-						TableColumn<Employee, String> PHONE = new TableColumn<Employee, String>("Phone");
-		PHONE.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Phone")
-		);
-						TableColumn<Employee, String> GENDER = new TableColumn<Employee, String>("Gender");
-		GENDER.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Gender")
-		);
-						TableColumn<Employee, String> BIRTHDATE = new TableColumn<Employee, String>("Birth date");
-		BIRTHDATE.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("BirthDate")
-		);
-						TableColumn<Employee, String> STARTDATE = new TableColumn<Employee, String>("Start date");
-		STARTDATE.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("StartDate")
-		);
-						TableColumn<Employee, String> ENDDATE = new TableColumn<Employee, String>("End date");
-		ENDDATE.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("EndDate")
-		);
-
-		TableColumn<Employee, String> STATUS = new TableColumn<Employee, String>("Status");
-		STATUS.setCellValueFactory(
-				new PropertyValueFactory<Employee,String>("Status")
-		);
-
-		table.setEditable(true);
-		table.getStyleClass().add("Table");
-		table.getColumns().addAll(ID,FIRSTNAME,LASTNAME);
-		table.setItems(data);
-		table.setMaxWidth(231);
-		table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
-		WebView browser = new WebView();
-		WebEngine webEngine = browser.getEngine();
-		webEngine.load("http://www.google.ca");
-
-		//Add item
-		TextField EId = new TextField();
-		TextField EfirstName = new TextField();
-		TextField ElastName = new TextField();
-		TextField ESIN = new TextField();
-		TextField Esalary = new TextField();
-		TextField Etitle = new TextField();
-		TextField Edepartment = new TextField();
-		TextField Eaddress = new TextField();
-		TextField Ephone = new TextField();
-		TextField Eemail = new TextField();
-		TextField Egender = new TextField();
-		TextField Estatus = new TextField();
-		TextField EbirthDate = new TextField();
-		TextField EstartDate = new TextField();
-		TextField EendDate = new TextField();
-
-
-//Add interface
-		Button userAdd = new Button();
-		userAdd.setGraphic(new ImageView("icon/plus.png"));
-		StackPane logo = new StackPane();
-		profile.setFitHeight(213);
-		profile.setFitWidth(160);
-		logo.getChildren().addAll(userAdd, profile);
-
-		Label firstnamel = new Label("First Name");
-		TextField firsname1 = new TextField() ;
-		TextField age1 = new TextField("") ;
-		TextField address1 = new TextField("") ;
-		TextField postion1 = new TextField("") ;
-		TextField phone1 = new TextField("") ;
-		TextField email1 = new TextField("") ;
-		Label gender1 = new Label("Gender");
-		ToggleGroup group = new ToggleGroup();
-		ToggleButton maleButton = new ToggleButton("Male");
-		ToggleButton femaleButton = new ToggleButton("Female");
-		GridPane pane = new GridPane();
-		pane.setPadding(new Insets(0,0,0,20));
-		pane.setHgap(10);
-		pane.setVgap(10);
-		VBox vv = new VBox(logo);
-		vv.setPadding(new Insets(30,0,0,30));
-		pane.add(vv,0,0);
-
-
-
-//Add funciton and delete function
-
- 		Button add = new Button("Add");
-		add.setGraphic(new ImageView("icon/plus.png"));
-		add.setBackground(Background.EMPTY);
-		add.addEventHandler(MouseEvent.MOUSE_ENTERED,
-				new EventHandler<MouseEvent>() {
-					@Override public void handle(MouseEvent e) {
-						add.setEffect(shadow);
-					}
-				});
-		add.addEventHandler(MouseEvent.MOUSE_EXITED,
-				new EventHandler<MouseEvent>() {
-
-					@Override public void handle(MouseEvent e) {
-						add.setEffect(null);
-					}
-				});
-				        add.setOnAction((ActionEvent e) ->{
-
-
-				        });
-
-		Button subtract = new Button("Delete");
-		subtract.setGraphic(new ImageView("icon/subtract.png"));
-		subtract.setBackground(Background.EMPTY);
-		subtract.addEventHandler(MouseEvent.MOUSE_ENTERED,
-				new EventHandler<MouseEvent>() {
-					@Override public void handle(MouseEvent e) {
-						subtract.setEffect(shadow);
-					}
-				});
-		subtract.addEventHandler(MouseEvent.MOUSE_EXITED,
-				new EventHandler<MouseEvent>() {
-
-					@Override public void handle(MouseEvent e) {
-						subtract.setEffect(null);
-					}
-				});
-		subtract.setOnAction((ActionEvent e) ->{
-
-		});
-
-		border.getChildren().addAll(background4K);
+		//Define scene
+		border.getChildren().add(background);
 		border.setTop(menu);
-		border.setCenter(pane);
-
-		//define Menu option
-		webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
-			border.setCenter(browser);
-		});
-
+		border.setCenter(tabPane);
 		root.getChildren().add(background4K);
 		root.setTop(hbox);
 		root.setCenter(vbox);
@@ -687,9 +425,6 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		primaryStage.getIcons().add(icon1);
 		primaryStage.show();
 
-		
-		
-		
 	}
 	
 	
