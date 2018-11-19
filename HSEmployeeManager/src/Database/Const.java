@@ -2,8 +2,8 @@ package Database;
 
 public class Const {
 	public static final String DB_NAME = "nakramdb";
-	public static final String DB_USER = "root";
-	public static final String DB_PASS = "Ammf123456";
+	public static final String DB_USER = "nakram";
+	public static final String DB_PASS = "219bn219bnzmxxxzmxxx";
 	//Create a constant for each of the table and column names
 	
 	public static final String TABLE_EMPLOYEE = "employee";

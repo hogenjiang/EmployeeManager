@@ -31,7 +31,7 @@ public class Database {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = 
 				DriverManager
-				.getConnection("jdbc:mysql://localhost/"+
+				.getConnection("jdbc:mysql://php.scweb.ca/"+
 				 Const.DB_NAME + "?useSSL=false",
 								Const.DB_USER, Const.DB_PASS);
 				System.out.println("Successfully Created Connection");
