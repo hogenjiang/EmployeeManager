@@ -386,7 +386,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		newItem.getItems().addAll(employeeItem);
 		viewMenu.getItems().addAll(tableItem,graphItem);
 		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
-		menu.setPadding(new Insets(0,0,0,0));
+		menu.setPadding(new Insets(0,0,0,6));
 		helpMenu.getItems().add(webItem);
 
 //		//TabPane
@@ -426,7 +426,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		});
 
 		Button addButton = new Button();
-		addButton.setGraphic(new ImageView("icon/home.png"));
+		addButton.setGraphic(new ImageView("icon/positive.png"));
 		addButton.getStyleClass().remove("button");
 		addButton.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
@@ -446,7 +446,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		});
 
 		Button statisticsButton = new Button();
-		statisticsButton.setGraphic(new ImageView("icon/home.png"));
+		statisticsButton.setGraphic(new ImageView("icon/chart.png"));
 		statisticsButton.getStyleClass().remove("button");
 		statisticsButton.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
@@ -473,11 +473,15 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 		AnchorPane anchorPane = new AnchorPane();
 		AnchorPane.setTopAnchor(homeButton, 5.0);
-		AnchorPane.setRightAnchor(homeButton,5.0);
-		anchorPane.getChildren().addAll(homeButton);
+		AnchorPane.setRightAnchor(homeButton,90.0);
+		AnchorPane.setTopAnchor(addButton, 5.0);
+		AnchorPane.setRightAnchor(addButton,45.0);
+		AnchorPane.setTopAnchor(statisticsButton, 5.0);
+		AnchorPane.setRightAnchor(statisticsButton,0.0);
+		anchorPane.getChildren().addAll(homeButton, addButton, statisticsButton);
 
 		HBox bb = new HBox(menu, anchorPane);
-		bb.setSpacing(760);
+		bb.setSpacing(665);
 
 		//Define scene
 		border.getChildren().addAll(background);
@@ -525,13 +529,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
         }
     }
 	
-	private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
-        int i = 0;
-        for (PieChart.Data data : pieChartData) {
-          data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
-          i++;
-        }
-      }
+
 	
 
 	

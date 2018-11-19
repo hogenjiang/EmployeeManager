@@ -23,17 +23,6 @@
 }
 
 
-.Pie{
-	-fx-pie-color: #ffd700;
-}
-
-.data0.chart-pie {
--fx-pie-color: #808080;
-}
-.data1.chart-pie{
--fx-pie-color: #C0C0C0;
-}
-
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }

@@ -1,85 +1,128 @@
 package Tabs;
 
-import javafx.event.EventHandler;
+import Models.Employ_home;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.InnerShadow;
-import javafx.scene.effect.Shadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.geometry.Side;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Home extends BorderPane {
+public class Home extends Pane {
     private static Home home;
     private Home(){
+//1
         FlowPane flow = new FlowPane();
+        TableView table = new TableView();
+        TableColumn firstNameCol = new TableColumn("First Name");
+        TableColumn lastNameCol = new TableColumn("Last Name");
+        TableColumn titleCol = new TableColumn("Job Title");
+        table.getColumns().addAll(firstNameCol, lastNameCol, titleCol);
 
-        ImageView image = new ImageView("icon/profile.jpg");
+        final ObservableList<Employ_home> data = FXCollections.observableArrayList(
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook"),
+                new Employ_home("Hello", "Kitty", "Cook")
 
-        ImageView image1 = new ImageView("icon/profile1.png");
 
-        ImageView image2 = new ImageView("icon/profile2.png");
+        );
 
+        firstNameCol.setCellValueFactory(
+                new PropertyValueFactory<>("FirstName")
+        );
+        lastNameCol.setCellValueFactory(
+                new PropertyValueFactory<>("LastName")
+        );
+        titleCol.setCellValueFactory(
+                new PropertyValueFactory<>("Title")
+        );
 
-        Text t1 = new Text("Holly");
-        Text t2 = new Text("Doll");
-        Text t3 = new Text("Sam");
+        table.setItems(data);
+        table.setEditable(false);
+        table.setMinWidth(259);
+        table.setMinHeight(700);
 
-        VBox e1 = new VBox();
-        e1.getChildren().addAll(image,t1);
-        e1.setSpacing(7);
-        e1.setPadding(new Insets(20,0,0,20));
-//        e1.setBackground(new Background(new BackgroundFill(Color.BLUE,
-//                CornerRadii.EMPTY, null)));
-//        e1.addEventHandler(MouseEvent.MOUSE_ENTERED,
-//                new EventHandler<MouseEvent>() {
-//                    @Override public void handle(MouseEvent e) {
-//                        e1.setScaleX(1.2);
-//                        e1.setScaleY(1.2);
-//
-//                    }
-//                });
-//        e1.addEventHandler(MouseEvent.MOUSE_EXITED,
-//                new EventHandler<MouseEvent>() {
-//
-//                    @Override public void handle(MouseEvent e) {
-//                        e1.setScaleX(1);
-//                        e1.setScaleY(1);
-//                    }
-//                });
+        VBox vBox = new VBox(table);
+        vBox.setPadding(new Insets(10,0,0,6));
 
-        VBox e2 = new VBox();
-        e2.getChildren().addAll(image1,t2);
-        e2.setSpacing(7);
-        e2.setPadding(new Insets(20,0,0,20));
-
-        VBox e3 = new VBox();
-        e3.getChildren().addAll(image2,t3);
-        e3.setSpacing(7);
-        e3.setPadding(new Insets(20,0,0,20));
-
-        List<VBox> list = new ArrayList<VBox>();
-        list.add(e1);
-        list.add(e2);
-        list.add(e3);
+        List<TableView> list = new ArrayList<TableView>();
         flow.setHgap(5);
-        flow.setBorder(Border.EMPTY);
         flow.getChildren().addAll(list);
-        this.setCenter(flow);
+        vBox.relocate(10,10);
+
+
+
+ //2
+        ObservableList<PieChart.Data> PieData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Salary Employee", 64),
+                        new PieChart.Data("Hourly Employee", 36));
+        PieChart chart = new PieChart(PieData);
+//        chart.setLabelLineLength(7);
+//        chart.setPrefSize(400,400);
+
+        VBox vBox1 = new VBox(chart);
+        vBox1.setPadding(new Insets(10,0,0,30));
+        vBox1.relocate(240,0);
+        this.getChildren().addAll(vBox, vBox1);
+        this.getStylesheets().add("CSS/table.css");
     }
 
     public static Home getInstance() {
         home = new Home();
-
         return home;
+    }
+
+    private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+        int i = 0;
+        for (PieChart.Data data : pieChartData) {
+            data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
+            i++;
+        }
     }
 
 

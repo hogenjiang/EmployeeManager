@@ -1,8 +1,6 @@
 package Models;
 
 
-import javafx.scene.image.Image;
-
 public class Employee {
 	private String EmployeeId;
 	private String FirstName;
