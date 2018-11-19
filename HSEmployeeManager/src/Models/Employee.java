@@ -17,6 +17,34 @@ public class Employee {
 	private String BirthDate;
 	private String StartDate;
 	private String EndDate;
+	private String City;
+	public String getCity() {
+		return City;
+	}
+
+	public void setCity(String city) {
+		City = city;
+	}
+
+	public String getProvince() {
+		return Province;
+	}
+
+	public void setProvince(String province) {
+		Province = province;
+	}
+
+	public String getPostalCode() {
+		return PostalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		PostalCode = postalCode;
+	}
+
+	private String Province;
+	private String PostalCode;
+	
 
 
 	public String getEmployeeId() {
@@ -140,7 +168,7 @@ public class Employee {
 	}
 
 	public Employee(String EmployeeId, String FirstName, String LastName, String SIN, String Salary, String Title, String Department, String Address, String Phone, String Email,
-					String Gender, String Status, String BirthDate, String StartDate, String EndDate){
+					String Gender, String Status, String BirthDate, String StartDate, String EndDate, String City, String Province, String PostalCode){
 
 		this.EmployeeId = new String(EmployeeId);
 		this.FirstName = new String(FirstName);
@@ -157,6 +185,9 @@ public class Employee {
 		this.StartDate = new String(StartDate);
 		this.Status = new String(Status);
 		this.EndDate = new String(EndDate);
+		this.City = new String(City);
+		this.Province = new String(Province);
+		this.PostalCode = new String(PostalCode);
 
 	}
 

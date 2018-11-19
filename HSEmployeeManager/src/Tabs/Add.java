@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -110,7 +111,7 @@ public class Add extends BorderPane{
 		ElastName.relocate(690,40);
 		TextField Egender = new TextField();
 		Egender.relocate(390,90);
-		TextField EbirthDate = new TextField();
+		DatePicker EbirthDate = new DatePicker();
 		EbirthDate.relocate(690,90);
 		TextField Ephone = new TextField();
 		Ephone.relocate(390,140);
