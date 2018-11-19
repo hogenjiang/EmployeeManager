@@ -1,4 +1,4 @@
-package Hogen;
+package forms;
 
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
