@@ -30,7 +30,6 @@ public class Add extends BorderPane{
 	DropShadow shadow = new DropShadow();
 	Image profileImage = new Image("icon/profile.jpg");
 	DepartmentTable departmentTable = new DepartmentTable();
-	GenderTable genderTable = new GenderTable();
     ProvinceTable provinceTable = new ProvinceTable();
     TitleTable titleTable = new TitleTable();
     SituationTable situationTable = new SituationTable();
@@ -99,14 +98,14 @@ public class Add extends BorderPane{
 		ID.relocate(300,245);
 		Text sin = new Text("SIN ");
 		sin.relocate(600,245);
-		Text salary = new Text("Salary ");
-		salary.relocate(300,295);
+		Text department = new Text("Department ");
+		department.relocate(300,295);
 		Text title = new Text("Title ");
 		title.relocate(600,295);
-		Text department = new Text("Department ");
-		department.relocate(300,345);
 		Text status = new Text("Status ");
-		status.relocate(600,345);
+		status.relocate(300,345);
+		Text salary = new Text("Salary ");
+		salary.relocate(600,345);
 		Text startdate = new Text("Start Date ");
 		startdate.relocate(300,395);
 		Text enddate = new Text("End Date ");
@@ -116,12 +115,12 @@ public class Add extends BorderPane{
 		EfirstName.relocate(390,40);
 		TextField ElastName = new TextField();
 		ElastName.relocate(690,40);
-		ComboBox<Gender> Egender = new ComboBox<>();
-		Egender.setItems(FXCollections.observableArrayList(genderTable.getAllGender()));
-		Egender.setPrefWidth(185);
+		ComboBox<Enums.gender> Egender = new ComboBox<>();
+		Egender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+		Egender.setPrefWidth(167);
 		Egender.relocate(390,90);
 		DatePicker EbirthDate = new DatePicker();
-		EbirthDate.setPrefWidth(188);
+		EbirthDate.setPrefWidth(167);
 		EbirthDate.relocate(690,90);
 		TextField Ephone = new TextField();
 		Ephone.relocate(390,140);
@@ -135,11 +134,11 @@ public class Add extends BorderPane{
 		TextField Ecity = new TextField();
 		Ecity.relocate(654,190);
 		Ecity.setPromptText("City");
-		Ecity.setPrefWidth(90);
+		Ecity.setPrefWidth(80);
 		ComboBox<Province> Eprovince = new ComboBox<>();
 		Eprovince.setItems(FXCollections.observableArrayList(provinceTable.getAllProvince()));
-		Eprovince.setPrefWidth(111);
-		Eprovince.relocate(763,190);
+		Eprovince.setPrefWidth(105);
+		Eprovince.relocate(750,190);
 		Eprovince.setPromptText("Province");
 
 
@@ -148,24 +147,24 @@ public class Add extends BorderPane{
 		TextField ESIN = new TextField();
 		ESIN.relocate(690,240);
         ComboBox<Department> Edepartment = new ComboBox<>();
-        Edepartment.setPrefWidth(188);
+        Edepartment.setPrefWidth(167);
         Edepartment.setItems(FXCollections.observableArrayList(departmentTable.getAllDepartment()));
         Edepartment.relocate(390,290);
 		ComboBox<Title> Etitle = new ComboBox<>();
 		Etitle.setItems(FXCollections.observableArrayList(titleTable.getAllTitle()));
-		Etitle.setPrefWidth(188);
-		Etitle.relocate(690,340);
+		Etitle.setPrefWidth(167);
+		Etitle.relocate(690,290);
         ComboBox<Situation> Estatus = new ComboBox<>();
-        Estatus.setPrefWidth(188);
+        Estatus.setPrefWidth(167);
         Estatus.setItems(FXCollections.observableArrayList(situationTable.getAllSituation()));
         Estatus.relocate(390,340);
 		TextField Esalary = new TextField();
-        Esalary.relocate(690,290);
+        Esalary.relocate(690,340);
 		DatePicker EstartDate = new DatePicker();
-		EstartDate.setPrefWidth(188);
+		EstartDate.setPrefWidth(167);
 		EstartDate.relocate(390,390);
 		DatePicker EendDate = new DatePicker();
-		EendDate.setPrefWidth(188);
+		EendDate.setPrefWidth(167);
 		EendDate.relocate(690,390);
 
 
@@ -205,7 +204,7 @@ public class Add extends BorderPane{
 
 
 
-		this.getChildren().add(canvas);
+		this.setCenter(canvas);
 		
 	}
 	
