@@ -1,4 +1,4 @@
-package Tabs;
+package Sections;
 
 import javafx.scene.layout.BorderPane;
 

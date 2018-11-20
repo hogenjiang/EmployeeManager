@@ -1,9 +1,9 @@
-package Hogen;
+package Hogen.test;
 
 import java.awt.Desktop;
 import java.io.File;
 
-import Tabs.Add;
+import Sections.Add;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

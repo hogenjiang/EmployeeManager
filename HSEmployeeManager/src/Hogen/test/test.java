@@ -1,4 +1,4 @@
-package Hogen;
+package Hogen.test;
 
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;

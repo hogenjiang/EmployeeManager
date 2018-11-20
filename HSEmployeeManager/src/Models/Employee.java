@@ -2,22 +2,73 @@ package Models;
 
 
 public class Employee {
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	private int id;
 	private String EmployeeId;
 	private String FirstName;
 	private String LastName;
-	private String SIN;
 	private String Salary;
-	private String Title;
-	private String Department;
 	private String Address;
 	private String Phone;
 	private String Email;
-	private String Gender;
-	private String Status;
 	private String BirthDate;
 	private String StartDate;
 	private String EndDate;
 	private String City;
+	private int Province;
+	private int Title;
+	private int Department;
+	private int Gender;
+	private int Status;
+
+	public int getProvince() {
+		return Province;
+	}
+
+	public void setProvince(int province) {
+		Province = province;
+	}
+
+	public int getTitle() {
+		return Title;
+	}
+
+	public void setTitle(int title) {
+		Title = title;
+	}
+
+	public int getDepartment() {
+		return Department;
+	}
+
+	public void setDepartment(int department) {
+		Department = department;
+	}
+
+	public int getGender() {
+		return Gender;
+	}
+
+	public void setGender(int gender) {
+		Gender = gender;
+	}
+
+	public int getStatus() {
+		return Status;
+	}
+
+	public void setStatus(int status) {
+		Status = status;
+	}
+
+
 	public String getCity() {
 		return City;
 	}
@@ -25,27 +76,6 @@ public class Employee {
 	public void setCity(String city) {
 		City = city;
 	}
-
-	public String getProvince() {
-		return Province;
-	}
-
-	public void setProvince(String province) {
-		Province = province;
-	}
-
-	public String getPostalCode() {
-		return PostalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		PostalCode = postalCode;
-	}
-
-	private String Province;
-	private String PostalCode;
-	
-
 
 	public String getEmployeeId() {
 		return EmployeeId;
@@ -71,14 +101,6 @@ public class Employee {
 		LastName = lastName;
 	}
 
-	public String getSIN() {
-		return SIN;
-	}
-
-	public void setSIN(String SIN) {
-		this.SIN = SIN;
-	}
-
 	public String getSalary() {
 		return Salary;
 	}
@@ -86,23 +108,6 @@ public class Employee {
 	public void setSalary(String salary) {
 		Salary = salary;
 	}
-
-	public String getTitle() {
-		return Title;
-	}
-
-	public void setTitle(String title) {
-		Title = title;
-	}
-
-	public String getDepartment() {
-		return Department;
-	}
-
-	public void setDepartment(String department) {
-		Department = department;
-	}
-
 	public String getAddress() {
 		return Address;
 	}
@@ -127,21 +132,6 @@ public class Employee {
 		Email = email;
 	}
 
-	public String getGender() {
-		return Gender;
-	}
-
-	public void setGender(String gender) {
-		Gender = gender;
-	}
-
-	public String getStatus() {
-		return Status;
-	}
-
-	public void setStatus(String status) {
-		Status = status;
-	}
 
 	public String getBirthDate() {
 		return BirthDate;
@@ -167,52 +157,49 @@ public class Employee {
 		EndDate = endDate;
 	}
 
-	public Employee(String EmployeeId, String FirstName, String LastName, String SIN, String Salary, String Title, String Department, String Address, String Phone, String Email,
-					String Gender, String Status, String BirthDate, String StartDate, String EndDate, String City, String Province, String PostalCode){
+	public Employee(String EmployeeId, String FirstName, String LastName, String Salary, int Title, int Department, String Address, String Phone, String Email,
+					int Gender, int Status, String BirthDate, String StartDate, String EndDate, String City, int Province){
 
-		this.EmployeeId = new String(EmployeeId);
-		this.FirstName = new String(FirstName);
-		this.LastName = new String(LastName);
-		this.SIN = new String(SIN);
-		this.Email = new String(Email);
-		this.Salary = new String(Salary);
-		this.Title = new String(Title);
-		this.Department = new String(Department);
-		this.Address = new String(Address);
-		this.Phone = new String(Phone);
-		this.Gender = new String(Gender);
-		this.BirthDate = new String(BirthDate);
-		this.StartDate = new String(StartDate);
-		this.Status = new String(Status);
-		this.EndDate = new String(EndDate);
-		this.City = new String(City);
-		this.Province = new String(Province);
-		this.PostalCode = new String(PostalCode);
+		this.EmployeeId = EmployeeId;
+		this.FirstName = FirstName;
+		this.LastName = LastName;
+		this.Email = Email;
+		this.Salary = Salary;
+		this.Title = Title;
+		this.Department = Department;
+		this.Address = Address;
+		this.Phone = Phone;
+		this.Gender = Gender;
+		this.BirthDate = BirthDate;
+		this.StartDate = StartDate;
+		this.Status = Status;
+		this.EndDate = EndDate;
+		this.City = City;
+		this.Province = Province;
+	}
 
+	public Employee(int id, String EmployeeId, String FirstName, String LastName, String Salary, int Title, int Department, String Address, String Phone, String Email,
+					int Gender, int Status, String BirthDate, String StartDate, String EndDate, String City, int Province){
+		this.id = id;
+		this.EmployeeId = EmployeeId;
+		this.FirstName = FirstName;
+		this.LastName = LastName;
+		this.Email = Email;
+		this.Salary = Salary;
+		this.Title = Title;
+		this.Department = Department;
+		this.Address = Address;
+		this.Phone = Phone;
+		this.Gender = Gender;
+		this.BirthDate = BirthDate;
+		this.StartDate = StartDate;
+		this.Status = Status;
+		this.EndDate = EndDate;
+		this.City = City;
+		this.Province = Province;
 	}
 
 
-//	public Employee(int id, int employeeId, String firstName, String lastName, int SIN, Image profile, int salary, String title, String department, String address, String phone, String email,
-//					String gender, String status, String birthDate, String startDate, String endDate){
-//		this.id = id;
-//		this.employeeId = employeeId;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.SIN = SIN;
-//		this.profile = profile;
-//		this.email = email;
-//		this.salary = salary;
-//		this.title = title;
-//		this.department = department;
-//		this.address = address;
-//		this.phone = phone;
-//		this.gender = gender;
-//		this.birthDate = birthDate;
-//		this.startDate = startDate;
-//		this.status = status;
-//		this.endDate = endDate;
-//
-//	}
 
 
 }

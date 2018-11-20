@@ -1,6 +1,9 @@
-package Tabs;
+package Sections;
 
 
+import DAO.DepartmentDAO;
+import Models.*;
+import Tables.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,6 +29,12 @@ public class Add extends BorderPane{
 	Desktop desktop = Desktop.getDesktop();
 	DropShadow shadow = new DropShadow();
 	Image profileImage = new Image("icon/profile.jpg");
+	DepartmentTable departmentTable = new DepartmentTable();
+	GenderTable genderTable = new GenderTable();
+    ProvinceTable provinceTable = new ProvinceTable();
+    TitleTable titleTable = new TitleTable();
+    SituationTable situationTable = new SituationTable();
+
 	
 	private Add() {
 //		this.setText("Add");
@@ -107,8 +116,8 @@ public class Add extends BorderPane{
 		EfirstName.relocate(390,40);
 		TextField ElastName = new TextField();
 		ElastName.relocate(690,40);
-		ComboBox<Enums.gender> Egender = new ComboBox<>();
-		Egender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+		ComboBox<Gender> Egender = new ComboBox<>();
+		Egender.setItems(FXCollections.observableArrayList(genderTable.getAllGender()));
 		Egender.setPrefWidth(185);
 		Egender.relocate(390,90);
 		DatePicker EbirthDate = new DatePicker();
@@ -127,8 +136,8 @@ public class Add extends BorderPane{
 		Ecity.relocate(654,190);
 		Ecity.setPromptText("City");
 		Ecity.setPrefWidth(90);
-		ComboBox<Enums.province> Eprovince = new ComboBox<>();
-		Eprovince.setItems(FXCollections.observableArrayList(Enums.province.values()));
+		ComboBox<Province> Eprovince = new ComboBox<>();
+		Eprovince.setItems(FXCollections.observableArrayList(provinceTable.getAllProvince()));
 		Eprovince.setPrefWidth(111);
 		Eprovince.relocate(763,190);
 		Eprovince.setPromptText("Province");
@@ -138,30 +147,27 @@ public class Add extends BorderPane{
 		EID.relocate(390,240);
 		TextField ESIN = new TextField();
 		ESIN.relocate(690,240);
-		TextField Esalary = new TextField();
-		Esalary.relocate(390,290);
-		ComboBox<Enums.title> Etitle = new ComboBox<>();
-		Etitle.setItems(FXCollections.observableArrayList(Enums.title.values()));
+        ComboBox<Department> Edepartment = new ComboBox<>();
+        Edepartment.setPrefWidth(188);
+        Edepartment.setItems(FXCollections.observableArrayList(departmentTable.getAllDepartment()));
+        Edepartment.relocate(390,290);
+		ComboBox<Title> Etitle = new ComboBox<>();
+		Etitle.setItems(FXCollections.observableArrayList(titleTable.getAllTitle()));
 		Etitle.setPrefWidth(188);
-		Etitle.relocate(690,290);
-		ComboBox<Enums.department> Edepartment = new ComboBox<>();
-		Edepartment.setPrefWidth(188);
-		Edepartment.setItems(FXCollections.observableArrayList(Enums.department.values()));
-		Edepartment.relocate(390,340);
-		ComboBox<Enums.situation> Estatus = new ComboBox<>();
-		Estatus.setPrefWidth(188);
-		Estatus.setItems(FXCollections.observableArrayList(Enums.situation.values()));
-		Estatus.relocate(690,340);
+		Etitle.relocate(690,340);
+        ComboBox<Situation> Estatus = new ComboBox<>();
+        Estatus.setPrefWidth(188);
+        Estatus.setItems(FXCollections.observableArrayList(situationTable.getAllSituation()));
+        Estatus.relocate(390,340);
+		TextField Esalary = new TextField();
+        Esalary.relocate(690,290);
 		DatePicker EstartDate = new DatePicker();
 		EstartDate.setPrefWidth(188);
 		EstartDate.relocate(390,390);
 		DatePicker EendDate = new DatePicker();
 		EendDate.setPrefWidth(188);
 		EendDate.relocate(690,390);
-		//Checkbox
-		CheckBox agree = new CheckBox();
-		agree.relocate(250,490);
-		agree.setText("By clicking button below, you agree to our terms of service and privacy statement.");
+
 
 
 		//Button save
@@ -195,7 +201,7 @@ public class Add extends BorderPane{
 
 		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,sin, ESIN,salary, Esalary,title, Etitle,department, Edepartment,
 				address, Eaddress,phone, Ecity,Eprovince, Ephone,email, Eemail,gender, Egender, ID, EID, status, Estatus,
-				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, agree, save);
+				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, save);
 
 
 

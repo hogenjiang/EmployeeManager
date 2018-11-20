@@ -22,10 +22,10 @@ public class Const {
 	public static final String EMPLOYEE_COLUMN_FIRSTNAME = "firstName";
 	public static final String EMPLOYEE_COLUMN_LASTNAME = "lastName";
 	public static final String EMPLOYEE_COLUMN_BIRTHDATE = "birthDate";
-	public static final String EMPLOYEE_COLUMN_SIN = "sin";
-	public static final String EMPLOYEE_COLUMN_PROFILE = "profile";
 	public static final String EMPLOYEE_COLUMN_SALARY = "salary";
 	public static final String EMPLOYEE_COLUMN_TITLE = "title";
+	public static final String EMPLOYEE_COLUMN_PROVINCE = "province";
+	public static final String EMPLOYEE_COLUMN_CITY = "city";
 	public static final String EMPLOYEE_COLUMN_DEPARTMENT = "department";
 	public static final String EMPLOYEE_COLUMN_ADDRESS = "address";
 	public static final String EMPLOYEE_COLUMN_PHONE = "phone";
@@ -34,6 +34,27 @@ public class Const {
 	public static final String EMPLOYEE_COLUMN_STATUS = "status";
 	public static final String EMPLOYEE_COLUMN_STARTDATE = "startDate";
 	public static final String EMPLOYEE_COLUMN_ENDDATE = "endDate";
+
+
+	public static final String TABLE_GENDER = "gender";
+	public static final String GENDER_COLUMN_ID = "id";
+	public static final String GENDER_COLUMN_GENDER = "gender";
+
+	public static final String TABLE_PROVINCE = "province";
+	public static final String PROVINCE_COLUMN_ID = "id";
+	public static final String PROVINCE_COLUMN_PROVINCE = "province";
+
+	public static final String TABLE_SITUATION = "situation";
+	public static final String SITUATION_COLUMN_ID = "id";
+	public static final String SITUATION_COLUMN_SITUATION = "situation";
+
+	public static final String TABLE_DEPARTMENT = "department";
+	public static final String DEPARTMENT_COLUMN_ID = "id";
+	public static final String DEPARTMENT_COLUMN_DEPARTMENT = "department";
+
+	public static final String TABLE_TITLE = "title";
+	public static final String TITLE_COLUMN_ID = "id";
+	public static final String TITLE_COLUMN_TITLE = "title";
 
 
 public static final String CREATE_TABLE_USER =
@@ -52,20 +73,65 @@ public static final String CREATE_TABLE_USER =
 					EMPLOYEE_COLUMN_EMPLOYEEID + " VARCHAR(5), " +
 					EMPLOYEE_COLUMN_FIRSTNAME + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_LASTNAME + " VARCHAR(50), " +
-					EMPLOYEE_COLUMN_SIN + " VARCHAR(9), " +
-					EMPLOYEE_COLUMN_PROFILE + " BLOB, " +
 					EMPLOYEE_COLUMN_SALARY + " VARCHAR(50), " +
-					EMPLOYEE_COLUMN_TITLE + " VARCHAR(50), " +
-					EMPLOYEE_COLUMN_DEPARTMENT + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_ADDRESS + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_PHONE + " VARCHAR(10), " +
 					EMPLOYEE_COLUMN_EMAIL + " VARCHAR(50), " +
-					EMPLOYEE_COLUMN_GENDER + " VARCHAR(10), " +
-					EMPLOYEE_COLUMN_STATUS + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_BIRTHDATE + " DATE, " +
 					EMPLOYEE_COLUMN_STARTDATE + " DATE, " +
 					EMPLOYEE_COLUMN_ENDDATE + " DATE, " +
+					EMPLOYEE_COLUMN_TITLE + " int REFERENCES " +
+					TABLE_TITLE + "(" + TITLE_COLUMN_ID + ")," +
+					EMPLOYEE_COLUMN_DEPARTMENT + " int REFERENCES " +
+					TABLE_DEPARTMENT + "(" + DEPARTMENT_COLUMN_ID + ")," +
+					EMPLOYEE_COLUMN_GENDER + " int REFERENCES " +
+					TABLE_GENDER + "(" + GENDER_COLUMN_ID + ")," +
+					EMPLOYEE_COLUMN_STATUS + " int REFERENCES " +
+					TABLE_SITUATION + "(" + SITUATION_COLUMN_ID + ")," +
+					EMPLOYEE_COLUMN_PROVINCE + " int REFERENCES " +
+					TABLE_PROVINCE + "(" + PROVINCE_COLUMN_ID + ")," +
+					EMPLOYEE_COLUMN_CITY + " VARCHAR(50), " +
 					"PRIMARY KEY(" + EMPLOYEE_COLUMN_ID + ")" +
 					");";
+
+	public static final String CREATE_TABLE_GENDER =
+			"CREATE TABLE " + TABLE_GENDER  + " (" +
+					GENDER_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+					GENDER_COLUMN_GENDER + " VARCHAR(50), " +
+					"PRIMARY KEY(" + GENDER_COLUMN_ID + ")" +
+					");";
+
+
+	public static final String CREATE_TABLE_DEPARTMENT =
+			"CREATE TABLE " + TABLE_DEPARTMENT  + " (" +
+					DEPARTMENT_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+					DEPARTMENT_COLUMN_DEPARTMENT + " VARCHAR(50), " +
+					"PRIMARY KEY(" + DEPARTMENT_COLUMN_ID + ")" +
+					");";
+
+
+
+	public static final String CREATE_TABLE_TITLE =
+			"CREATE TABLE " + TABLE_TITLE  + " (" +
+					TITLE_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+					TITLE_COLUMN_TITLE + " VARCHAR(50), " +
+					"PRIMARY KEY(" + TITLE_COLUMN_ID + ")" +
+					");";
+
+
+	public static final String CREATE_TABLE_SITUATION =
+			"CREATE TABLE " + TABLE_SITUATION  + " (" +
+					SITUATION_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+					SITUATION_COLUMN_SITUATION + " VARCHAR(50), " +
+					"PRIMARY KEY(" + SITUATION_COLUMN_ID + ")" +
+					");";
+
+	public static final String CREATE_TABLE_PROVINCE =
+			"CREATE TABLE " + TABLE_PROVINCE  + " (" +
+					PROVINCE_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
+					PROVINCE_COLUMN_PROVINCE + " VARCHAR(50), " +
+					"PRIMARY KEY(" + PROVINCE_COLUMN_ID + ")" +
+					");";
+
 
 }

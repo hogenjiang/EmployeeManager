@@ -18,6 +18,13 @@ public class Account {
 		this.email = email;
 		this.gender = gender;
 	}
+
+	public Account(String login, String password, String email, String gender) {
+		this.login = login;
+		this.password = password;
+		this.email = email;
+		this.gender = gender;
+	}
 	
 	public int getId() {
 		return id;
@@ -59,11 +66,6 @@ public class Account {
 		this.gender = gender;
 	}
 
-	public Account(String login, String password, String email, String gender) {
-		this.login = login;
-		this.password = password;
-		this.email = email;
-		this.gender = gender;
-	}
+
 
 }
