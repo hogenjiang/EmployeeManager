@@ -1,11 +1,12 @@
 package Enums;
 
 
-public enum Situation {
-Hour,Salary;
+public enum situation {
+	Temporary,Hourly,Salary;
 	public String toString() {
 		switch(this){
-			case Hour: return "Hourly";
+			case Temporary: return "Temporary";
+			case Hourly: return "Hourly";
 			case Salary: return "Salary";
 		}
 		

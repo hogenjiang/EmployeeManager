@@ -295,16 +295,12 @@ back.setOnAction(new EventHandler<ActionEvent>() {
 					grid.add(tip, 2, 2);
 					grid.add(signup, 3, 2);
 
-
 					vbox.getChildren().addAll(message,login);
-
 
 					signuproot.getChildren().add(background4K);
 					signuproot.setTop(hbox);
 					signuproot.setCenter(vbox);
 					signuproot.setBottom(grid);
-
-
 
 
 					TranslateTransition tb1 = new TranslateTransition(Duration.millis(200), username);
@@ -389,17 +385,6 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		menu.setPadding(new Insets(0,0,0,6));
 		helpMenu.getItems().add(webItem);
 
-//		//TabPane
-//		TabPane tabPane = new TabPane();
-//		tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-//		//Three tabs
-
-//		add.setClosable(false);
-//		RemoveItemTab removeItemTab = RemoveItemTab.getInstance();
-//		removeItemTab.setClosable(false);
-//		tabPane.getTabs().addAll(add, removeItemTab);
-//		tabPane.setSide(Side.BOTTOM);
-
 
 		Add add = Add.getInstance();
 		Home home = Home.getInstance();
@@ -442,6 +427,8 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 				});
 		addButton.setOnAction(e->{
 			border.setCenter(add);
+			scene2.getStylesheets().remove("CSS/combo.css");
+			scene2.getStylesheets().add("CSS/datepicker.css");
 
 		});
 
@@ -462,12 +449,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 				});
 		statisticsButton.setOnAction(e->{
 			border.setCenter(statistics);
-
 		});
-
-
-
-
 
 
 
@@ -481,7 +463,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		anchorPane.getChildren().addAll(homeButton, addButton, statisticsButton);
 
 		HBox bb = new HBox(menu, anchorPane);
-		bb.setSpacing(665);
+		bb.setSpacing(640);
 
 		//Define scene
 		border.getChildren().addAll(background);

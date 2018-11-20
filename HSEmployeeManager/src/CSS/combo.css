@@ -61,4 +61,28 @@
     -fx-background-color: transparent;
 }
 
+.combo-box{
+    -fx-background-color: #ffffff;
+}
+
+
+.menu{
+    -fx-font-family: "sans-serif";
+    -fx-font-weight: bold;
+
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: white;
+}
+
+.date-picker > .arrow-button > .arrow {
+}
+
+.date-picker > {
+    -fx-background-color: white;
+
+}
+
+
 

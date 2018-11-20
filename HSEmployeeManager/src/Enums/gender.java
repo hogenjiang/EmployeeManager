@@ -1,13 +1,12 @@
 package Enums;
 
 public enum gender {
-MALE,FEMALE;
+Male,Female;
 	public String toString() {
 		switch(this){
-			case MALE: return "male";
-			case FEMALE: return "female";
+			case Male: return "Male";
+			case Female: return "Female";
 		}
-		
 		return null;
 	}
 

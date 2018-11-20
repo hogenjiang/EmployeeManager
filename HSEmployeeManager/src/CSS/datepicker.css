@@ -3,11 +3,15 @@
 }
 
 
-.button{
+.bb{
     -fx-font-size: 16;
     -fx-base: #2c5185;
     -fx-background-color: #2c5185;
     -fx-border-radius: 5;
+}
+
+.button{
+    -fx-base: #3c7be0;
 }
 
 .check-box .box {

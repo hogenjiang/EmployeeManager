@@ -1,12 +1,11 @@
 package Tabs;
 
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,8 +14,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -40,6 +37,7 @@ public class Add extends BorderPane{
 		Button choose = new Button("Add picture");
 
 		choose.getStyleClass().add("Button");
+		choose.getStyleClass().add("bb");
 		choose.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
 					@Override public void handle(MouseEvent e) {
@@ -109,32 +107,56 @@ public class Add extends BorderPane{
 		EfirstName.relocate(390,40);
 		TextField ElastName = new TextField();
 		ElastName.relocate(690,40);
-		TextField Egender = new TextField();
+		ComboBox<Enums.gender> Egender = new ComboBox<>();
+		Egender.setItems(FXCollections.observableArrayList(Enums.gender.values()));
+		Egender.setPrefWidth(185);
 		Egender.relocate(390,90);
 		DatePicker EbirthDate = new DatePicker();
+		EbirthDate.setPrefWidth(188);
 		EbirthDate.relocate(690,90);
 		TextField Ephone = new TextField();
 		Ephone.relocate(390,140);
+
 		TextField Eemail = new TextField();
 		Eemail.relocate(690,140);
 		TextField Eaddress = new TextField();
-		Eaddress.setPrefWidth(485);
+		Eaddress.setPrefWidth(250);
 		Eaddress.relocate(390,190);
+
+		TextField Ecity = new TextField();
+		Ecity.relocate(654,190);
+		Ecity.setPromptText("City");
+		Ecity.setPrefWidth(90);
+		ComboBox<Enums.province> Eprovince = new ComboBox<>();
+		Eprovince.setItems(FXCollections.observableArrayList(Enums.province.values()));
+		Eprovince.setPrefWidth(111);
+		Eprovince.relocate(763,190);
+		Eprovince.setPromptText("Province");
+
+
 		TextField EID = new TextField();
 		EID.relocate(390,240);
 		TextField ESIN = new TextField();
 		ESIN.relocate(690,240);
 		TextField Esalary = new TextField();
 		Esalary.relocate(390,290);
-		TextField Etitle = new TextField();
+		ComboBox<Enums.title> Etitle = new ComboBox<>();
+		Etitle.setItems(FXCollections.observableArrayList(Enums.title.values()));
+		Etitle.setPrefWidth(188);
 		Etitle.relocate(690,290);
-		TextField Edepartment = new TextField();
+		ComboBox<Enums.department> Edepartment = new ComboBox<>();
+		Edepartment.setPrefWidth(188);
+		Edepartment.setItems(FXCollections.observableArrayList(Enums.department.values()));
 		Edepartment.relocate(390,340);
-		TextField Estatus = new TextField();
+		ComboBox<Enums.situation> Estatus = new ComboBox<>();
+		Estatus.setPrefWidth(188);
+		Estatus.setItems(FXCollections.observableArrayList(Enums.situation.values()));
 		Estatus.relocate(690,340);
-		TextField EstartDate = new TextField();
+		DatePicker EstartDate = new DatePicker();
+		EstartDate.setPrefWidth(188);
 		EstartDate.relocate(390,390);
-		TextField EendDate = new TextField();
+		DatePicker EendDate = new DatePicker();
+		EendDate.setPrefWidth(188);
 		EendDate.relocate(690,390);
 		//Checkbox
 		CheckBox agree = new CheckBox();
@@ -144,7 +166,8 @@ public class Add extends BorderPane{
 
 		//Button save
 		Button save = new Button("Create employee");
-		save.relocate(400,600);
+		save.getStyleClass().add("bb");
+		save.relocate(570,600);
 		save.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
 					@Override public void handle(MouseEvent e) {
@@ -171,9 +194,9 @@ public class Add extends BorderPane{
 
 
 		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,sin, ESIN,salary, Esalary,title, Etitle,department, Edepartment,
-				address, Eaddress,phone, Ephone,email, Eemail,gender, Egender, ID, EID, status, Estatus,
+				address, Eaddress,phone, Ecity,Eprovince, Ephone,email, Eemail,gender, Egender, ID, EID, status, Estatus,
 				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, agree, save);
-		canvas.getStylesheets().add("CSS/combo.css");
+
 
 
 		this.getChildren().add(canvas);
