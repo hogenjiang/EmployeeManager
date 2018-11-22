@@ -1,9 +1,11 @@
 package Sections;
 
 
+import Models.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Home extends Pane {
+public class Home extends BorderPane {
     private static Home home;
     private Home(){
 //1
@@ -26,48 +28,9 @@ public class Home extends Pane {
         TableColumn titleCol = new TableColumn("Job Title");
         table.getColumns().addAll(firstNameCol, lastNameCol, titleCol);
 
-//        final ObservableList<Employ_home> data = FXCollections.observableArrayList(
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook"),
-//                new Employ_home("Hello", "Kitty", "Cook")
-//
-//
-//        );
+        final ObservableList<Employee> data = FXCollections.observableArrayList(
+
+        );
 
         firstNameCol.setCellValueFactory(
                 new PropertyValueFactory<>("FirstName")
@@ -79,18 +42,22 @@ public class Home extends Pane {
                 new PropertyValueFactory<>("Title")
         );
 
-//        table.setItems(data);
+        table.setItems(data);
         table.setEditable(false);
-        table.setMinWidth(259);
-        table.setMinHeight(700);
+        table.setPrefSize(255,50);
 
-        VBox vBox = new VBox();
-        vBox.setPadding(new Insets(10,0,0,6));
 
-        List<TableView> list = new ArrayList<TableView>();
+
+        List<String> list = new ArrayList<String>();
+        list.add("Ravi");
+        list.add("Vijay");
+        list.add("Ravi");
+        list.add("Ajay");
         flow.setHgap(5);
-        flow.getChildren().addAll(list);
-        vBox.relocate(10,10);
+        for (int i = 0;i<90){
+            flow.getChildren().add(list)
+        }
+
 
 
 
@@ -100,13 +67,17 @@ public class Home extends Pane {
                         new PieChart.Data("Salary Employee", 64),
                         new PieChart.Data("Hourly Employee", 36));
         PieChart chart = new PieChart(PieData);
-//        chart.setLabelLineLength(7);
-//        chart.setPrefSize(400,400);
 
-        VBox vBox1 = new VBox(chart);
-        vBox1.setPadding(new Insets(10,0,0,30));
-        vBox1.relocate(240,0);
-        this.getChildren().addAll(vBox, vBox1);
+        VBox vBox = new VBox(chart,flow);
+        vBox.setSpacing(5);
+
+
+        HBox hBox = new HBox();
+        hBox.getChildren().addAll(table,chart);
+        hBox.setPadding(new Insets(10,0,0,10));
+
+
+        this.setCenter(hBox);
         this.getStylesheets().add("CSS/table.css");
     }
 

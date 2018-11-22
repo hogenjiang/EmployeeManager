@@ -178,8 +178,7 @@ public class Employee {
 		this.Province = Province;
 	}
 
-	public Employee(int id, String EmployeeId, String FirstName, String LastName, String Salary, int Title, int Department, String Address, String Phone, String Email,
-					int Gender, int Status, String BirthDate, String StartDate, String EndDate, String City, int Province){
+	public Employee(String EmployeeId, String FirstName){
 		this.id = id;
 		this.EmployeeId = EmployeeId;
 		this.FirstName = FirstName;
