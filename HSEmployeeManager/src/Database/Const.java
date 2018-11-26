@@ -23,6 +23,9 @@ public class Const {
 	public static final String DEPARTMENT_COLUMN_ID = "departmentId";
 	public static final String DEPARTMENT_COLUMN_NAME = "departmentName";
 	public static final String DEPARTMENT_COLUMN_MANAGER = "manager";
+	public static final String TABLE_CITY = "city";
+	public static final String CITY_COLUMN_ID = "cityId";
+	public static final String CITY_COLUMN_NAME = "name";
 	
 	
 	//Create the database tables
@@ -60,6 +63,13 @@ public class Const {
 			
 			");";
 	
+	
+	public static final String CREATE_TABLE_CITY = 
+			"CREATE TABLE " + TABLE_CITY  + " (" +
+			 CITY_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " + 
+			 CITY_COLUMN_NAME + " VARCHAR(30), " +
+			 "PRIMARY KEY(" + DEPARTMENT_COLUMN_ID + ")" +
+			");";
 	
 	
 	

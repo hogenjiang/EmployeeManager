@@ -52,9 +52,9 @@ public class AddEmployeeTab extends Tab{
 				 Text location = new Text("City:");
 					pane.add(location, 0, 3);
 				 
-		  ComboBox<ENUMS.City> comboCity = new ComboBox<>();
+		  ComboBox<Cities.City> comboCity = new ComboBox<>();
 		  comboCity.setItems(
-				FXCollections.observableArrayList(ENUMS.City.values()));
+				FXCollections.observableArrayList(ENUMS.Cities.values()));
 		pane.add(comboCity,1, 3);
 		
 		

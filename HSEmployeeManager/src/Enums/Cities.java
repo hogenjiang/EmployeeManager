@@ -1,6 +1,6 @@
-package ENUMS;
+package Enums;
 
-public enum City {
+public enum Cities {
 	
 	
 	Windsor,

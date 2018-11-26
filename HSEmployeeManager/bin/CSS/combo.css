@@ -1,0 +1,29 @@
+.TextField{
+    -fx-background-color: #ffffff;
+}
+
+.Button{
+    -fx-font-size: 16;
+    -fx-base: #2c5185;
+    -fx-background-color: #2c5185;
+    -fx-border-radius: 5;
+}
+
+.Table{
+	-fx-font-size: 16;
+    -fx-base: #C0C0C0;
+    -fx-background-color: #C0C0C0;
+}
+
+.Pie{
+	-fx-pie-color: #ffd700;
+}
+
+.data0.chart-pie
+{
+-fx-pie-color: #808080;
+
+}
+.data1.chart-pie{
+-fx-pie-color: #C0C0C0;
+}
