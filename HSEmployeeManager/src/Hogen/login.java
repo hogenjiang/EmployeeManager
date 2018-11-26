@@ -213,7 +213,7 @@ login.setOnAction(new EventHandler<ActionEvent>() {
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(false);
+							primaryStage.setResizable(true);
 							primaryStage.show();
 						}
 
