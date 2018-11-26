@@ -1,8 +1,8 @@
 package Database;
 
 public class Const {
-	public static final String DB_NAME = "jjiangblog";
-	public static final String DB_USER = "jjiang";
+	public static final String DB_NAME = "test";
+	public static final String DB_USER = "hogenjiang";
 	public static final String DB_PASS = "jiang318";
 
 //Create a constant for each table column

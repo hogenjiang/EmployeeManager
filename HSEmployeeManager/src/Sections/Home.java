@@ -54,9 +54,9 @@ public class Home extends BorderPane {
         list.add("Ravi");
         list.add("Ajay");
         flow.setHgap(5);
-        for (int i = 0;i<90){
-            flow.getChildren().add(list)
-        }
+//        for (int i = 0;i<90){
+//            flow.getChildren().add(list)
+//        }
 
 
 
