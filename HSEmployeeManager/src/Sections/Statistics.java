@@ -6,8 +6,7 @@ public class Statistics extends BorderPane {
     private static Statistics tab;
     private Statistics(){
 
-//        this.setLeft();
-//        this.setCenter();
+
     }
 
     public static Statistics getInstance(){

@@ -73,7 +73,7 @@ public class Home extends BorderPane {
 
 
         HBox hBox = new HBox();
-        hBox.getChildren().addAll(table,chart);
+        hBox.getChildren().addAll(chart);
         hBox.setPadding(new Insets(10,0,0,10));
 
 

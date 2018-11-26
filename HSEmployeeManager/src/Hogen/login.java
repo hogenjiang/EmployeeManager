@@ -32,6 +32,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -344,6 +346,9 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 
 		//SCENE 2
+		WebView browser = new WebView();
+		WebEngine webEngine = browser.getEngine();
+		webEngine.load("http://eclipse.com");
 
 		//build menu bar, item, create tabPane, tab, borderPane, top, center
 		MenuBar menu = new MenuBar();
@@ -374,6 +379,12 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		employeeItem.addEventHandler(ActionEvent.ACTION, (e) -> {
 
 		});
+
+
+		webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+
+		});
+
 
 		fileMenu.getItems().addAll(newItem, exportItem, exitItem);
 		newItem.getItems().addAll(employeeItem);
