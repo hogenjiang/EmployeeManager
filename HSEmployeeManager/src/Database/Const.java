@@ -1,8 +1,10 @@
 package Database;
 
+import javafx.scene.image.Image;
+
 public class Const {
-	public static final String DB_NAME = "jjiangblog";
-	public static final String DB_USER = "jjiang";
+	public static final String DB_NAME = "test";
+	public static final String DB_USER = "hogenjiang";
 	public static final String DB_PASS = "jiang318";
 
 //Create a constant for each table column
@@ -36,9 +38,6 @@ public class Const {
 	public static final String EMPLOYEE_COLUMN_ENDDATE = "endDate";
 
 
-	public static final String TABLE_GENDER = "gender";
-	public static final String GENDER_COLUMN_ID = "id";
-	public static final String GENDER_COLUMN_GENDER = "gender";
 
 	public static final String TABLE_PROVINCE = "province";
 	public static final String PROVINCE_COLUMN_ID = "id";
@@ -55,6 +54,8 @@ public class Const {
 	public static final String TABLE_TITLE = "title";
 	public static final String TITLE_COLUMN_ID = "id";
 	public static final String TITLE_COLUMN_TITLE = "title";
+
+
 
 
 public static final String CREATE_TABLE_USER =
@@ -77,6 +78,7 @@ public static final String CREATE_TABLE_USER =
 					EMPLOYEE_COLUMN_ADDRESS + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_PHONE + " VARCHAR(10), " +
 					EMPLOYEE_COLUMN_EMAIL + " VARCHAR(50), " +
+					EMPLOYEE_COLUMN_GENDER + " VARCHAR(50), " +
 					EMPLOYEE_COLUMN_BIRTHDATE + " DATE, " +
 					EMPLOYEE_COLUMN_STARTDATE + " DATE, " +
 					EMPLOYEE_COLUMN_ENDDATE + " DATE, " +
@@ -84,8 +86,6 @@ public static final String CREATE_TABLE_USER =
 					TABLE_TITLE + "(" + TITLE_COLUMN_ID + ")," +
 					EMPLOYEE_COLUMN_DEPARTMENT + " int REFERENCES " +
 					TABLE_DEPARTMENT + "(" + DEPARTMENT_COLUMN_ID + ")," +
-					EMPLOYEE_COLUMN_GENDER + " int REFERENCES " +
-					TABLE_GENDER + "(" + GENDER_COLUMN_ID + ")," +
 					EMPLOYEE_COLUMN_STATUS + " int REFERENCES " +
 					TABLE_SITUATION + "(" + SITUATION_COLUMN_ID + ")," +
 					EMPLOYEE_COLUMN_PROVINCE + " int REFERENCES " +
@@ -94,12 +94,7 @@ public static final String CREATE_TABLE_USER =
 					"PRIMARY KEY(" + EMPLOYEE_COLUMN_ID + ")" +
 					");";
 
-	public static final String CREATE_TABLE_GENDER =
-			"CREATE TABLE " + TABLE_GENDER  + " (" +
-					GENDER_COLUMN_ID + " int NOT NULL AUTO_INCREMENT, " +
-					GENDER_COLUMN_GENDER + " VARCHAR(50), " +
-					"PRIMARY KEY(" + GENDER_COLUMN_ID + ")" +
-					");";
+
 
 
 	public static final String CREATE_TABLE_DEPARTMENT =
@@ -132,6 +127,7 @@ public static final String CREATE_TABLE_USER =
 					PROVINCE_COLUMN_PROVINCE + " VARCHAR(50), " +
 					"PRIMARY KEY(" + PROVINCE_COLUMN_ID + ")" +
 					");";
+
 
 
 }

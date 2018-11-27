@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import Models.Account;
+import Sections.ViewAll;
 import Tables.AccountTable;
 import Sections.Add;
 import Sections.Home;
@@ -48,6 +49,9 @@ public class login extends Application{
 	private ImageView profile = new ImageView();
 
 	private Scene scene1, scene2;
+	private Add add = Add.getInstance();
+	private Home home = Home.getInstance();
+	private Statistics statistics = Statistics.getInstance();
 	
 	//Main entrance
 	ListView<String> list = new ListView<String>(); 
@@ -365,8 +369,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		MenuItem employeeItem = new MenuItem("Employee");
 		MenuItem exportItem = new MenuItem("Export");
 		MenuItem exitItem = new MenuItem("Exit");
-		MenuItem tableItem = new MenuItem("Table");
-		MenuItem graphItem = new MenuItem("Graph");
+		MenuItem allItem = new MenuItem("View All");
 		MenuItem webItem = new MenuItem("Website");
 
 
@@ -377,26 +380,31 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		});
 
 		employeeItem.addEventHandler(ActionEvent.ACTION, (e) -> {
-
+			border.setCenter(add);
+			scene2.getStylesheets().remove("CSS/combo.css");
+			scene2.getStylesheets().add("CSS/datepicker.css");
 		});
 
 
 		webItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+			border.setCenter(browser);
+		});
 
+		allItem.addEventHandler(ActionEvent.ACTION, (e) -> {
+			ViewAll viewAll = ViewAll.getInstance();
+			border.setCenter(viewAll);
 		});
 
 
 		fileMenu.getItems().addAll(newItem, exportItem, exitItem);
 		newItem.getItems().addAll(employeeItem);
-		viewMenu.getItems().addAll(tableItem,graphItem);
+		viewMenu.getItems().addAll(allItem);
 		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
 		menu.setPadding(new Insets(0,0,0,6));
 		helpMenu.getItems().add(webItem);
 
 
-		Add add = Add.getInstance();
-		Home home = Home.getInstance();
-		Statistics statistics = Statistics.getInstance();
+
 
 		Button homeButton = new Button();
 		homeButton.setGraphic(new ImageView("icon/home.png"));
@@ -481,6 +489,10 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		root.setTop(hbox);
 		root.setCenter(vbox);
 		root.setBottom(grid);
+
+
+
+
 		scene1 = new Scene(root, 1024, 768);
 		scene2 = new Scene(border,1024,768);
 		scene1.getStylesheets().add("CSS/combo.css");

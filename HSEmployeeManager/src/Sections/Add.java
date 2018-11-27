@@ -36,8 +36,8 @@ public class Add extends BorderPane{
 
 	
 	private Add() {
-//		this.setText("Add");
 		Pane canvas = new Pane();
+		EmployeeTable table = new EmployeeTable();
 		//profile
 		profile.setImage(profileImage);
 		profile.setFitHeight(213);
@@ -94,10 +94,10 @@ public class Add extends BorderPane{
 		email.relocate(600,145);
 		Text address = new Text("Address ");
 		address.relocate(300,195);
-		Text ID = new Text("ID ");
-		ID.relocate(300,245);
-		Text sin = new Text("SIN ");
-		sin.relocate(600,245);
+		Text city = new Text("City ");
+		city.relocate(300,245);
+		Text province = new Text("Province ");
+		province.relocate(600,245);
 		Text department = new Text("Department ");
 		department.relocate(300,295);
 		Text title = new Text("Title ");
@@ -111,6 +111,9 @@ public class Add extends BorderPane{
 		Text enddate = new Text("End Date ");
 		enddate.relocate(600,395);
 		//TextField
+
+		ImageView im = new ImageView("icon/plus.png");
+		TextField EemployeeId = new TextField();
 		TextField EfirstName = new TextField();
 		EfirstName.relocate(390,40);
 		TextField ElastName = new TextField();
@@ -128,24 +131,18 @@ public class Add extends BorderPane{
 		TextField Eemail = new TextField();
 		Eemail.relocate(690,140);
 		TextField Eaddress = new TextField();
-		Eaddress.setPrefWidth(250);
+		Eaddress.setPrefWidth(500);
 		Eaddress.relocate(390,190);
 
 		TextField Ecity = new TextField();
-		Ecity.relocate(654,190);
-		Ecity.setPromptText("City");
-		Ecity.setPrefWidth(80);
+		Ecity.relocate(390,240);
 		ComboBox<Province> Eprovince = new ComboBox<>();
 		Eprovince.setItems(FXCollections.observableArrayList(provinceTable.getAllProvince()));
-		Eprovince.setPrefWidth(105);
-		Eprovince.relocate(750,190);
-		Eprovince.setPromptText("Province");
+		Eprovince.relocate(690,240);
 
 
-		TextField EID = new TextField();
-		EID.relocate(390,240);
-		TextField ESIN = new TextField();
-		ESIN.relocate(690,240);
+
+
         ComboBox<Department> Edepartment = new ComboBox<>();
         Edepartment.setPrefWidth(167);
         Edepartment.setItems(FXCollections.observableArrayList(departmentTable.getAllDepartment()));
@@ -172,7 +169,7 @@ public class Add extends BorderPane{
 		//Button save
 		Button save = new Button("Create employee");
 		save.getStyleClass().add("bb");
-		save.relocate(570,600);
+		save.relocate(520,600);
 		save.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
 					@Override public void handle(MouseEvent e) {
@@ -190,16 +187,34 @@ public class Add extends BorderPane{
 
 			@Override
 			public void handle(ActionEvent event) {
+				Employee employee = new Employee(
+						EemployeeId.getText().toString(),
+						EfirstName.getText().toString(),
+						ElastName.getText().toString(),
+						Eemail.getText().toString(),
+						Esalary.getText().toString(),
+						Etitle.getSelectionModel().getSelectedItem().getId(),
+						Edepartment.getSelectionModel().getSelectedItem().getId(),
+						Eaddress.getText().toString(),
+						Ephone.getText().toString(),
+						Egender.getSelectionModel().getSelectedItem().toString(),
+						EbirthDate.getValue().toString(),
+						EstartDate.getValue().toString(),
+						Estatus.getSelectionModel().getSelectedItem().getId(),
+						EendDate.getValue().toString(),
+						Ecity.getText().toString(),
+						Eprovince.getSelectionModel().getSelectedItem().getId()
 
+						);
+				table.createEmployee(employee);
 			}
-
 		});
 
 
 
 
-		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,sin, ESIN,salary, Esalary,title, Etitle,department, Edepartment,
-				address, Eaddress,phone, Ecity,Eprovince, Ephone,email, Eemail,gender, Egender, ID, EID, status, Estatus,
+		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,city, Ecity,province, Eprovince,salary, Esalary,title, Etitle,department, Edepartment,
+				address, Eaddress,phone, Ephone,email, Eemail,gender, Egender, status, Estatus,
 				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, save);
 
 
@@ -227,9 +242,7 @@ public class Add extends BorderPane{
 		);
 	}
 
-	private void json(){
 
-	}
 }
 
 

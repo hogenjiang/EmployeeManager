@@ -7,78 +7,54 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Home extends BorderPane {
+public class Home extends Pane {
     private static Home home;
     private Home(){
-//1
-        FlowPane flow = new FlowPane();
-        TableView table = new TableView();
-        TableColumn firstNameCol = new TableColumn("First Name");
-        TableColumn lastNameCol = new TableColumn("Last Name");
-        TableColumn titleCol = new TableColumn("Job Title");
-        table.getColumns().addAll(firstNameCol, lastNameCol, titleCol);
-
-        final ObservableList<Employee> data = FXCollections.observableArrayList(
-
-        );
-
-        firstNameCol.setCellValueFactory(
-                new PropertyValueFactory<>("FirstName")
-        );
-        lastNameCol.setCellValueFactory(
-                new PropertyValueFactory<>("LastName")
-        );
-        titleCol.setCellValueFactory(
-                new PropertyValueFactory<>("Title")
-        );
-
-        table.setItems(data);
-        table.setEditable(false);
-        table.setPrefSize(255,50);
-
-
-
-        List<String> list = new ArrayList<String>();
-        list.add("Ravi");
-        list.add("Vijay");
-        list.add("Ravi");
-        list.add("Ajay");
-        flow.setHgap(5);
-//        for (int i = 0;i<90){
-//            flow.getChildren().add(list)
-//        }
-
-
 
 
  //2
-        ObservableList<PieChart.Data> PieData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Salary Employee", 64),
-                        new PieChart.Data("Hourly Employee", 36));
-        PieChart chart = new PieChart(PieData);
+//        ObservableList<PieChart.Data> PieData =
+//                FXCollections.observableArrayList(
+//                        new PieChart.Data("Salary Employee", 64),
+//                        new PieChart.Data("Hourly Employee", 36));
+//        PieChart chart = new PieChart(PieData);
+//
+//        VBox vBox = new VBox(chart,flow);
+//        vBox.setSpacing(5);
 
-        VBox vBox = new VBox(chart,flow);
-        vBox.setSpacing(5);
+     ImageView employee = new ImageView();
+     employee.setImage(new Image("icon/plus.png"));
+        ImageView employee1 = new ImageView();
+        employee1.setImage(new Image("icon/file.png"));
+
+     VBox vBox = new VBox(employee);
+     VBox vv = new VBox(employee1);
 
 
-        HBox hBox = new HBox();
-        hBox.getChildren().addAll(chart);
-        hBox.setPadding(new Insets(10,0,0,10));
+    List<VBox> list = new ArrayList<VBox>();
+    list.add(vBox);
+    list.add(vv);
 
+this.setPadding(new Insets(10,10,10,10));
 
-        this.setCenter(hBox);
-        this.getStylesheets().add("CSS/table.css");
+        this.getChildren().addAll(list);
+
     }
 
     public static Home getInstance() {
@@ -94,5 +70,9 @@ public class Home extends BorderPane {
         }
     }
 
+    private FlowPane addFlowPane(){
+        FlowPane flow = new FlowPane();
+        return flow;
+    }
 
 }

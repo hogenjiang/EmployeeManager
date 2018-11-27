@@ -1,6 +1,9 @@
 package Models;
 
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Employee {
 	public int getId() {
 		return id;
@@ -22,11 +25,22 @@ public class Employee {
 	private String StartDate;
 	private String EndDate;
 	private String City;
+	private String Gender;
 	private int Province;
 	private int Title;
 	private int Department;
-	private int Gender;
 	private int Status;
+
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+
 
 	public int getProvince() {
 		return Province;
@@ -52,13 +66,7 @@ public class Employee {
 		Department = department;
 	}
 
-	public int getGender() {
-		return Gender;
-	}
 
-	public void setGender(int gender) {
-		Gender = gender;
-	}
 
 	public int getStatus() {
 		return Status;
@@ -157,8 +165,9 @@ public class Employee {
 		EndDate = endDate;
 	}
 
-	public Employee(String EmployeeId, String FirstName, String LastName, String Salary, int Title, int Department, String Address, String Phone, String Email,
-					int Gender, int Status, String BirthDate, String StartDate, String EndDate, String City, int Province){
+	public Employee(String EmployeeId, String FirstName, String LastName, String Email,
+					String Salary, int Title, int Department, String Address, String Phone,
+					String Gender, String BirthDate, String StartDate, int Status, String EndDate, String City, int Province){
 
 		this.EmployeeId = EmployeeId;
 		this.FirstName = FirstName;
@@ -178,7 +187,7 @@ public class Employee {
 		this.Province = Province;
 	}
 
-	public Employee(String EmployeeId, String FirstName){
+	public Employee(String EmployeeId, String FirstName, String LastName){
 		this.id = id;
 		this.EmployeeId = EmployeeId;
 		this.FirstName = FirstName;
@@ -198,7 +207,9 @@ public class Employee {
 		this.Province = Province;
 	}
 
-
+	public String toString(){
+		return this.FirstName + " "+ this.LastName;
+	}
 
 
 }
