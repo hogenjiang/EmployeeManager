@@ -60,7 +60,10 @@ public class Home extends BorderPane {
         tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
         tableView1.setMaxWidth(218);
 
-        GridPane gridPane = new GridPane();
+            BorderPane root = new BorderPane();
+            GridPane gridPane = new GridPane();
+            gridPane.add(table.getEmployee(),1,1);
+
 
             tableView1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
@@ -138,6 +141,7 @@ public class Home extends BorderPane {
 
         this.setPadding(new Insets(0,0,0,15));
         this.setLeft(hh);
+        this.setCenter(gridPane);
 
 
     }

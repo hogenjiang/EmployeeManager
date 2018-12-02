@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07996ef4-17ae-4cf1-81d7-56001b74618a" name="Default Changelist" comment="Fresh Project">
-      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/FlowPaneDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HSEmployeeManager/src/txt/companyInformation.java" afterDir="false" />
+    <list default="true" id="07996ef4-17ae-4cf1-81d7-56001b74618a" name="Default Changelist" comment="Version build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/CSS/combo.css" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/CSS/combo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Gender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/HSEmployeeManager/bin/" />
@@ -49,15 +41,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="18" />
-          <entry key="java" value="10294" />
-          <entry key="txt" value="13" />
+          <entry key="java" value="10672" />
+          <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="18" />
-          <entry key="JAVA" value="10294" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="JAVA" value="10672" />
+          <entry key="PLAIN_TEXT" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,83 +93,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getInstance#0;class#ViewAll#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1273">
-              <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="68" column="83" selection-start-line="68" selection-start-column="83" selection-end-line="68" selection-end-column="83" />
-              <folding>
-                <element signature="method#createEmployee#0;class#EmployeeTable#0" />
-                <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
-                <element signature="method#getAllEmployees#0;class#EmployeeTable#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/AccountTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="88" column="1" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="88" selection-end-column="1" />
-              <folding>
-                <element signature="method#getAccount#0;class#AccountTable#0" />
-                <element signature="method#updateAccount#0;class#AccountTable#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="239" column="41" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+            <state relative-caret-position="323">
+              <caret line="92" column="71" lean-forward="true" selection-start-line="92" selection-start-column="71" selection-end-line="92" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
+                <element signature="method#deleteEmployee#0;class#EmployeeTable#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -185,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            <state relative-caret-position="209">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,22 +119,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="504" column="42" selection-start-line="504" selection-start-column="42" selection-end-line="504" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="78" column="104" selection-start-line="78" selection-start-column="104" selection-end-line="78" selection-end-column="104" />
+            <state relative-caret-position="331">
+              <caret line="143" column="27" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2071#2884#0" />
                 <element signature="e#3300#3343#0" />
+                <element signature="e#3482#3517#0" />
                 <element signature="method#getInstance#0;class#Home#0" />
                 <element signature="method#applyCustomColorSequence#0;class#Home#0" />
               </folding>
@@ -268,7 +185,6 @@
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/txt/companyInformation.java" />
@@ -280,11 +196,12 @@
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" />
       </list>
     </option>
   </component>
@@ -380,7 +297,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/hogen/Documents/HSEmployeeManager/HSEmployeeManager/src/Sections/Home.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543731702889" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543790267341" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -465,7 +382,7 @@
       <workItem from="1543586769198" duration="156000" />
       <workItem from="1543589024979" duration="13365000" />
       <workItem from="1543717353267" duration="12079000" />
-      <workItem from="1543763652166" duration="17208000" />
+      <workItem from="1543763652166" duration="18767000" />
     </task>
     <task id="LOCAL-00001" summary="Fresh Project">
       <created>1543356174730</created>
@@ -474,11 +391,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543356174730</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Version build">
+      <created>1543788874191</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543788874191</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69389000" />
+    <option name="totallyTimeSpent" value="70948000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -493,7 +417,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22379604" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.055240795" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,7 +477,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2efds" />
     <MESSAGE value="Fresh Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fresh Project" />
+    <MESSAGE value="Version build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version build" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/gender.java">
@@ -706,19 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="78" column="104" selection-start-line="78" selection-start-column="104" selection-end-line="78" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3300#3343#0" />
-            <element signature="method#getInstance#0;class#Home#0" />
-            <element signature="method#applyCustomColorSequence#0;class#Home#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/AccountTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -726,28 +638,6 @@
           <folding>
             <element signature="method#getAccount#0;class#AccountTable#0" />
             <element signature="method#updateAccount#0;class#AccountTable#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="68" column="83" selection-start-line="68" selection-start-column="83" selection-end-line="68" selection-end-column="83" />
-          <folding>
-            <element signature="method#createEmployee#0;class#EmployeeTable#0" />
-            <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
-            <element signature="method#getAllEmployees#0;class#EmployeeTable#0" />
           </folding>
         </state>
       </provider>
@@ -782,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="239" column="41" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+        <state relative-caret-position="124">
+          <caret line="237" column="44" selection-start-line="237" selection-start-column="44" selection-end-line="237" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -792,8 +682,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="504" column="42" selection-start-line="504" selection-start-column="42" selection-end-line="504" selection-end-column="42" />
+        <state relative-caret-position="261">
+          <caret line="504" column="38" selection-start-line="504" selection-start-column="38" selection-end-line="504" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="92" column="71" lean-forward="true" selection-start-line="92" selection-start-column="71" selection-end-line="92" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
+            <element signature="method#deleteEmployee#0;class#EmployeeTable#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="143" column="27" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2071#2884#0" />
+            <element signature="e#3300#3343#0" />
+            <element signature="e#3482#3517#0" />
+            <element signature="method#getInstance#0;class#Home#0" />
+            <element signature="method#applyCustomColorSequence#0;class#Home#0" />
+          </folding>
         </state>
       </provider>
     </entry>

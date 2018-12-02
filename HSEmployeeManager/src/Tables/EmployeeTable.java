@@ -5,6 +5,8 @@ import Database.Const;
 import Database.Database;
 import Models.Employee;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
+
 
 import java.io.FileInputStream;
 import java.sql.ResultSet;
@@ -16,6 +18,7 @@ public class EmployeeTable implements EmployeeDAO {
 
     Database db = Database.getInstance();
     ArrayList<Employee> employees;
+    Text employid;
     private Image image;
     private FileInputStream fileInputStream;
 
@@ -77,6 +80,23 @@ public class EmployeeTable implements EmployeeDAO {
     }
 
     @Override
+    public Text getEmployee() {
+        employid = new Text();
+        String query = "SELECT * FROM " + Const.TABLE_EMPLOYEE;
+
+
+
+        try {
+            Statement getItems = db.getConnection().createStatement();
+            ResultSet data = getItems.executeQuery(query);
+            employid.setText(data.getString(Const.EMPLOYEE_COLUMN_ID));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employid;
+    }
+
+    @Override
     public ArrayList<Employee> getAllEmployees() {
         String query = "SELECT * FROM " + Const.TABLE_EMPLOYEE;
         employees = new ArrayList<Employee>();
@@ -103,10 +123,6 @@ public class EmployeeTable implements EmployeeDAO {
                        data.getString(Const.EMPLOYEE_COLUMN_CITY),
                        data.getInt(Const.EMPLOYEE_COLUMN_PROVINCE)
                        ));
-
-
-
-
 
             }
         } catch (SQLException e) {
