@@ -23,7 +23,7 @@ public enum title {
             case MK3: return "Content Marketing Producer";
             case MK4: return "Digital Marketing Manager";
             case MK5: return "Digital Content Specialist";
-            case MK6: return "Social Media Marketing Manager ";
+            case MK6: return "Social Media Marketing Manager";
             case MK7: return "Marketing Content Writer";
             //HR department
             case HR1: return "Administrative Manager";

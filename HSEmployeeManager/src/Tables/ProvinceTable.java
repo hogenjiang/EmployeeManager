@@ -33,4 +33,25 @@ public class ProvinceTable implements ProvinceDAO {
         }
         return provinces;
     }
+
+   @Override
+    public Province getProvince(int provinceID) {
+        String query = "SELECT * FROM " + Const.TABLE_PROVINCE + " WHERE "
+                + Const.PROVINCE_COLUMN_ID + "=" + "'" + provinceID + "'";
+        Province province = null;
+        try {
+            Statement getProvince = db.getConnection().createStatement();
+            ResultSet data = getProvince.executeQuery(query);
+            while(data.next()) {
+                province = new Province(
+                                data.getInt(Const.EMPLOYEE_COLUMN_ID),
+                                data.getString(Const.PROVINCE_COLUMN_PROVINCE));
+            }
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return province;
+    }
+
 }

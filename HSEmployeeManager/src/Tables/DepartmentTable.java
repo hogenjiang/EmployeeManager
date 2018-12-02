@@ -34,4 +34,6 @@ public class DepartmentTable implements DepartmentDAO {
         }
                 return departments;
     }
+
+
 }

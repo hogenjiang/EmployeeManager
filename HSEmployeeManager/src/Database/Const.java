@@ -1,6 +1,7 @@
 package Database;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Const {
 	public static final String DB_NAME = "test";
@@ -36,6 +37,7 @@ public class Const {
 	public static final String EMPLOYEE_COLUMN_STATUS = "status";
 	public static final String EMPLOYEE_COLUMN_STARTDATE = "startDate";
 	public static final String EMPLOYEE_COLUMN_ENDDATE = "endDate";
+	public static final String image = "image";
 
 
 
@@ -91,6 +93,7 @@ public static final String CREATE_TABLE_USER =
 					EMPLOYEE_COLUMN_PROVINCE + " int REFERENCES " +
 					TABLE_PROVINCE + "(" + PROVINCE_COLUMN_ID + ")," +
 					EMPLOYEE_COLUMN_CITY + " VARCHAR(50), " +
+					image + " BLOB, " +
 					"PRIMARY KEY(" + EMPLOYEE_COLUMN_ID + ")" +
 					");";
 

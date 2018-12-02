@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07996ef4-17ae-4cf1-81d7-56001b74618a" name="Default Changelist" comment="2efds">
-      <change afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" afterDir="false" />
+    <list default="true" id="07996ef4-17ae-4cf1-81d7-56001b74618a" name="Default Changelist" comment="Fresh Project">
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/FlowPaneDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HSEmployeeManager/src/txt/companyInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/CSS/combo.css" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/CSS/combo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/bin/Hogen/login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Models/Gender.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/icon/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/icon/file.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/icon/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/icon/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/icon/view.png" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/icon/view.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/HSEmployeeManager/bin/" />
@@ -40,30 +38,40 @@
     <session id="1405255191">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3585" />
+          <entry key="css" value="18" />
+          <entry key="java" value="10294" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3585" />
+          <entry key="CSS" value="18" />
+          <entry key="JAVA" value="10294" />
+          <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="31" />
-          <entry key="png" value="1" />
+          <entry key="css" value="2" />
+          <entry key="java" value="96" />
+          <entry key="png" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="31" />
+          <entry key="CSS" value="2" />
+          <entry key="Image" value="2" />
+          <entry key="JAVA" value="96" />
         </counts>
       </usages-collector>
     </session>
@@ -93,19 +101,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+            <state relative-caret-position="231">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getInstance#0;class#ViewAll#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="205" column="79" selection-start-line="205" selection-start-column="79" selection-end-line="205" selection-end-column="79" />
+            <state relative-caret-position="1273">
+              <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,75 +128,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+            <state relative-caret-position="250">
+              <caret line="68" column="83" selection-start-line="68" selection-start-column="83" selection-end-line="68" selection-end-column="83" />
               <folding>
+                <element signature="method#createEmployee#0;class#EmployeeTable#0" />
                 <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
+                <element signature="method#getAllEmployees#0;class#EmployeeTable#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="36" column="87" selection-start-line="36" selection-start-column="87" selection-end-line="36" selection-end-column="87" />
+            <state>
+              <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/gender.java">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/AccountTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="288">
+              <caret line="88" column="1" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="88" selection-end-column="1" />
+              <folding>
+                <element signature="method#getAccount#0;class#AccountTable#0" />
+                <element signature="method#updateAccount#0;class#AccountTable#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/DepartmentDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+            <state relative-caret-position="425">
+              <caret line="239" column="41" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getInstance#0;class#ViewAll#0" />
-                <element signature="e#958#964#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1577">
-              <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3881#3882#0" expanded="true" />
-                <element signature="e#3930#3931#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="399">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -189,10 +185,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            <state relative-caret-position="190">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="504" column="42" selection-start-line="504" selection-start-column="42" selection-end-line="504" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="78" column="104" selection-start-line="78" selection-start-column="104" selection-end-line="78" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3300#3343#0" />
+                <element signature="method#getInstance#0;class#Home#0" />
+                <element signature="method#applyCustomColorSequence#0;class#Home#0" />
               </folding>
             </state>
           </provider>
@@ -204,6 +224,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -216,7 +237,22 @@
       <find>allite</find>
       <find>Button</find>
       <find>BLO</find>
+      <find>Add</find>
+      <find>set</find>
+      <find>table</find>
+      <find>tru</find>
+      <find>shadow</find>
+      <find>web</find>
+      <find>scene2</find>
+      <find>home</find>
+      <find>tableView</find>
+      <find>Grap</find>
+      <find>ess</find>
+      <find>add</find>
     </findStrings>
+    <replaceStrings>
+      <replace>tableView</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -229,16 +265,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" />
-        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java" />
         <option value="$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/txt/companyInformation.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/test.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/FlowPaneDemo.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java" />
+        <option value="$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java" />
       </list>
     </option>
   </component>
@@ -250,9 +296,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="y" value="43" />
+    <option name="width" value="948" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -262,6 +308,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,13 +325,13 @@
               <item name="HSEmployeeManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="HSEmployeeManager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="CSS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HSEmployeeManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="HSEmployeeManager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HSEmployeeManager" type="b2602c69:ProjectViewProjectNode" />
@@ -302,8 +349,7 @@
               <item name="HSEmployeeManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="HSEmployeeManager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Hogen" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HSEmployeeManager" type="b2602c69:ProjectViewProjectNode" />
@@ -327,16 +373,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/hogen/Documents/HSEmployeeManager/HSEmployeeManager/src/Sections/Home.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543356080319" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/OOADPatterns-p2" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543731702889" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -356,7 +401,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="FlowPaneDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hogen.test.FlowPaneDemo" />
+      <module name="HSEmployeeManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Hogen.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -366,6 +424,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="table" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hogen.test.table" />
+      <module name="HSEmployeeManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Hogen.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.table" />
+      <item itemvalue="Application.FlowPaneDemo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FlowPaneDemo" />
+        <item itemvalue="Application.table" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -378,17 +460,61 @@
       <option name="presentableId" value="Default" />
       <updated>1543239565909</updated>
       <workItem from="1543239568873" duration="27000" />
+      <workItem from="1543445393199" duration="1455000" />
+      <workItem from="1543493347889" duration="1794000" />
+      <workItem from="1543586769198" duration="156000" />
+      <workItem from="1543589024979" duration="13365000" />
+      <workItem from="1543717353267" duration="12079000" />
+      <workItem from="1543763652166" duration="17208000" />
     </task>
+    <task id="LOCAL-00001" summary="Fresh Project">
+      <created>1543356174730</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543356174730</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23073000" />
+    <option name="totallyTimeSpent" value="69389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14295302" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12818792" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22379604" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32902297" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24487594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -397,7 +523,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23285714" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -416,7 +542,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -426,95 +552,67 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2efds" />
-    <option name="LAST_COMMIT_MESSAGE" value="2efds" />
+    <MESSAGE value="Fresh Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fresh Project" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/gender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="38">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/icon/profile1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Province.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="266">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/AccountTable.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/ProvinceDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+        <state relative-caret-position="114">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/ProvinceTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="36" column="87" selection-start-line="36" selection-start-column="87" selection-end-line="36" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Gender.java" />
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/SituationTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#715#718#0" />
-            <element signature="e#1396#1402#0" expanded="true" />
-            <element signature="method#applyCustomColorSequence#0;class#Home#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="393" column="52" selection-start-line="393" selection-start-column="52" selection-end-line="393" selection-end-column="52" />
-          <folding>
-            <element signature="method#configureFileChooser#0;class#login#0" />
-            <element signature="method#openFile#0;class#login#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1577">
-          <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3881#3882#0" expanded="true" />
-            <element signature="e#3930#3931#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#ViewAll#0" />
-            <element signature="e#958#964#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -525,48 +623,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="217" column="37" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+          <folding>
+            <element signature="e#3931#3932#0" expanded="true" />
+            <element signature="e#4002#4003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/txt/companyInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="231" selection-start-line="5" selection-start-column="20" selection-end-line="7" selection-end-column="231" />
+          <folding>
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/icon/profile1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test.java" />
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/CSS/combo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/FlowPaneDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="20" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/test/table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="190">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="method#main#0;class#table#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/gender.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/situation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="57">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Database.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Enums/title.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="36" column="87" selection-start-line="36" selection-start-column="87" selection-end-line="36" selection-end-column="87" />
+        <state relative-caret-position="760">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/DepartmentTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="78" column="104" selection-start-line="78" selection-start-column="104" selection-end-line="78" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3300#3343#0" />
+            <element signature="method#getInstance#0;class#Home#0" />
+            <element signature="method#applyCustomColorSequence#0;class#Home#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/AccountTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="88" column="1" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="88" selection-end-column="1" />
+          <folding>
+            <element signature="method#getAccount#0;class#AccountTable#0" />
+            <element signature="method#updateAccount#0;class#AccountTable#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/DAO/EmployeeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Tables/EmployeeTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+        <state relative-caret-position="250">
+          <caret line="68" column="83" selection-start-line="68" selection-start-column="83" selection-end-line="68" selection-end-column="83" />
           <folding>
+            <element signature="method#createEmployee#0;class#EmployeeTable#0" />
             <element signature="method#updateEmployee#0;class#EmployeeTable#0" />
+            <element signature="method#getAllEmployees#0;class#EmployeeTable#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Database/Const.java">
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Models/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+        <state>
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/ViewAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInstance#0;class#ViewAll#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Sections/Add.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="205" column="79" selection-start-line="205" selection-start-column="79" selection-end-line="205" selection-end-column="79" />
+        <state relative-caret-position="425">
+          <caret line="239" column="41" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HSEmployeeManager/src/Hogen/login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="504" column="42" selection-start-line="504" selection-start-column="42" selection-end-line="504" selection-end-column="42" />
         </state>
       </provider>
     </entry>

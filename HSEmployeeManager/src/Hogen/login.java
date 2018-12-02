@@ -13,6 +13,7 @@ import Tables.AccountTable;
 import Sections.Add;
 import Sections.Home;
 import Sections.Statistics;
+import Tables.EmployeeTable;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
@@ -38,8 +39,11 @@ import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-public class login extends Application{
 
+import static Sections.Home.tableView1;
+
+public class login extends Application{
+	public static WebView browser = new WebView();
 
 
 	private ImageView imageview = new ImageView();
@@ -331,7 +335,7 @@ back.setOnAction(new EventHandler<ActionEvent>() {
 					scene1 = new Scene(signuproot, 1024, 768);
 					scene1.getStylesheets().add("CSS/combo.css");
 					primaryStage.setScene(scene1);
-					primaryStage.setResizable(true);
+					primaryStage.setResizable(false);
 
 				}
 			});
@@ -350,7 +354,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 
 		//SCENE 2
-		WebView browser = new WebView();
+
 		WebEngine webEngine = browser.getEngine();
 		webEngine.load("http://eclipse.com");
 
@@ -367,7 +371,6 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		helpMenu.setGraphic(new ImageView("icon/help.png"));
 
 		MenuItem employeeItem = new MenuItem("Employee");
-		MenuItem exportItem = new MenuItem("Export");
 		MenuItem exitItem = new MenuItem("Exit");
 		MenuItem allItem = new MenuItem("View All");
 		MenuItem webItem = new MenuItem("Website");
@@ -396,7 +399,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 		});
 
 
-		fileMenu.getItems().addAll(newItem, exportItem, exitItem);
+		fileMenu.getItems().addAll(newItem, exitItem);
 		newItem.getItems().addAll(employeeItem);
 		viewMenu.getItems().addAll(allItem);
 		menu.getMenus().addAll(fileMenu,viewMenu,helpMenu);
@@ -423,6 +426,8 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 				});
 		homeButton.setOnAction(e->{
 			border.setCenter(home);
+			EmployeeTable table = new EmployeeTable();
+			tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
 
 		});
 
@@ -470,21 +475,24 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 
 		AnchorPane anchorPane = new AnchorPane();
-		AnchorPane.setTopAnchor(homeButton, 5.0);
-		AnchorPane.setRightAnchor(homeButton,90.0);
-		AnchorPane.setTopAnchor(addButton, 5.0);
-		AnchorPane.setRightAnchor(addButton,45.0);
-		AnchorPane.setTopAnchor(statisticsButton, 5.0);
-		AnchorPane.setRightAnchor(statisticsButton,0.0);
+		AnchorPane.setBottomAnchor(homeButton, 5.0);
+		AnchorPane.setRightAnchor(homeButton,100.0);
+		AnchorPane.setBottomAnchor(addButton, 5.0);
+		AnchorPane.setRightAnchor(addButton,55.0);
+		AnchorPane.setBottomAnchor(statisticsButton, 5.0);
+		AnchorPane.setRightAnchor(statisticsButton,10.0);
 		anchorPane.getChildren().addAll(homeButton, addButton, statisticsButton);
 
-		HBox bb = new HBox(menu, anchorPane);
-		bb.setSpacing(640);
+		HBox anBox = new HBox(anchorPane);
+		anBox.setAlignment(Pos.TOP_CENTER);
+
+
 
 		//Define scene
 		border.getChildren().addAll(background);
-		border.setTop(bb);
+		border.setTop(menu);
 		border.setCenter(home);
+		border.setBottom(anBox);
 		root.getChildren().add(background4K);
 		root.setTop(hbox);
 		root.setCenter(vbox);
@@ -493,8 +501,8 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 
 
-		scene1 = new Scene(root, 1024, 768);
-		scene2 = new Scene(border,1024,768);
+		scene1 = new Scene(root, 1024, 720);
+		scene2 = new Scene(border,1200,720);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);

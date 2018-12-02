@@ -4,9 +4,11 @@ package Sections;
 import DAO.DepartmentDAO;
 import Models.*;
 import Tables.*;
+import com.sun.webkit.dom.ElementImpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
@@ -111,7 +113,7 @@ public class Add extends BorderPane{
 		Text enddate = new Text("End Date ");
 		enddate.relocate(600,395);
 		//TextField
-
+		int id = 1;
 		ImageView im = new ImageView("icon/plus.png");
 		TextField EemployeeId = new TextField();
 		TextField EfirstName = new TextField();
@@ -165,11 +167,21 @@ public class Add extends BorderPane{
 		EendDate.relocate(690,390);
 
 
+		Text employid = new Text("ID ");
+		employid.relocate(120,350);
+		TextField ess = new TextField();
+		ess.relocate(140,350);
+		ess.setPrefWidth(60);
+
+
+
+
+
 
 		//Button save
 		Button save = new Button("Create employee");
 		save.getStyleClass().add("bb");
-		save.relocate(520,600);
+		save.relocate(400,500);
 		save.addEventHandler(MouseEvent.MOUSE_ENTERED,
 				new EventHandler<MouseEvent>() {
 					@Override public void handle(MouseEvent e) {
@@ -188,22 +200,23 @@ public class Add extends BorderPane{
 			@Override
 			public void handle(ActionEvent event) {
 				Employee employee = new Employee(
-						EemployeeId.getText().toString(),
-						EfirstName.getText().toString(),
-						ElastName.getText().toString(),
-						Eemail.getText().toString(),
-						Esalary.getText().toString(),
+						ess.getText(),
+						EfirstName.getText(),
+						ElastName.getText(),
+						Eemail.getText(),
+						Esalary.getText(),
 						Etitle.getSelectionModel().getSelectedItem().getId(),
 						Edepartment.getSelectionModel().getSelectedItem().getId(),
-						Eaddress.getText().toString(),
-						Ephone.getText().toString(),
+						Eaddress.getText(),
+						Ephone.getText(),
 						Egender.getSelectionModel().getSelectedItem().toString(),
 						EbirthDate.getValue().toString(),
 						EstartDate.getValue().toString(),
-						Estatus.getSelectionModel().getSelectedItem().getId(),
 						EendDate.getValue().toString(),
-						Ecity.getText().toString(),
+						Estatus.getSelectionModel().getSelectedItem().getId(),
+						Ecity.getText(),
 						Eprovince.getSelectionModel().getSelectedItem().getId()
+//						profile.getImage()
 
 						);
 				table.createEmployee(employee);
@@ -213,13 +226,22 @@ public class Add extends BorderPane{
 
 
 
-		canvas.getChildren().addAll(v, firstname, EfirstName,lastname, ElastName,city, Ecity,province, Eprovince,salary, Esalary,title, Etitle,department, Edepartment,
+		canvas.getChildren().addAll(employid, ess,v, firstname, EfirstName,lastname, ElastName,city, Ecity,province, Eprovince,salary, Esalary,title, Etitle,department, Edepartment,
 				address, Eaddress,phone, Ephone,email, Eemail,gender, Egender, status, Estatus,
 				birthdate, EbirthDate,startdate, EstartDate,enddate, EendDate, save);
 
 
 
-		this.setCenter(canvas);
+
+		VBox vBox = new VBox(canvas);
+		vBox.setAlignment(Pos.TOP_CENTER);
+		vBox.setPadding(new Insets(0,20,0,0));
+
+		HBox hh = new HBox(vBox);
+		hh.setAlignment(Pos.BOTTOM_CENTER);
+		hh.setPadding(new Insets(0,20,0,0));
+
+		this.setCenter(hh);
 		
 	}
 	
