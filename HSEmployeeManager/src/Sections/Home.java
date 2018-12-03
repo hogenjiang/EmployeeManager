@@ -33,7 +33,8 @@ public class Home extends BorderPane {
     private static Home home;
     EmployeeTable table = new EmployeeTable();
     public static TableView tableView1 = new TableView();
-    private Add addSection = Add.getInstance();
+    public static Add addSection = Add.getInstance();
+    public static HBox hBox2 =new HBox();
     private Home(){
 
 
@@ -62,7 +63,7 @@ public class Home extends BorderPane {
 
             BorderPane root = new BorderPane();
             GridPane gridPane = new GridPane();
-            gridPane.add(table.getEmployee(),1,1);
+//            gridPane.add(table.getEmployee(),1,1);
 
 
             tableView1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -72,7 +73,7 @@ public class Home extends BorderPane {
             delete.getStyleClass().remove("button");
             delete.setGraphic(new ImageView("icon/minus.png"));
             delete.setOnAction(e-> {
-
+                Stage newWindow = new Stage();
                     Label label = new Label("Are you sure delete the employees you selected?");
 
                     Button yes = new Button("Yes");
@@ -80,8 +81,12 @@ public class Home extends BorderPane {
                         Employee employee = (Employee) tableView1.getSelectionModel().getSelectedItem();
                         table.deleteEmployee(employee);
                         tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
+                        newWindow.close();
                     });
                     Button no = new Button("No");
+                    no.setOnAction(e2->{
+                        newWindow.close();
+                    });
 
 
                     HBox hh = new HBox(yes,no);
@@ -95,7 +100,7 @@ public class Home extends BorderPane {
                     Scene secondScene = new Scene(vBox, 350, 150);
 
                     // New window (Stage)
-                    Stage newWindow = new Stage();
+
                     newWindow.setTitle("Second Stage");
                     newWindow.setScene(secondScene);
                     newWindow.show();
@@ -105,9 +110,9 @@ public class Home extends BorderPane {
             add.getStyleClass().remove("button");
             add.setGraphic(new ImageView("icon/positive.png"));
             add.setOnAction(e->{
-                    HBox hBox =new HBox(addSection);
-                    hBox.setAlignment(Pos.BASELINE_LEFT);
-                    this.setCenter(hBox);
+                    hBox2.getChildren().add(addSection);
+                    hBox2.setAlignment(Pos.BASELINE_LEFT);
+                    this.setCenter(hBox2);
             });
 
             Button edit = new Button();

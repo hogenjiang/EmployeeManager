@@ -88,20 +88,31 @@ public class Statistics extends BorderPane {
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("2016");
+        series1.getData().add(new XYChart.Data<>("Accounting",30));
+        series1.getData().add(new XYChart.Data<>("Marketing",50));
+        series1.getData().add(new XYChart.Data<>("Management",20));
+        series1.getData().add(new XYChart.Data<>("Human Resource",60));
+        series1.getData().add(new XYChart.Data<>("Development",55));
+
 
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("2017");
+        series2.getData().add(new XYChart.Data<>("Accounting",24));
+        series2.getData().add(new XYChart.Data<>("Marketing",61));
+        series2.getData().add(new XYChart.Data<>("Management",34));
+        series2.getData().add(new XYChart.Data<>("Human Resource",58));
+        series2.getData().add(new XYChart.Data<>("Development",80));
 
         XYChart.Series series3 = new XYChart.Series();
         series3.setName("2018");
+        series3.getData().add(new XYChart.Data<>("Accounting",25));
+        series3.getData().add(new XYChart.Data<>("Marketing",55));
+        series3.getData().add(new XYChart.Data<>("Management",25));
+        series3.getData().add(new XYChart.Data<>("Human Resource",62));
+        series3.getData().add(new XYChart.Data<>("Development",82));
 
         barChart.setTitle("Employee distribution");
         barChart.getData().addAll(series1,series2,series3);
-
-
-
-        //Pie Chart
-
 
 
 
@@ -181,14 +192,15 @@ public class Statistics extends BorderPane {
         EmployeeTable table = new EmployeeTable();
 
         PieChart PieChart = new PieChart();
+        PieChart.setTitle("Department distribution(2018)");
 
                 ObservableList<PieChart.Data> PieData =
                 FXCollections.observableArrayList(
-                        new PieChart.Data("Accounting", 60),
-                        new PieChart.Data("Marketing", 34),
-                        new PieChart.Data("Management", 6),
-                        new PieChart.Data("Human Resource", 6),
-                        new PieChart.Data("Development", 6)
+                        new PieChart.Data("Accounting", 34),
+                        new PieChart.Data("Marketing", 40),
+                        new PieChart.Data("Management", 7),
+                        new PieChart.Data("Human Resource", 42),
+                        new PieChart.Data("Development", 60)
                         );
 
                 PieChart.setData(PieData);

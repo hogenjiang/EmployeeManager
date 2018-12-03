@@ -79,22 +79,22 @@ public class EmployeeTable implements EmployeeDAO {
         }
     }
 
-    @Override
-    public Text getEmployee() {
-        employid = new Text();
-        String query = "SELECT * FROM " + Const.TABLE_EMPLOYEE;
-
-
-
-        try {
-            Statement getItems = db.getConnection().createStatement();
-            ResultSet data = getItems.executeQuery(query);
-            employid.setText(data.getString(Const.EMPLOYEE_COLUMN_ID));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return employid;
-    }
+//    @Override
+//    public Text getEmployee() {
+//        employid = new Text();
+//        String query = "SELECT * FROM " + Const.TABLE_EMPLOYEE;
+//
+//
+//
+//        try {
+//            Statement getItems = db.getConnection().createStatement();
+//            ResultSet data = getItems.executeQuery(query);
+//            employid.setText(data.getString(Const.EMPLOYEE_COLUMN_ID));
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return employid;
+//    }
 
     @Override
     public ArrayList<Employee> getAllEmployees() {

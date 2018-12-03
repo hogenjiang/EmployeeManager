@@ -40,6 +40,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import static Sections.Home.addSection;
+import static Sections.Home.hBox2;
 import static Sections.Home.tableView1;
 
 public class login extends Application{
@@ -428,7 +430,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 			border.setCenter(home);
 			EmployeeTable table = new EmployeeTable();
 			tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
-
+			hBox2.getChildren().remove(addSection);
 		});
 
 		Button addButton = new Button();
