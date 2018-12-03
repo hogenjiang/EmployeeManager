@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 import java.awt.Desktop;
 import java.io.File;
 
+import static Sections.Home.tableView1;
+
 public class Add extends BorderPane{
 	private static Add tab;
 	private ImageView profile = new ImageView();
@@ -220,6 +222,7 @@ public class Add extends BorderPane{
 
 						);
 				table.createEmployee(employee);
+				tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
 			}
 		});
 

@@ -27,6 +27,7 @@ import java.util.List;
 public class ViewAll extends BorderPane {
 
     EmployeeTable table = new EmployeeTable();
+    public static TableView tableView2 = new TableView();
 
     private static ViewAll tab;
     public ViewAll(){
@@ -38,7 +39,7 @@ public class ViewAll extends BorderPane {
 //        VBox vBox = new VBox(list);
 //        vBox.setPadding(new Insets(10,0,0,10));
 
-        TableView tableView = new TableView();
+
         TableColumn idCol = new TableColumn("ID");
         TableColumn firstNameCol = new TableColumn("First Name");
         TableColumn lastNameCol = new TableColumn("Last Name");
@@ -58,7 +59,7 @@ public class ViewAll extends BorderPane {
         TableColumn cityCol = new TableColumn("City");
         TableColumn proCol = new TableColumn("Province");
 
-        tableView.getColumns().addAll(idCol,firstNameCol,lastNameCol,emailCol,
+        tableView2.getColumns().addAll(idCol,firstNameCol,lastNameCol,emailCol,
                 salaryCol,titleCol,departmentCol,addressCol,phoneCol,genderCol,
                 birthDateCol,startCol,endCol,statusCol,cityCol,proCol);
 
@@ -128,15 +129,15 @@ public class ViewAll extends BorderPane {
 
 
 
-        tableView.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
-        tableView.setMinWidth(1171);
-        tableView.setMaxWidth(1505);
+        tableView2.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
+        tableView2.setMinWidth(1171);
+        tableView2.setMaxWidth(1505);
 
 
-        HBox tablebox = new HBox(tableView);
-        tablebox.setAlignment(Pos.CENTER);
+//        HBox tablebox = new HBox(tableView2);
+//        tablebox.setAlignment(Pos.CENTER);
 
-        this.setCenter(tableView);
+        this.setCenter(tableView2);
 
     }
 

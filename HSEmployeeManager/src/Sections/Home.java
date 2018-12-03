@@ -28,6 +28,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Sections.ViewAll.tableView2;
+
 
 public class Home extends BorderPane {
     private static Home home;
@@ -62,8 +64,8 @@ public class Home extends BorderPane {
         tableView1.setMaxWidth(218);
 
             BorderPane root = new BorderPane();
-            GridPane gridPane = new GridPane();
-//            gridPane.add(table.getEmployee(),1,1);
+
+            root.setCenter(tableView2);
 
 
             tableView1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -146,7 +148,7 @@ public class Home extends BorderPane {
 
         this.setPadding(new Insets(0,0,0,15));
         this.setLeft(hh);
-        this.setCenter(gridPane);
+        this.setCenter(root);
 
 
     }
