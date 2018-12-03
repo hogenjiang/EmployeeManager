@@ -431,6 +431,7 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 			EmployeeTable table = new EmployeeTable();
 			tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
 			hBox2.getChildren().remove(addSection);
+
 		});
 
 		Button addButton = new Button();

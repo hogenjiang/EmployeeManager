@@ -39,6 +39,26 @@ public class Home extends BorderPane {
     public static HBox hBox2 =new HBox();
     private Home(){
 
+        ImageView imageView = new ImageView("icon/i1.png");
+        imageView.setFitWidth(100);
+        imageView.setFitHeight(100);
+
+        ImageView imageView2 = new ImageView("icon/i2.png");
+        imageView2.setFitWidth(100);
+        imageView2.setFitHeight(100);
+
+        ImageView imageView3 = new ImageView("icon/i3.png");
+        imageView3.setFitWidth(100);
+        imageView3.setFitHeight(100);
+
+
+
+        FlowPane ff = new FlowPane();
+        ff.setOrientation(Orientation.HORIZONTAL);
+        ff.getChildren().addAll(imageView,imageView2,imageView3);
+        ff.setHgap(8);
+
+
 
         
         TableColumn idCol = new TableColumn("ID");
@@ -63,11 +83,12 @@ public class Home extends BorderPane {
         tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
         tableView1.setMaxWidth(218);
 
-            BorderPane root = new BorderPane();
+            HBox root = new HBox();
+            root.getChildren().add(ff);
+            root.setAlignment(Pos.CENTER);
 
-            root.setCenter(tableView2);
-
-
+            VBox vv = new VBox(root);
+            vv.setAlignment(Pos.CENTER);
             tableView1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
 
@@ -105,27 +126,33 @@ public class Home extends BorderPane {
 
                     newWindow.setTitle("Second Stage");
                     newWindow.setScene(secondScene);
-                    newWindow.show();
+                    if (tableView1.getSelectionModel().getSelectedItem() == null){
+
+                    }else{
+                        newWindow.show();
+                    }
+
                 });
 
             Button add = new Button();
             add.getStyleClass().remove("button");
             add.setGraphic(new ImageView("icon/positive.png"));
             add.setOnAction(e->{
+                    hBox2.getChildren().remove(addSection);
                     hBox2.getChildren().add(addSection);
                     hBox2.setAlignment(Pos.BASELINE_LEFT);
                     this.setCenter(hBox2);
             });
 
-            Button edit = new Button();
-            edit.getStyleClass().remove("button");
-            edit.setGraphic(new ImageView("icon/edit.png"));
-            edit.setOnAction(e->{
+            Button more = new Button();
+            more.getStyleClass().remove("button");
+            more.setGraphic(new ImageView("icon/more.png"));
+            more.setOnAction(e->{
 
             });
 
 
-            VBox vvv = new VBox(add,delete,edit);
+            VBox vvv = new VBox(add,delete,more);
             vvv.setSpacing(7);
 
             HBox hh = new HBox(vvv,tableView1);
@@ -148,7 +175,7 @@ public class Home extends BorderPane {
 
         this.setPadding(new Insets(0,0,0,15));
         this.setLeft(hh);
-        this.setCenter(root);
+        this.setCenter(vv);
 
 
     }

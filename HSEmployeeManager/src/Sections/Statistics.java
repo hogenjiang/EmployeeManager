@@ -45,16 +45,15 @@ public class Statistics extends BorderPane {
     private Statistics(){
         Pane nn = new Pane();
 
-        ImageView imageView = new ImageView("icon/profile1.png");
-        imageView.setFitWidth(359);
-        imageView.setFitHeight(400);
+        ImageView imageView = new ImageView("icon/iconpng.png");
+        imageView.setFitWidth(100);
+        imageView.setFitHeight(100);
 
-        StackPane stackPane = new StackPane();
+        ImageView imageView2 = new ImageView("icon/people.png");
+        imageView2.setFitWidth(100);
+        imageView2.setFitHeight(100);
 
-
-
-
-
+        FlowPane stackPane = new FlowPane();
         Text information = new Text();
         information.relocate(30,10);
         information.setText(" People connect better with stories than they" +
@@ -70,12 +69,33 @@ public class Statistics extends BorderPane {
 
         stackPane.setStyle("-fx-background-color: Grey;-fx-border-radius: 10 10 10 10;" +
                 "-fx-background-radius: 10 10 10 10;");
-        stackPane.getChildren().addAll(information);
+        stackPane.getChildren().addAll(imageView,information);
 
 
 
 
-        nn.getChildren().addAll(stackPane);
+
+        FlowPane stackPane3 = new FlowPane();
+        Text information3 = new Text();
+        information3.relocate(30,10);
+        information3.setText("ALL department: " +"\n" +  "1. Accounting"+"\n" +
+                "2. Marketing" +"\n" + "3. Management" +"\n" + "4. Human Resource"
+                +"\n" + "5. Development");
+
+        stackPane3.setStyle("-fx-background-color: White;-fx-border-radius: 10 10 10 10;" +
+                "-fx-background-radius: 10 10 10 10;");
+        stackPane3.getChildren().addAll(imageView2,information3);
+
+        FlowPane flowPane = new FlowPane();
+        flowPane.setVgap(7);
+        flowPane.getChildren().addAll(stackPane, stackPane3);
+
+
+
+
+
+
+        nn.getChildren().addAll(flowPane);
         VBox panebox = new VBox(nn);
         panebox.setPadding(new Insets(10,0,0,10));
 
@@ -120,8 +140,6 @@ public class Statistics extends BorderPane {
         buttonhbox.getChildren().addAll(pieButton,barButton);
         buttonhbox.setAlignment(Pos.CENTER);
         buttonhbox.setSpacing(5);
-
-
 
 
 
