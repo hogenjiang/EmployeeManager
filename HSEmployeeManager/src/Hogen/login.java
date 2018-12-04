@@ -22,6 +22,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -40,9 +41,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import static Sections.Home.addSection;
-import static Sections.Home.hBox2;
-import static Sections.Home.tableView1;
+import static Sections.Home.*;
 
 public class login extends Application{
 	public static WebView browser = new WebView();
@@ -84,7 +83,7 @@ public class login extends Application{
 	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
+
 //SCENE 1
 		BorderPane root = new BorderPane();
 		Font font = Font.font ("Arial", FontWeight.BOLD, 12);
@@ -225,7 +224,7 @@ login.setOnAction(new EventHandler<ActionEvent>() {
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(true);
+							primaryStage.setResizable(false);
 							primaryStage.show();
 						}
 
@@ -249,7 +248,7 @@ password.setOnKeyPressed(new EventHandler<KeyEvent>() {
 							password.clear();
 							message.setText("");
 							primaryStage.setScene(scene2);
-							primaryStage.setResizable(true);
+							primaryStage.setResizable(false);
 							primaryStage.show();
 						}
 					}
@@ -428,9 +427,24 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 				});
 		homeButton.setOnAction(e->{
 			border.setCenter(home);
+
+
+
+
+
+			empl = new VBox(out,scrollPane);
+			gg = new HBox(empl,bhh);
+			vv = new VBox(ff,gg);
+
+
+			home.getChildren().remove(hBox2);
+
+			hBox2.getChildren().removeAll(addSection,vv);
+			home.setCenter(vv);
+
+
 			EmployeeTable table = new EmployeeTable();
 			tableView1.setItems(FXCollections.observableArrayList(table.getAllEmployees()));
-			hBox2.getChildren().remove(addSection);
 
 		});
 
@@ -453,7 +467,6 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 			border.setCenter(add);
 			scene2.getStylesheets().remove("CSS/combo.css");
 			scene2.getStylesheets().add("CSS/datepicker.css");
-
 		});
 
 		Button statisticsButton = new Button();
@@ -505,11 +518,11 @@ signUp.setOnAction(new EventHandler<ActionEvent>() {
 
 
 		scene1 = new Scene(root, 1024, 720);
-		scene2 = new Scene(border,1200,720);
+		scene2 = new Scene(border,1250,800);
 		scene1.getStylesheets().add("CSS/combo.css");
 		scene2.getStylesheets().add("CSS/combo.css");
 		primaryStage.setScene(scene1);
-		primaryStage.setResizable(true);
+		primaryStage.setResizable(false);
 		primaryStage.setTitle("Employee System");
 		primaryStage.getIcons().add(icon1);
 		primaryStage.show();

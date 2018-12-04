@@ -67,8 +67,7 @@ public class Statistics extends BorderPane {
                 "\n" + " important than the fact that you are presenting " +
                 "\n" + " information in the form of a story to begin with.");
 
-        stackPane.setStyle("-fx-background-color: Grey;-fx-border-radius: 10 10 10 10;" +
-                "-fx-background-radius: 10 10 10 10;");
+        stackPane.setStyle("-fx-background-color: #9da2a2;-fx-background-radius: 10 10 10 10");
         stackPane.getChildren().addAll(imageView,information);
 
 
@@ -82,12 +81,12 @@ public class Statistics extends BorderPane {
                 "2. Marketing" +"\n" + "3. Management" +"\n" + "4. Human Resource"
                 +"\n" + "5. Development");
 
-        stackPane3.setStyle("-fx-background-color: White;-fx-border-radius: 10 10 10 10;" +
+        stackPane3.setStyle("-fx-background-color: #9da2a2;-fx-border-radius: 10 10 10 10;" +
                 "-fx-background-radius: 10 10 10 10;");
         stackPane3.getChildren().addAll(imageView2,information3);
 
         FlowPane flowPane = new FlowPane();
-        flowPane.setVgap(7);
+        flowPane.setVgap(12);
         flowPane.getChildren().addAll(stackPane, stackPane3);
 
 
@@ -97,7 +96,8 @@ public class Statistics extends BorderPane {
 
         nn.getChildren().addAll(flowPane);
         VBox panebox = new VBox(nn);
-        panebox.setPadding(new Insets(10,0,0,10));
+        panebox.setAlignment(Pos.CENTER);
+        panebox.setPadding(new Insets(0,0,130,10));
 
         //Bar Chart
         CategoryAxis categoryAxis = new CategoryAxis();
@@ -144,10 +144,14 @@ public class Statistics extends BorderPane {
 
 
         vBox.getChildren().addAll(newPieChart(),buttonhbox);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setPadding(new Insets(0,0,130,0));
         vBox.setSpacing(30);
 
         vBox1.getChildren().addAll(barChart);
         vBox1.setSpacing(30);
+        vBox1.setAlignment(Pos.CENTER);
+        vBox1.setPadding(new Insets(0,0,130,0));
 
         //Switch
         pieButton.setBackground(Background.EMPTY);
