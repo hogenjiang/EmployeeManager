@@ -23,7 +23,7 @@ public class Database {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = 
-						DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Const.DB_NAME + "?useSSL=false", Const.DB_USER, Const.DB_PASS);
+						DriverManager.getConnection("jdbc:mysql://localhost/" + Const.DB_NAME + "?useSSL=false", Const.DB_USER, Const.DB_PASS);
 
 				System.out.println("Successfully Created Connection");
 			}
@@ -33,12 +33,16 @@ public class Database {
 		}
 		
 		try {
-			createTable(Const.TABLE_LOGIN, Const.CREATE_TABLE_LOGIN, connection);
-			
+			createTable(Const.TABLE_USER, Const.CREATE_TABLE_USER, connection);
+			createTable(Const.TABLE_EMPLOYEE, Const.CREATE_TABLE_EMPLOYEE, connection);
+			createTable(Const.TABLE_PROVINCE, Const.CREATE_TABLE_PROVINCE, connection);
+			createTable(Const.TABLE_SITUATION, Const.CREATE_TABLE_SITUATION, connection);
+			createTable(Const.TABLE_DEPARTMENT, Const.CREATE_TABLE_DEPARTMENT, connection);
+			createTable(Const.TABLE_TITLE, Const.CREATE_TABLE_TITLE, connection);
+
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	//getInstance and getConnection method
 	public static Database getInstance() {

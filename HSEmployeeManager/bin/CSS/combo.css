@@ -1,0 +1,88 @@
+.text-field{
+    -fx-background-color: #ffffff;
+}
+
+
+.button{
+    -fx-font-size: 16;
+    -fx-base: #2c5185;
+    -fx-background-color: #2c5185;
+    -fx-border-radius: 5;
+}
+
+.check-box .box {
+    -fx-background-color: #ffffff;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #828282;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #ffffff;
+}
+
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane {
+    -fx-tab-min-width:85px;
+
+
+}
+
+.tab{
+    -fx-background-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-padding: 0 0 0 48;
+
+}
+.tab-pane .tab {
+    -fx-background-color: transparent;
+}
+
+
+.tab .tab-label {
+    -fx-text-fill: #828282;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #2c5185;
+}
+
+
+.menu-bar{
+    -fx-background-color: transparent;
+}
+
+.combo-box{
+    -fx-background-color: #ffffff;
+}
+
+
+.menu{
+    -fx-font-family: "sans-serif";
+    -fx-font-weight: bold;
+
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: white;
+}
+
+.date-picker > .arrow-button > .arrow {
+}
+
+.date-picker > {
+    -fx-background-color: white;
+
+}
+
+
+.
