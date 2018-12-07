@@ -2,10 +2,10 @@
 This is a JavaFX-MySQL Employee System software for sovling problem of empolyee management.
 # Simple Description
 Main feature:
-  **Login/Register
-  **built-in database
-  **Create, Retrieve, Delete
-  **Data statistics
+  * Login/Register
+  * built-in database
+  * Create, Retrieve, Delete
+  * Data statistics
 
 # Build With
 * [Eclipse](https://www.eclipse.org/ide/) - IDE
@@ -59,3 +59,4 @@ Main feature:
 </p>
 
 # Credit
+* [Icon8](https://icons8.com/)
